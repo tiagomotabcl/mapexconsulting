@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M.Apex Consulting — Deployment Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090d;--bg2:#0c1018;--card:#111820;--card2:#141d28;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--accent:#2DD4BF;--accent3:rgba(45,212,191,0.1);--text:#dde6f0;--text2:#98afc4;--text3:#5a7390;--green:#34d399;--amber:#fbbf24;--red:#f87171;--fh:'Syne',sans-serif;--fb:'Inter',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px;line-height:1.75;padding:3rem 1.5rem;max-width:820px;margin:0 auto}
+h1{font-family:var(--fh);font-size:2rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:0.5rem}
+h1 em{font-style:normal;color:var(--accent)}
+.intro{color:var(--text2);margin-bottom:3rem;font-size:0.9rem}
+h2{font-family:var(--fh);font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;margin:2.5rem 0 0.75rem;padding-top:1.5rem;border-top:1px solid var(--border);color:var(--accent)}
+h2 .num{background:var(--accent3);border:1px solid rgba(45,212,191,0.2);color:var(--accent);font-size:0.75rem;padding:3px 10px;border-radius:20px;margin-right:8px}
+h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin:1.5rem 0 0.5rem;color:var(--text)}
+p{margin-bottom:1rem;color:var(--text2)}
+.step{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;margin:0.75rem 0}
+.step-num{font-family:var(--fh);font-size:0.75rem;font-weight:800;color:var(--accent);margin-bottom:0.35rem}
+.step p{margin-bottom:0.5rem}
+.step p:last-child{margin-bottom:0}
+code{background:var(--card2);color:var(--accent);padding:2px 7px;border-radius:4px;font-size:0.85rem;font-family:'Courier New',monospace}
+pre{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin:0.75rem 0;overflow-x:auto;font-size:0.82rem;line-height:1.6;color:var(--green);font-family:'Courier New',monospace}
+.warn{background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:8px;padding:1rem 1.25rem;margin:1rem 0}
+.warn strong{color:var(--amber)}
+.warn p{color:var(--text2);margin:0}
+.ok{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:1rem 1.25rem;margin:1rem 0}
+.ok strong{color:var(--green)}
+.ok p{color:var(--text2);margin:0}
+.files{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;margin:1rem 0}
+.file-row{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--border)}
+.file-row:last-child{border-bottom:none}
+.file-name{font-family:monospace;color:var(--accent);font-size:0.85rem;font-weight:600}
+.file-desc{font-size:0.78rem;color:var(--text3)}
+.checklist{list-style:none;margin:1rem 0}
+.checklist li{padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--text2);display:flex;align-items:flex-start;gap:10px}
+.checklist li::before{content:'☐';color:var(--accent);font-size:1rem;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<h1>M.Apex Consulting<br><em>Deployment Guide</em></h1>
+<p class="intro">Step-by-step instructions to get your website live at <strong>mapexconsulting.co.uk</strong> using GitHub Pages + Names.co.uk DNS. Takes about 20 minutes.</p>
+
+<!-- FILES LIST -->
+<h2><span class="num">📁</span> Files to Upload</h2>
+<p>You have 6 files to upload to GitHub. All are in the same folder you downloaded:</p>
+<div class="files">
+  <div class="file-row"><span class="file-name">index.html</span><span class="file-desc">Homepage</span></div>
+  <div class="file-row"><span class="file-name">services.html</span><span class="file-desc">77+ services page</span></div>
+  <div class="file-row"><span class="file-name">consulting.html</span><span class="file-desc">Strategic consulting page</span></div>
+  <div class="file-row"><span class="file-name">about.html</span><span class="file-desc">About page</span></div>
+  <div class="file-row"><span class="file-name">contact.html</span><span class="file-desc">Contact page</span></div>
+  <div class="file-row"><span class="file-name">CNAME</span><span class="file-desc">Domain config (no extension)</span></div>
+</div>
+
+<!-- PART A -->
+<h2><span class="num">A</span> GitHub — Create Repository & Upload Files</h2>
+
+<div class="step">
+  <div class="step-num">Step 1</div>
+  <p>Go to <code>github.com</code> and log in to your account (<strong>tiagomotabcl</strong>)</p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 2</div>
+  <p>Click the <strong>+</strong> icon (top right) → <strong>New repository</strong></p>
+  <p>Repository name: <code>mapexconsulting</code></p>
+  <p>Set to <strong>Public</strong></p>
+  <p>Tick <strong>Add a README file</strong></p>
+  <p>Click <strong>Create repository</strong></p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 3 — Upload all 6 files</div>
+  <p>In your new repository, click <strong>Add file → Upload files</strong></p>
+  <p>Drag all 6 files into the upload area:</p>
+  <p><code>index.html</code> <code>services.html</code> <code>consulting.html</code> <code>about.html</code> <code>contact.html</code> <code>CNAME</code></p>
+  <p>Scroll down and click <strong>Commit changes</strong></p>
+</div>
+
+<div class="warn">
+  <p><strong>⚠️ Important:</strong> Make sure the file called <code>CNAME</code> has NO file extension. It must be exactly <code>CNAME</code>, not <code>CNAME.txt</code>. If your computer added .txt, rename it before uploading.</p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 4 — Enable GitHub Pages</div>
+  <p>Go to your repository → <strong>Settings</strong> (tab at the top)</p>
+  <p>In the left sidebar, click <strong>Pages</strong></p>
+  <p>Under "Build and deployment":</p>
+  <p>• Source: <strong>Deploy from a branch</strong></p>
+  <p>• Branch: <strong>main</strong> · Folder: <strong>/ (root)</strong></p>
+  <p>Click <strong>Save</strong></p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 5 — Set Custom Domain</div>
+  <p>Still on the Pages settings page, scroll down to <strong>"Custom domain"</strong></p>
+  <p>Type: <code>mapexconsulting.co.uk</code></p>
+  <p>Click <strong>Save</strong></p>
+  <p>GitHub will show a yellow "DNS check in progress" — this is normal. It resolves after you set up DNS in the next section.</p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 6 — Enforce HTTPS</div>
+  <p>After the DNS check passes (may take 15-60 minutes), come back to this page and tick:</p>
+  <p><strong>☑ Enforce HTTPS</strong></p>
+  <p>This gives you a free SSL certificate. Your site will be served securely.</p>
+</div>
+
+<!-- PART B -->
+<h2><span class="num">B</span> Names.co.uk — Configure DNS Records</h2>
+
+<div class="step">
+  <div class="step-num">Step 1</div>
+  <p>Go to <code>domains.names.co.uk</code> and log in</p>
+  <p>Click on <strong>mapexconsulting.co.uk</strong> to manage it</p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 2</div>
+  <p>Find <strong>DNS Settings</strong>, <strong>DNS Management</strong>, or <strong>Advanced DNS</strong></p>
+  <p>The exact menu name varies — look for "DNS Records" or "Manage DNS"</p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 3 — Delete default records</div>
+  <p>Delete any existing <strong>A records</strong> and <strong>CNAME records</strong> that came pre-configured. You're replacing them with GitHub's.</p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 4 — Add these DNS records</div>
+  <p>Add these <strong>4 A records</strong> (these are GitHub Pages' IP addresses):</p>
+</div>
+
+<pre>
+Type: A     Host: @     Value: 185.199.108.153     TTL: 3600
+Type: A     Host: @     Value: 185.199.109.153     TTL: 3600
+Type: A     Host: @     Value: 185.199.110.153     TTL: 3600
+Type: A     Host: @     Value: 185.199.111.153     TTL: 3600
+</pre>
+
+<p>Then add this <strong>CNAME record</strong> for www:</p>
+
+<pre>
+Type: CNAME     Host: www     Value: tiagomotabcl.github.io     TTL: 3600
+</pre>
+
+<div class="warn">
+  <p><strong>⚠️ Note on the CNAME value:</strong> Use your GitHub username: <code>tiagomotabcl.github.io</code>. If you created a new GitHub account called <code>mapexconsulting</code>, use <code>mapexconsulting.github.io</code> instead.</p>
+</div>
+
+<div class="step">
+  <div class="step-num">Step 5 — Save</div>
+  <p>Click <strong>Save</strong> or <strong>Update</strong>. Some providers save automatically per record.</p>
+</div>
+
+<!-- PART C -->
+<h2><span class="num">C</span> Wait & Verify</h2>
+
+<div class="step">
+  <div class="step-num">DNS Propagation</div>
+  <p>DNS changes take <strong>5 minutes to 48 hours</strong> to propagate worldwide. Usually with Names.co.uk it's <strong>15–30 minutes</strong>.</p>
+</div>
+
+<div class="step">
+  <div class="step-num">Test your site</div>
+  <p>After 15–30 minutes, open a browser and go to:</p>
+  <p><code>https://mapexconsulting.co.uk</code></p>
+  <p>If you see your homepage — congratulations, you're live! 🎉</p>
+  <p>Also test:</p>
+  <p>• <code>https://www.mapexconsulting.co.uk</code> (should redirect)</p>
+  <p>• <code>https://mapexconsulting.co.uk/services.html</code></p>
+  <p>• <code>https://mapexconsulting.co.uk/consulting.html</code></p>
+  <p>• <code>https://mapexconsulting.co.uk/about.html</code></p>
+  <p>• <code>https://mapexconsulting.co.uk/contact.html</code></p>
+</div>
+
+<div class="step">
+  <div class="step-num">If it doesn't work after 1 hour</div>
+  <p>1. Go back to GitHub → Settings → Pages — check if "DNS check" shows a green tick ✓</p>
+  <p>2. If not, double-check the 4 A records and CNAME in Names.co.uk — typos are the #1 cause</p>
+  <p>3. Try clearing your browser cache or using incognito mode</p>
+  <p>4. Check <code>https://www.whatsmydns.net/#A/mapexconsulting.co.uk</code> to see if DNS has propagated</p>
+</div>
+
+<div class="ok">
+  <p><strong>✅ When everything works, you'll have:</strong></p>
+  <p>• <code>mapexconsulting.co.uk</code> — your professional domain</p>
+  <p>• Free HTTPS (SSL) certificate from GitHub / Let's Encrypt</p>
+  <p>• Free hosting on GitHub Pages</p>
+  <p>• 5-page professional website with WhatsApp integration</p>
+  <p>• Total ongoing cost: ~£8/year (domain only)</p>
+</div>
+
+<!-- PART D -->
+<h2><span class="num">D</span> How to Update Your Site in the Future</h2>
+
+<div class="step">
+  <div class="step-num">To edit a page</div>
+  <p>1. Go to <code>github.com/tiagomotabcl/mapexconsulting</code></p>
+  <p>2. Click the file you want to edit (e.g. <code>index.html</code>)</p>
+  <p>3. Click the <strong>pencil icon</strong> ✏️ (top right of the file)</p>
+  <p>4. Make your changes</p>
+  <p>5. Click <strong>Commit changes</strong></p>
+  <p>6. Wait 1–2 minutes — GitHub rebuilds your site automatically</p>
+</div>
+
+<div class="step">
+  <div class="step-num">To replace a page completely</div>
+  <p>1. Click the file → pencil icon → <strong>Select All</strong> (Ctrl+A) → <strong>Delete</strong></p>
+  <p>2. Paste the new content</p>
+  <p>3. Click <strong>Commit changes</strong></p>
+</div>
+
+<!-- CHECKLIST -->
+<h2><span class="num">✓</span> Final Launch Checklist</h2>
+<ul class="checklist">
+  <li>Create GitHub repository "mapexconsulting"</li>
+  <li>Upload all 6 files (5 HTML + CNAME)</li>
+  <li>Enable GitHub Pages (Settings → Pages → main branch)</li>
+  <li>Set custom domain to mapexconsulting.co.uk</li>
+  <li>Add 4 A records in Names.co.uk DNS</li>
+  <li>Add 1 CNAME record (www → tiagomotabcl.github.io)</li>
+  <li>Wait 15-30 minutes for DNS propagation</li>
+  <li>Verify site loads at https://mapexconsulting.co.uk</li>
+  <li>Enable "Enforce HTTPS" in GitHub Pages settings</li>
+  <li>Test all 5 pages + WhatsApp button</li>
+  <li>Update Linktree with new domain</li>
+  <li>Update Facebook page with new website URL</li>
+</ul>
+
+<p style="text-align:center;color:var(--text3);margin-top:3rem;font-size:0.8rem">M.Apex Consulting · Deployment Guide · June 2026</p>
+
+</body>
+</html>

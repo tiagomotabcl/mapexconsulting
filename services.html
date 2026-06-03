@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services — M.Apex Consulting</title>
+<meta name="description" content="58+ IT services for UK businesses — support, cloud, cybersecurity, data, AI, digital presence and managed plans.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090d;--bg2:#0c1018;--bg3:#10161f;--card:#111820;--card2:#141d28;--border:rgba(255,255,255,0.055);--border2:rgba(255,255,255,0.1);--border3:rgba(255,255,255,0.16);--accent:#2DD4BF;--accent2:#14b8a6;--accent3:rgba(45,212,191,0.1);--text:#dde6f0;--text2:#98afc4;--text3:#5a7390;--green:#34d399;--amber:#fbbf24;--purple:#a78bfa;--red:#f87171;--fh:'Syne',sans-serif;--fb:'Inter',sans-serif;--r:8px;--r2:12px;--r3:16px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px;line-height:1.65;overflow-x:hidden}
+nav svg{width:28px;height:28px;display:inline-block;vertical-align:middle;margin-right:6px}
+nav{position:fixed;top:0;width:100%;z-index:200;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,4rem);background:rgba(7,9,13,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-family:var(--fh);font-size:1.05rem;font-weight:800;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo-mark{width:28px;height:28px;border-radius:6px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;color:#000;font-family:var(--fh)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.8rem;font-weight:500;transition:color 0.15s}
+.nav-links a:hover,.nav-links a.cur{color:var(--text)}
+.nav-btn{background:var(--accent);color:#000;padding:7px 18px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:0.78rem}
+.hbg{display:none;background:none;border:none;cursor:pointer;padding:4px;gap:4px;flex-direction:column}
+.hbg span{display:block;width:20px;height:1.5px;background:var(--text2)}
+.mob{display:none;position:fixed;inset:60px 0 0;background:var(--bg);z-index:199;flex-direction:column;padding:2rem clamp(1.5rem,4vw,4rem);gap:1.5rem;border-top:1px solid var(--border)}
+.mob.open{display:flex}
+.mob a{color:var(--text);text-decoration:none;font-family:var(--fh);font-size:1.3rem;font-weight:700}
+.ph{padding:clamp(90px,12vw,140px) clamp(1.5rem,4vw,4rem) clamp(3rem,5vw,4rem);background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.ph::after{content:'';position:absolute;top:-40%;right:-20%;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,0.05) 0%,transparent 65%);pointer-events:none}
+.ph-inner{max-width:1280px;margin:0 auto}
+.ey{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem}
+.ph h1{font-family:var(--fh);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-0.025em;margin-bottom:0.9rem}
+.ph h1 em{font-style:normal;color:var(--accent)}
+.ph p{color:var(--text2);font-size:0.9rem;max-width:520px;line-height:1.75}
+.filter-bar{position:sticky;top:60px;z-index:100;background:rgba(12,16,24,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.75rem clamp(1.5rem,4vw,4rem);display:flex;gap:0.4rem;flex-wrap:wrap}
+.fb{background:transparent;border:1px solid var(--border);color:var(--text3);padding:5px 14px;border-radius:20px;font-family:var(--fb);font-size:0.72rem;font-weight:500;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.fb:hover{border-color:var(--border2);color:var(--text2)}
+.fb.on{background:var(--accent3);border-color:rgba(45,212,191,0.3);color:var(--accent)}
+section{padding:clamp(2.5rem,5vw,4.5rem) clamp(1.5rem,4vw,4rem)}
+.wrap{max-width:1280px;margin:0 auto}
+.cat-block{margin-bottom:3.5rem}
+.cat-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
+.cat-head-left{display:flex;align-items:center;gap:12px}
+.cat-icon{width:38px;height:38px;border-radius:10px;background:var(--accent3);border:1px solid rgba(45,212,191,0.15);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.cat-title{font-family:var(--fh);font-size:1rem;font-weight:800}
+.cat-count{font-size:0.68rem;color:var(--text3);margin-top:2px}
+.cat-earn{font-size:0.72rem;color:var(--green);background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.15);padding:3px 10px;border-radius:20px;white-space:nowrap}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.75rem}
+.sc{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem 1.5rem;transition:border-color 0.15s,transform 0.15s;display:flex;flex-direction:column}
+.sc:hover{border-color:var(--border2);transform:translateY(-2px)}
+.sc-name{font-family:var(--fh);font-size:0.88rem;font-weight:700;margin-bottom:0.4rem}
+.sc-desc{font-size:0.75rem;color:var(--text2);line-height:1.65;flex:1}
+.sc-earn{font-size:0.68rem;color:var(--green);margin-top:0.6rem;font-weight:500}
+.sc-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:0.5rem}
+.tag{font-size:0.58rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:0.03em}
+.t-new{background:rgba(52,211,153,0.1);color:var(--green)}
+.t-ai{background:var(--accent3);color:var(--accent)}
+.t-hot{background:rgba(251,191,36,0.1);color:var(--amber)}
+.t-mgd{background:rgba(167,139,250,0.1);color:var(--purple)}
+.t-cert{background:rgba(248,113,113,0.1);color:var(--red)}
+.sc-link{font-size:0.72rem;color:var(--accent2);text-decoration:none;margin-top:0.75rem;display:inline-flex;align-items:center;gap:4px;transition:color 0.15s}
+.sc-link:hover{color:var(--accent)}
+.cta-banner{background:var(--card);border:1px solid var(--border2);border-radius:var(--r3);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:1rem}
+.cta-banner h3{font-family:var(--fh);font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.35rem}
+.cta-banner h3 em{font-style:normal;color:var(--accent)}
+.cta-banner p{font-size:0.82rem;color:var(--text2);max-width:440px}
+.cta-btns{display:flex;gap:0.75rem;flex-wrap:wrap;flex-shrink:0}
+.btn-a{background:var(--accent);color:#000;padding:10px 22px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:0.8rem;transition:opacity 0.15s;display:inline-flex;align-items:center;gap:6px}
+.btn-a:hover{opacity:0.85}
+.btn-g{background:transparent;color:var(--text);border:1px solid var(--border3);padding:10px 22px;border-radius:var(--r);text-decoration:none;font-weight:500;font-size:0.8rem;transition:background 0.15s}
+.btn-g:hover{background:var(--card2)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.75rem clamp(1.5rem,4vw,4rem)}
+.ft{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-logo{font-family:var(--fh);font-weight:800;font-size:0.95rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:7px}
+.ft-mark{width:22px;height:22px;border-radius:5px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:900;color:#000;font-family:var(--fh)}
+.ft-links{display:flex;gap:1.5rem}
+.ft-links a{color:var(--text3);text-decoration:none;font-size:0.72rem;transition:color 0.15s}
+.ft-links a:hover{color:var(--text2)}
+.ft-copy{font-size:0.68rem;color:var(--text3)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:768px){.nav-links,.nav-btn{display:none}.hbg{display:flex}nav{padding:0 1.25rem}section{padding:2.5rem 1.25rem}.ph{padding-left:1.25rem;padding-right:1.25rem}.filter-bar{padding-left:1.25rem;padding-right:1.25rem}.cta-banner{padding:2rem 1.5rem}.ft{flex-direction:column;align-items:flex-start}footer{padding-left:1.25rem;padding-right:1.25rem}.cat-earn{display:none}}
+
+/* WhatsApp float */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;display:flex;align-items:center;gap:0;cursor:pointer;text-decoration:none}
+.wa-float-btn{width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:transform 0.2s,box-shadow 0.2s}
+.wa-float-btn:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(37,211,102,0.45)}
+.wa-float-btn svg{width:26px;height:26px;fill:#fff}
+.wa-float-label{background:#111820;color:#dde6f0;font-size:0.72rem;font-weight:600;padding:6px 12px;border-radius:20px 0 0 20px;opacity:0;transform:translateX(8px);transition:opacity 0.2s,transform 0.2s;white-space:nowrap;pointer-events:none;border:1px solid rgba(255,255,255,0.08);border-right:none;margin-right:-4px}
+.wa-float:hover .wa-float-label{opacity:1;transform:translateX(0)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs>
+  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
+</svg>Apex</a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html" class="cur">Services</a></li><li><a href="consulting.html">Consulting</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nav-btn">Get a Quote</a>
+  <button class="hbg" id="mb" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mo"><a href="index.html" onclick="cm()">Home</a><a href="services.html" onclick="cm()">Services</a><a href="about.html" onclick="cm()">About</a><a href="contact.html" onclick="cm()">Contact</a></div>
+
+<div class="ph"><div class="ph-inner">
+  <div class="ey">What I offer</div>
+  <h1>77+ services.<br><em>One expert.</em></h1>
+  <p>Everything your business needs from a single trusted IT partner. No outsourcing, no middlemen — delivered by someone who knows your systems inside out.</p>
+</div></div>
+
+<div class="filter-bar" id="filterBar">
+  <button class="fb on" onclick="filter('all',this)">All</button>
+  <button class="fb" onclick="filter('strategic',this)">⚖️ Strategic Consulting</button>
+  <button class="fb" onclick="filter('support',this)">🖥️ IT Support</button>
+  <button class="fb" onclick="filter('cyber',this)">🔒 Cybersecurity</button>
+  <button class="fb" onclick="filter('data',this)">📊 Data & Automation</button>
+  <button class="fb" onclick="filter('ai',this)">🤖 AI Services</button>
+  <button class="fb" onclick="filter('web',this)">🌐 Web & Digital</button>
+  <button class="fb" onclick="filter('digital',this)">📣 Digital Marketing</button>
+  <button class="fb" onclick="filter('auto',this)">⚙️ Automation & Mfg</button>
+  <button class="fb" onclick="filter('managed',this)">📋 Managed Plans</button>
+</div>
+
+<section><div class="wrap">
+
+<!-- STRATEGIC CONSULTING -->
+<div class="cat-block rv" data-cat="strategic">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">⚖️</div><div><div class="cat-title">Strategic Consulting</div><div class="cat-count">12 high-value services</div></div></div>
+    <span class="cat-earn">High-value · £2,000–£15,000 projects</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">NIS2 Directive Compliance</div><div class="sc-desc">Audit your cybersecurity posture against the EU NIS2 directive and design a compliant IT resilience plan. Essential for manufacturing, transport, utilities and their supply chains — now a legal requirement with significant fines for non-compliance.</div><div class="sc-earn">£3,000–£12,000 engagement</div><div class="sc-tags"><span class="tag t-cert">Legal Requirement</span><span class="tag t-hot">High Demand</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">Ransomware Resilience Planning</div><div class="sc-desc">Build and test a recovery plan so that if you're attacked, you're back online in hours not weeks. Centred on immutable, isolated backups that ransomware cannot touch. The question is when, not if.</div><div class="sc-earn">£2,000–£6,000 project</div><div class="sc-tags"><span class="tag t-new">Critical</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">Business Continuity Planning</div><div class="sc-desc">A tested plan to keep your business running through any IT disruption — from a cyber attack to hardware failure. Defines exactly who does what, in what order, to get critical systems back fast.</div><div class="sc-earn">£2,000–£5,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">Private AI Deployment</div><div class="sc-desc">Deploy open-source LLMs or private Azure instances that analyse your company's documents and databases with 100% confidentiality — your data never leaves your control. The productivity of AI without the data leak risk.</div><div class="sc-earn">£4,000–£15,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">Confidential</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">Autonomous AI Agents (Copilot Studio)</div><div class="sc-desc">Build AI agents that do the work, not just chat — an agent that reads an order email, checks ERP stock and generates the dispatch note automatically. Real task automation beyond conversational chatbots.</div><div class="sc-earn">£3,000–£10,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-hot">High Value</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">EU AI Act Risk & Governance</div><div class="sc-desc">Ensure every AI tool your business uses complies with the EU AI Act — risk classification, governance policies and documentation — so you adopt AI confidently without legal exposure.</div><div class="sc-earn">£1,500–£5,000 engagement</div><div class="sc-tags"><span class="tag t-cert">EU AI Act</span><span class="tag t-ai">AI</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">Legacy Industrial Software Rescue</div><div class="sc-desc">Audit, optimise and secure critical software running on old PHP, outdated SQL and unpatched IIS servers — migrating to modern Windows Server without stopping production. My core differentiator.</div><div class="sc-earn">£3,000–£12,000 project</div><div class="sc-tags"><span class="tag t-new">My Speciality</span><span class="tag t-hot">High Value</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">Paperless Shop Floor Automation</div><div class="sc-desc">Replace printed Excel sheets, whiteboards and manual logs with digital kiosks integrated into real-time dashboards. Built and proven in a live industrial environment — QR clock-in, attendance, visitor management.</div><div class="sc-earn">£3,000–£10,000 project</div><div class="sc-tags"><span class="tag t-new">Proven</span><span class="tag t-hot">High Value</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">Process Hyperautomation</div><div class="sc-desc">Map repetitive manual processes draining your team's time and rebuild them as automated workflows connecting ERP, email, databases and reporting — so data flows automatically and people focus on what matters.</div><div class="sc-earn">£2,000–£8,000 project</div><div class="sc-tags"><span class="tag t-hot">High ROI</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">ESG & Carbon Footprint Reporting</div><div class="sc-desc">Centralise and automate collection of energy, waste and fleet data — pulled from IoT sensors or your ERP — to generate the sustainability reports banks and investors now require. Turn a manual headache into a pipeline.</div><div class="sc-earn">£3,000–£10,000 project</div><div class="sc-tags"><span class="tag t-cert">Investor Requirement</span><span class="tag t-new">Growing Fast</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">IoT & Sensor Data Integration</div><div class="sc-desc">Connect the sensors and meters on your shop floor to a central system that logs, visualises and reports data automatically — the foundation for ESG reporting and smarter operational decisions.</div><div class="sc-earn">£2,500–£8,000 project</div><div class="sc-tags"><span class="tag t-new">Emerging</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+    <div class="sc"><div class="sc-name">IT Strategy & Roadmap Consulting</div><div class="sc-desc">A strategic 12–24 month technology roadmap aligned to your business goals — covering infrastructure, cloud, security, AI adoption and digital transformation, with realistic budget estimates and priorities.</div><div class="sc-earn">£2,000–£6,000 engagement</div><div class="sc-tags"><span class="tag t-mgd">Advisory</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
+  </div>
+</div>
+
+<!-- IT SUPPORT -->
+<div class="cat-block rv" data-cat="support">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">🖥️</div><div><div class="cat-title">IT Support & Infrastructure</div><div class="cat-count">13 services</div></div></div>
+    <span class="cat-earn">From £50/hr · £500+ projects</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">Remote & On-site Support</div><div class="sc-desc">Full helpdesk for PCs, Macs and mobile devices. Hardware diagnostics, upgrades, OS issues and troubleshooting wherever you need it.</div><div class="sc-earn">From £50/hr or day rate</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Microsoft 365 Admin</div><div class="sc-desc">Full tenant management — users, licences, Exchange Online, Teams policies, SharePoint permissions, security defaults and MFA rollout.</div><div class="sc-earn">£500–£2,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Azure / Entra ID</div><div class="sc-desc">Cloud identity — user provisioning, SSO, Conditional Access policies, guest access and hybrid AD configuration with on-prem integration.</div><div class="sc-earn">£800–£3,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Server Admin (Windows/Linux)</div><div class="sc-desc">IIS, DNS, DHCP, file shares, Active Directory, patch management and performance monitoring for on-prem servers and cloud VMs.</div><div class="sc-earn">From £60/hr</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Intune / MDM</div><div class="sc-desc">Device enrolment, compliance policies, app deployment and remote wipe across Windows, iOS, Android and macOS from a single console.</div><div class="sc-earn">£600–£2,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Group Policy (GPO)</div><div class="sc-desc">Windows Group Policy design and deployment via Active Directory — software restrictions, drive maps, security baselines and login scripts.</div><div class="sc-earn">£300–£800 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Virtualisation</div><div class="sc-desc">Hyper-V and VMware — virtual machine setup, P2V migration, snapshot management, performance tuning and capacity planning.</div><div class="sc-earn">From £500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Networking & Connectivity</div><div class="sc-desc">Office and home networks, mesh Wi-Fi, firewall and VPN (Meraki, Fortinet, pfSense), VLAN segmentation and comprehensive network audits.</div><div class="sc-earn">From £300 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Teams Phone / VoIP Setup</div><div class="sc-desc">Replace legacy phone lines with Microsoft Teams Phone or hosted VoIP. Number porting, call routing, auto-attendants and voicemail. Critical ahead of the 2027 PSTN switch-off.</div><div class="sc-earn">£1,000–£4,000 setup</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">SaaS Licence Audit</div><div class="sc-desc">Audit every SaaS subscription your business pays for. Identify unused licences, right-size plans and set up monthly governance. Most businesses save 20–35% of their software bill.</div><div class="sc-earn">£400–£1,200 audit + retainer</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Backup Audit & Implementation</div><div class="sc-desc">Audit existing backup (usually broken or non-existent), implement a proper 3-2-1 backup strategy using Veeam, Acronis or Azure Backup. Test restores included.</div><div class="sc-earn">£500–£1,500 setup</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">IT Procurement</div><div class="sc-desc">Sourcing and purchasing laptops, servers, networking gear and software licences at the best price — correctly spec'd for your actual needs, not over-engineered.</div><div class="sc-earn">% of order or flat fee</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Onboarding & Offboarding</div><div class="sc-desc">Full new-starter setup or secure leaver offboarding — accounts, devices, permissions, email forwarding and data transfer handled end-to-end.</div><div class="sc-earn">£150–£400 per user</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+  </div>
+</div>
+
+<!-- CYBERSECURITY -->
+<div class="cat-block rv" data-cat="cyber">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">🔒</div><div><div class="cat-title">Cybersecurity</div><div class="cat-count">11 services</div></div></div>
+    <span class="cat-earn">£500–£8,000 projects · monthly plans</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">Cyber Essentials Certification Prep</div><div class="sc-desc">Prepare your business for UK government-backed Cyber Essentials certification. Mandatory for all government contracts — and shown to prevent 98% of common attacks. I audit your 5 controls, fix gaps and guide the self-assessment.</div><div class="sc-earn">£500–£2,000 per engagement</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-cert">Gov Requirement</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">MFA / Zero Trust Setup</div><div class="sc-desc">Enforce multi-factor across Microsoft 365, Google and all platforms. Zero Trust network access policies to protect against credential theft — the #1 attack vector.</div><div class="sc-earn">£400–£1,200 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Managed Security Service (MSSP-lite)</div><div class="sc-desc">Monthly managed security monitoring: dark web scanning, Microsoft Secure Score tracking, email threat monitoring, patch compliance reports and a monthly security health score. Ongoing protection, not one-off fixes.</div><div class="sc-earn">£200–£800/month</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-new">New</span><span class="tag t-mgd">Managed</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Dark Web Monitoring</div><div class="sc-desc">Continuous scanning — alerts when your company email addresses or credentials appear in known data breaches or dark web forums before they're exploited.</div><div class="sc-earn">From £50/month</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Security Awareness Training</div><div class="sc-desc">Simulated phishing campaigns and tailored staff training sessions. One Sheffield firm reduced phishing click rates from 32% to 4% through regular monthly sessions.</div><div class="sc-earn">£300–£800 per session</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">GDPR / Compliance Review</div><div class="sc-desc">Data audit, privacy notices, data flow mapping and a practical gap analysis against UK GDPR requirements. Clear actions, not legal waffle.</div><div class="sc-earn">£600–£1,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Email Security (DMARC/DKIM/SPF)</div><div class="sc-desc">Full email authentication setup to prevent domain spoofing, phishing and spam. Also improves deliverability — often completed in a single day.</div><div class="sc-earn">£200–£500 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Password Manager Rollout</div><div class="sc-desc">Deploy 1Password Teams or Bitwarden Business across your organisation — account setup, credential import, shared vault configuration and full staff training.</div><div class="sc-earn">£300–£600 per deployment</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Endpoint Protection (EDR)</div><div class="sc-desc">Deploy and manage enterprise-grade endpoint detection and response across all devices, with centralised alerting and rapid threat response.</div><div class="sc-earn">From £50/month managed</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Penetration Testing</div><div class="sc-desc">Controlled ethical testing of your network, M365 environment or web apps to find vulnerabilities before attackers do. Detailed written report with remediation steps.</div><div class="sc-earn">£800–£3,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">ISO 27001 / Cyber Essentials Plus</div><div class="sc-desc">Gap analysis, policy templates and implementation support for ISO 27001 certification or Cyber Essentials Plus — the next level above standard CE.</div><div class="sc-earn">£1,500–£5,000 project</div><div class="sc-tags"><span class="tag t-new">New</span><span class="tag t-cert">Certification</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+  </div>
+</div>
+
+<!-- DATA -->
+<div class="cat-block rv" data-cat="data">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">📊</div><div><div class="cat-title">Data & Automation</div><div class="cat-count">11 services</div></div></div>
+    <span class="cat-earn">£50–£120/hr · £500–£15k projects</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">Power BI Dashboards</div><div class="sc-desc">Custom KPI dashboards, financial reports and executive visualisations connected to your live data — ERP, SQL, Excel or cloud sources.</div><div class="sc-earn">£800–£5,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Power Platform Development</div><div class="sc-desc">PowerApps, Power Automate and Copilot Studio combined — custom business apps, approval workflows, data collection tools and process automation that connects to any Microsoft data source.</div><div class="sc-earn">£2,000–£15,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Excel Automation (VBA)</div><div class="sc-desc">Macros, advanced formulas and automated reporting workbooks that eliminate hours of weekly manual work — built exactly around how your team works.</div><div class="sc-earn">£300–£2,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Power Automate Flows</div><div class="sc-desc">Automate approvals, notifications, form submissions and data syncs across Microsoft 365, SharePoint and hundreds of third-party apps via connectors.</div><div class="sc-earn">£400–£2,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">SQL Databases</div><div class="sc-desc">Schema design, stored procedures, query optimisation, reporting views and SQL Server administration for business-critical applications and reporting.</div><div class="sc-earn">From £60/hr</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Python Scripting & Automation</div><div class="sc-desc">Data pipelines, scheduled tasks, API integrations and custom automation tools that permanently replace repetitive manual processes.</div><div class="sc-earn">From £60/hr</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">SharePoint Intranet</div><div class="sc-desc">Design and build company portals, document libraries, news hubs and team collaboration spaces on Microsoft SharePoint Online.</div><div class="sc-earn">£1,000–£5,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Data Migration</div><div class="sc-desc">Legacy to cloud — clean, map, migrate and validate your data with zero loss. Covers ERP, CRM, file servers and databases.</div><div class="sc-earn">£800–£4,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Cloud Cost Optimisation</div><div class="sc-desc">Review Azure spend and M365 licences, identify orphaned resources, right-size plans and set up ongoing cost governance. Most businesses save 20–40% of their cloud bill after an audit.</div><div class="sc-earn">£500–£2,000 audit + % savings</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">IT Due Diligence (M&A)</div><div class="sc-desc">IT assessment for businesses being acquired or merging — infrastructure state, security posture, licencing compliance, technical debt and integration complexity report.</div><div class="sc-earn">£2,000–£8,000 assessment</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Financial Reporting & Modelling</div><div class="sc-desc">P&L, balance sheets, cash flow forecasting and variance analysis in Excel, Power BI or Dynamics — built for management decisions, not just accountants.</div><div class="sc-earn">£600–£3,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+  </div>
+</div>
+
+<!-- AI -->
+<div class="cat-block rv" data-cat="ai">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">🤖</div><div><div class="cat-title">AI & Emerging Technology</div><div class="cat-count">7 services</div></div></div>
+    <span class="cat-earn">£800–£5,000+ projects</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">Microsoft Copilot Rollout</div><div class="sc-desc">End-to-end Copilot deployment: licence procurement, tenant security config, user enablement and full staff training. Most businesses get Copilot licences but never deploy them properly — this fixes that.</div><div class="sc-earn">£1,500–£5,000 rollout</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">AI Workflow Integration</div><div class="sc-desc">Connect AI tools into your existing systems — CRM, ERP, M365, SharePoint and custom APIs — to automate tasks, surface insights and reduce manual work.</div><div class="sc-earn">£1,000–£4,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">AI Governance & Policy Writing</div><div class="sc-desc">Write a tailored AI acceptable use policy, data handling guidelines and risk assessment for your business. Most companies adopting AI tools have nothing in writing — this protects you legally and operationally.</div><div class="sc-earn">£800–£2,500 engagement</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Prompt Engineering</div><div class="sc-desc">Design and optimise custom system prompts for Copilot, ChatGPT and other LLMs, tailored to your specific business language, workflows and compliance requirements.</div><div class="sc-earn">£500–£1,500 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">ChatGPT / AI Tools for Business</div><div class="sc-desc">Select the right AI tools, configure them securely, integrate with your workflows and train your team to use them effectively, responsibly and in line with your policies.</div><div class="sc-earn">£600–£2,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Custom Chatbot Development</div><div class="sc-desc">Build internal or customer-facing chatbots powered by Copilot Studio or GPT — trained on your documents, FAQs and knowledge base to answer real questions.</div><div class="sc-earn">£1,500–£6,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">AI Staff Training Workshop</div><div class="sc-desc">Half-day or full-day workshop teaching your team to use AI tools effectively — practical, hands-on and tailored to your industry and existing tools. Delivered remotely or on-site.</div><div class="sc-earn">£500–£1,500 per session</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+  </div>
+</div>
+
+<!-- WEB -->
+<div class="cat-block rv" data-cat="web">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">🌐</div><div><div class="cat-title">Web & Digital Presence</div><div class="cat-count">8 services</div></div></div>
+    <span class="cat-earn">£200–£5,000 projects</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">Website Design & Build</div><div class="sc-desc">Professional custom HTML/CSS, WordPress or Wix websites — fast, mobile-first, SEO-optimised and built to convert visitors into real enquiries.</div><div class="sc-earn">£800–£4,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Google Workspace Setup</div><div class="sc-desc">Gmail, Drive, Meet, Calendar — full admin config, migration from legacy email systems, domain verification and staff training included.</div><div class="sc-earn">£400–£1,200 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Domain & DNS Management</div><div class="sc-desc">Domain registration, DNS record setup (MX, A, CNAME, TXT, SPF), SSL certificates, CDN configuration and domain transfers handled correctly.</div><div class="sc-earn">From £150 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Cloud Migration (M365/GWS)</div><div class="sc-desc">Migrate from on-prem Exchange, file servers or Google to Microsoft 365 — email, calendar, OneDrive, Teams and SharePoint all covered.</div><div class="sc-earn">£1,000–£4,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Technical SEO</div><div class="sc-desc">Core Web Vitals, site speed, crawl error fixes, structured data, XML sitemaps and mobile usability — the technical foundations that get you ranking.</div><div class="sc-earn">£400–£1,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">E-commerce Setup</div><div class="sc-desc">WooCommerce or Shopify store setup, product import, Stripe/PayPal integration, shipping configuration and order management workflows.</div><div class="sc-earn">£800–£3,000 project</div><div class="sc-tags"></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Email Newsletter Setup</div><div class="sc-desc">Set up Mailchimp or Klaviyo with domain authentication, branded templates, automated sequences and a sending strategy. Combines with your existing DMARC knowledge for a premium result.</div><div class="sc-earn">£300–£800 setup</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Website Care Plan</div><div class="sc-desc">Monthly website maintenance — plugin updates, security scans, uptime monitoring, backups and a monthly performance report. Peace of mind that your site stays fast and secure.</div><div class="sc-earn">£50–£150/month</div><div class="sc-tags"><span class="tag t-new">New</span><span class="tag t-mgd">Managed</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+  </div>
+</div>
+
+<!-- DIGITAL MARKETING -->
+<div class="cat-block rv" data-cat="digital">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">📣</div><div><div class="cat-title">Digital Marketing & Presence</div><div class="cat-count">5 services</div></div></div>
+    <span class="cat-earn">£150–£500 projects · monthly plans</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">Google Business Profile</div><div class="sc-desc">Setup, verification and full optimisation of your Google Business Profile — categories, photos, services, Q&A, review strategy and posting schedule. Dramatically improves local search visibility.</div><div class="sc-earn">£150–£300 setup + £50–£100/month</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">LinkedIn Company Page Setup</div><div class="sc-desc">Set up or refresh your LinkedIn company presence — banner, about section, service pages, employee advocacy setup and a 30-day content calendar to get started.</div><div class="sc-earn">£200–£500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Social Media Business Setup</div><div class="sc-desc">Facebook Business, Instagram Business and Meta Business Suite — profile setup, brand consistency, admin roles, pixel setup and basic ad account configuration.</div><div class="sc-earn">£200–£500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Google Analytics & Tag Manager</div><div class="sc-desc">Set up GA4, Google Tag Manager and conversion tracking so you actually know where your website enquiries are coming from and what's working.</div><div class="sc-earn">£300–£700 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Online Review Management Setup</div><div class="sc-desc">Set up a system to consistently collect Google and Trustpilot reviews — automated request sequences, response templates and reputation monitoring. More reviews, less effort.</div><div class="sc-earn">£200–£400 setup</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+  </div>
+</div>
+
+
+<!-- AUTOMATION & MANUFACTURING -->
+<div class="cat-block rv" data-cat="auto">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">⚙️</div><div><div class="cat-title">Business Automation & Manufacturing IT</div><div class="cat-count">8 services</div></div></div>
+    <span class="cat-earn">£500–£8,000 projects</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">Kiosk & Attendance Systems</div><div class="sc-desc">Custom QR code clock-in/out kiosk systems for manufacturing and warehouse environments. Staff scan badges on tablet, data writes direct to database. Built with PHP, MySQL and IIS — same stack used in production at a UK industrial company. Includes admin panel, badge printing and scheduled reports.</div><div class="sc-earn">£1,500–£5,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Visitor & Contractor Management</div><div class="sc-desc">Digital visitor sign-in with H&S induction, contractor management, automatic fire call list and sign-out tracking. Replaces paper visitor books. Includes emergency evacuation list always accessible from any device.</div><div class="sc-earn">£800–£2,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Shift & Attendance Reporting Automation</div><div class="sc-desc">Automated daily, weekly and monthly attendance reports emailed to managers and HR. Late arrival alerts, overtime tracking, absence summaries — all generated and sent automatically on schedule. No manual effort required.</div><div class="sc-earn">£600–£2,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">OEE & Production Dashboards</div><div class="sc-desc">Overall Equipment Effectiveness dashboards showing availability, performance and quality in real time. Connect production line data to Power BI or a custom web dashboard. Helps identify bottlenecks and downtime patterns before they become costly.</div><div class="sc-earn">£1,500–£5,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Barcode & QR Stock Tracking</div><div class="sc-desc">Simple scan-in/scan-out stock system using barcodes or QR codes and a tablet or handheld scanner. Track inventory movements, generate low-stock alerts and produce stock level reports — without expensive specialist software.</div><div class="sc-earn">£800–£3,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">ERP Reporting & Integration</div><div class="sc-desc">Connect your ERP system (SAP, Dynamics AX, Sage) to Power BI, Excel or a custom dashboard. Extract the reports your managers actually need — without waiting for the IT team or paying for expensive consultants.</div><div class="sc-earn">£1,000–£4,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">ISO 9001 Document Control System</div><div class="sc-desc">Build a simple document management system for ISO 9001 compliance — version control, approval workflows, controlled distribution and audit trail. Built on SharePoint or as a standalone web application.</div><div class="sc-earn">£1,000–£3,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+    <div class="sc"><div class="sc-name">Preventive Maintenance Scheduler</div><div class="sc-desc">Automated maintenance scheduling and alert system — track equipment service intervals, send reminders to engineers, log completed work and generate compliance reports. Reduces unexpected downtime significantly.</div><div class="sc-earn">£800–£2,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
+  </div>
+</div>
+
+<!-- MANAGED -->
+<div class="cat-block rv" data-cat="managed">
+  <div class="cat-head">
+    <div class="cat-head-left"><div class="cat-icon">📋</div><div><div class="cat-title">Managed & Retainer Plans</div><div class="cat-count">6 plans</div></div></div>
+    <span class="cat-earn">Predictable monthly costs</span>
+  </div>
+  <div class="svc-grid">
+    <div class="sc"><div class="sc-name">Monthly IT Retainer</div><div class="sc-desc">Your dedicated IT department for a fixed monthly cost. Priority SLA, proactive monitoring, patch management and a monthly review call. Scales up or down as your business needs change.</div><div class="sc-earn">POA per month</div><div class="sc-tags"><span class="tag t-mgd">Managed</span><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
+    <div class="sc"><div class="sc-name">Managed Security Service</div><div class="sc-desc">Monthly security monitoring — dark web scanning, Microsoft Secure Score, email threat alerts, patch compliance and a monthly health report. Ongoing protection without hiring a security engineer.</div><div class="sc-earn">£200–£800/month</div><div class="sc-tags"><span class="tag t-mgd">Managed</span><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
+    <div class="sc"><div class="sc-name">IT Health Check</div><div class="sc-desc">One-off full audit of infrastructure, security posture, licences and costs — delivered as a clear risk report with a prioritised remediation roadmap within 5 working days.</div><div class="sc-earn">POA one-off</div><div class="sc-tags"><span class="tag t-mgd">Managed</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
+    <div class="sc"><div class="sc-name">Disaster Recovery Plan</div><div class="sc-desc">Full DR runbook, backup validation, RTO/RPO definition, failover documentation and an annual live test exercise — so you're prepared before something goes wrong.</div><div class="sc-earn">POA one-off project</div><div class="sc-tags"><span class="tag t-mgd">Managed</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
+    <div class="sc"><div class="sc-name">IT Roadmap Consulting</div><div class="sc-desc">Strategic 12–24 month IT roadmap aligned to your business goals — covering infrastructure, cloud, security, AI adoption and digital transformation priorities with budget estimates.</div><div class="sc-earn">£800–£2,500 project</div><div class="sc-tags"><span class="tag t-mgd">Managed</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
+    <div class="sc"><div class="sc-name">Quarterly IT Review</div><div class="sc-desc">Regular check-in on your IT environment — performance, security posture, costs, upcoming licence renewals and recommendations for the next quarter. Keeps you ahead of problems.</div><div class="sc-earn">From £300/quarter</div><div class="sc-tags"><span class="tag t-mgd">Managed</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
+  </div>
+</div>
+
+<div class="cta-banner rv">
+  <div><h3>Not sure what<br><em>you need?</em></h3><p>Describe your situation in plain English — I'll recommend the right services and give you a clear, honest quote. No obligation, no jargon.</p></div>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-a">Talk to me →</a>
+    <a href="https://api.whatsapp.com/send/?phone=447349301106" class="btn-g" target="_blank" rel="noopener">WhatsApp me</a>
+  </div>
+</div>
+
+</div></section>
+
+<footer><div class="ft">
+  <a href="index.html" class="ft-logo"><svg width="28" height="28" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs>
+  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
+</svg>Tech Consult</a>
+  <div class="ft-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <div class="ft-copy">© 2025 M.Apex Consulting · UK IT Consultancy</div>
+</div></footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:0.05});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+document.getElementById('mb').addEventListener('click',()=>document.getElementById('mo').classList.toggle('open'));
+function cm(){document.getElementById('mo').classList.remove('open')}
+function filter(cat,btn){
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  document.querySelectorAll('.cat-block').forEach(s=>{s.style.display=(cat==='all'||s.dataset.cat===cat)?'':'none'});
+}
+</script>
+
+<!-- WhatsApp Float -->
+<a href="https://api.whatsapp.com/send/?phone=447349301106&text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20IT%20services." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-float-label">Chat with me</span>
+  <div class="wa-float-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+</a>
+</body></html>

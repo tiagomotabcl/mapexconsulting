@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M.Apex Consulting — IT & Technology Partner for UK Businesses</title>
+<meta name="description" content="UK-based IT consultancy with 14+ years experience. Cloud, cybersecurity, data, AI and managed support for small and medium businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090d;--bg2:#0c1018;--bg3:#10161f;--card:#111820;--card2:#141d28;--card3:#182230;--border:rgba(255,255,255,0.055);--border2:rgba(255,255,255,0.1);--border3:rgba(255,255,255,0.16);--accent:#2DD4BF;--accent2:#14b8a6;--accent3:rgba(45,212,191,0.1);--accent4:rgba(45,212,191,0.06);--text:#dde6f0;--text2:#98afc4;--text3:#5a7390;--green:#34d399;--amber:#fbbf24;--purple:#a78bfa;--fh:'Syne',sans-serif;--fb:'Inter',sans-serif;--r:8px;--r2:12px;--r3:16px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px;line-height:1.65;overflow-x:hidden}
+nav svg{width:28px;height:28px;display:inline-block;vertical-align:middle;margin-right:6px}
+nav{position:fixed;top:0;width:100%;z-index:200;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,4rem);background:rgba(7,9,13,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-family:var(--fh);font-size:1.05rem;font-weight:800;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;letter-spacing:-0.01em}
+.logo-mark{width:28px;height:28px;border-radius:6px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;color:#000;font-family:var(--fh)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.8rem;font-weight:500;transition:color 0.15s}
+.nav-links a:hover{color:var(--text)}
+.nav-btn{background:var(--accent);color:#000;padding:7px 18px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:0.78rem;transition:opacity 0.15s}
+.nav-btn:hover{opacity:0.85}
+.hbg{display:none;background:none;border:none;cursor:pointer;padding:4px;gap:4px;flex-direction:column}
+.hbg span{display:block;width:20px;height:1.5px;background:var(--text2)}
+.mob{display:none;position:fixed;inset:60px 0 0;background:var(--bg);z-index:199;flex-direction:column;padding:2rem clamp(1.5rem,4vw,4rem);gap:1.5rem;border-top:1px solid var(--border)}
+.mob.open{display:flex}
+.mob a{color:var(--text);text-decoration:none;font-family:var(--fh);font-size:1.3rem;font-weight:700}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px clamp(1.5rem,4vw,4rem) 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,0.055) 0%,transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-20%;left:-10%;width:50vw;height:50vw;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,0.03) 0%,transparent 60%);pointer-events:none}
+.hero-wrap{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:5vw;align-items:center}
+.eyebrow{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px;animation:fu 0.5s ease both}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+h1{font-family:var(--fh);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;line-height:1.1;letter-spacing:-0.025em;margin-bottom:1.25rem;animation:fu 0.5s 0.07s ease both;color:var(--text)}
+h1 em{font-style:normal;color:var(--accent)}
+h1 .dim{color:var(--text3);font-weight:300}
+.hero-desc{font-size:0.95rem;color:var(--text2);max-width:480px;line-height:1.8;margin-bottom:2rem;animation:fu 0.5s 0.14s ease both}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap;animation:fu 0.5s 0.21s ease both}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:var(--r);font-weight:600;font-size:0.82rem;text-decoration:none;transition:all 0.15s;cursor:pointer;border:none;font-family:var(--fb);letter-spacing:0.01em}
+.btn-a{background:var(--accent);color:#000}.btn-a:hover{opacity:0.85;transform:translateY(-1px)}
+.btn-g{background:transparent;color:var(--text);border:1px solid var(--border3)}.btn-g:hover{background:var(--card2)}
+
+/* TRUST BAR */
+.trust-bar{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;animation:fu 0.5s 0.28s ease both}
+.trust-item .num{font-family:var(--fh);font-size:1.6rem;font-weight:800;color:var(--text);line-height:1}
+.trust-item .num em{color:var(--accent);font-style:normal}
+.trust-item .lbl{font-size:0.7rem;color:var(--text3);margin-top:3px;letter-spacing:0.04em;text-transform:uppercase}
+
+/* HERO RIGHT — proof panel */
+.proof-panel{background:var(--card);border:1px solid var(--border2);border-radius:var(--r3);overflow:hidden;animation:fu 0.5s 0.18s ease both}
+.proof-header{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.proof-header .dot{width:8px;height:8px;border-radius:50%}
+.d-g{background:var(--green)}.d-a{background:var(--amber)}.d-r{background:#f87171}
+.proof-title{font-size:0.72rem;font-weight:600;color:var(--text2);margin-left:4px}
+.proof-body{padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:0}
+.proof-row{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0;border-bottom:1px solid var(--border)}
+.proof-row:last-child{border-bottom:none}
+.pr-label{font-size:0.78rem;color:var(--text2);display:flex;align-items:center;gap:8px}
+.pr-icon{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0}
+.pr-val{font-size:0.78rem;font-weight:600;color:var(--text)}
+.pr-badge{font-size:0.62rem;padding:2px 8px;border-radius:4px;font-weight:600}
+.pb-g{background:rgba(52,211,153,0.12);color:var(--green)}
+.pb-a{background:rgba(251,191,36,0.12);color:var(--amber)}
+.pb-b{background:var(--accent3);color:var(--accent)}
+
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* TICKER */
+.ticker{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);padding:10px 0}
+.ticker-t{display:inline-flex;animation:tk 35s linear infinite;white-space:nowrap}
+.ti{font-size:0.7rem;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;padding:0 2rem;border-right:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.ti::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:clamp(3rem,6vw,5rem) clamp(1.5rem,4vw,4rem)}
+.wrap{max-width:1280px;margin:0 auto}
+h2{font-family:var(--fh);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em;color:var(--text)}
+h2 em{font-style:normal;color:var(--accent)}
+.sub{color:var(--text2);font-size:0.88rem;line-height:1.75;max-width:480px;margin-top:0.5rem}
+.eyebrow2{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+
+/* VALUE PROPS */
+#value{background:var(--bg2);border-top:1px solid var(--border)}
+.vp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--border);border-radius:var(--r2);overflow:hidden;margin-top:3rem}
+.vp{background:var(--card);padding:1.75rem;transition:background 0.2s}
+.vp:hover{background:var(--card2)}
+.vp-icon{font-size:1.3rem;margin-bottom:0.85rem}
+.vp-title{font-family:var(--fh);font-size:0.88rem;font-weight:700;margin-bottom:0.35rem}
+.vp-desc{font-size:0.78rem;color:var(--text2);line-height:1.65}
+
+/* SERVICES PREVIEW */
+#services{background:var(--bg)}
+.svc-hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.see-all{font-size:0.78rem;color:var(--accent);text-decoration:none;font-weight:500;white-space:nowrap;transition:opacity 0.15s}
+.see-all:hover{opacity:0.7}
+.svc-cats{display:flex;flex-direction:column;gap:1.5rem}
+.svc-cat-row{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;align-items:start;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.svc-cat-row:last-child{border-bottom:none;padding-bottom:0}
+.cat-lbl{font-size:0.7rem;font-weight:600;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;padding-top:0.2rem}
+.svc-pills{display:flex;flex-wrap:wrap;gap:0.5rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:6px 14px;font-size:0.75rem;color:var(--text2);transition:all 0.15s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.pill:hover{border-color:var(--accent2);color:var(--text);background:var(--card2)}
+.pill-badge{font-size:0.58rem;padding:1px 5px;border-radius:3px;font-weight:700}
+.pb-new{background:rgba(52,211,153,0.12);color:var(--green)}
+.pb-ai{background:var(--accent3);color:var(--accent)}
+.pb-hot{background:rgba(251,191,36,0.1);color:var(--amber)}
+
+/* HOW IT WORKS */
+#how{background:var(--bg2);border-top:1px solid var(--border)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--border);border-radius:var(--r2);overflow:hidden;margin-top:3rem}
+.step{background:var(--card);padding:1.75rem;position:relative}
+.step-num{font-family:var(--fh);font-size:2rem;font-weight:800;color:var(--border2);line-height:1;margin-bottom:0.75rem}
+.step-title{font-family:var(--fh);font-size:0.88rem;font-weight:700;margin-bottom:0.35rem}
+.step-desc{font-size:0.75rem;color:var(--text2);line-height:1.6}
+.step-arrow{position:absolute;top:50%;right:-1px;transform:translateY(-50%);color:var(--border2);font-size:1rem;z-index:1}
+
+/* PLANS */
+#plans{background:var(--bg)}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+.plan{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);padding:2rem;position:relative;transition:border-color 0.2s}
+.plan.feat{border-color:var(--accent2)}
+.plan-badge{position:absolute;top:1.25rem;right:1.25rem;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:var(--accent);background:var(--accent3);border:1px solid rgba(45,212,191,0.2);padding:3px 9px;border-radius:4px}
+.plan-name{font-family:var(--fh);font-size:1rem;font-weight:800;margin-bottom:0.4rem}
+.plan-desc{font-size:0.78rem;color:var(--text2);line-height:1.6;margin-bottom:1.5rem}
+.plan-price{font-family:var(--fh);font-size:1.6rem;font-weight:800;margin-bottom:1.5rem;color:var(--text)}
+.plan-price small{font-size:0.82rem;color:var(--text2);font-weight:400;font-family:var(--fb)}
+.plan-feats{list-style:none;display:flex;flex-direction:column}
+.plan-feats li{font-size:0.78rem;color:var(--text2);padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:flex-start}
+.plan-feats li:last-child{border-bottom:none}
+.plan-feats li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;font-size:0.72rem;margin-top:2px}
+.plan-cta{display:block;text-align:center;margin-top:1.5rem;background:var(--card2);border:1px solid var(--border2);color:var(--text);text-decoration:none;padding:9px;border-radius:var(--r);font-size:0.78rem;font-weight:600;transition:all 0.15s}
+.plan-cta:hover{background:var(--card3);border-color:var(--accent2)}
+.plan.feat .plan-cta{background:var(--accent);color:#000;border-color:var(--accent)}
+.plan.feat .plan-cta:hover{opacity:0.85}
+
+/* TESTIMONIALS / SOCIAL PROOF */
+#proof{background:var(--bg2);border-top:1px solid var(--border)}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem}
+.tcard-stars{color:var(--amber);font-size:0.85rem;margin-bottom:0.75rem;letter-spacing:2px}
+.tcard-text{font-size:0.82rem;color:var(--text2);line-height:1.7;margin-bottom:1rem;font-style:italic}
+.tcard-author{font-size:0.72rem;font-weight:600;color:var(--text)}
+.tcard-role{font-size:0.68rem;color:var(--text3)}
+
+/* CONTACT STRIP */
+#contact{background:var(--bg)}
+.contact-strip{background:var(--card);border:1px solid var(--border2);border-radius:var(--r3);padding:3rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
+.cs-left h2{margin-bottom:0.75rem}
+.cs-left p{font-size:0.88rem;color:var(--text2);line-height:1.75;margin-bottom:2rem}
+.channels{display:flex;flex-direction:column;gap:0.6rem}
+.ch{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;background:var(--bg3);border:1px solid var(--border);padding:12px 16px;border-radius:var(--r2);transition:all 0.15s;font-size:0.82rem}
+.ch:hover{border-color:var(--accent2);background:var(--card2)}
+.ch-ic{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.wa{background:rgba(37,211,102,0.1)}.fb{background:rgba(66,103,178,0.12)}.lk{background:var(--accent4)}
+.ch-n{font-weight:600;font-size:0.8rem}.ch-s{font-size:0.7rem;color:var(--text3);margin-top:1px}
+/* mini form */
+.fg{display:flex;flex-direction:column;gap:4px;margin-bottom:0.85rem}
+.fg label{font-size:0.68rem;font-weight:600;color:var(--text3);letter-spacing:0.06em;text-transform:uppercase}
+.fg input,.fg textarea,.fg select{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:9px 14px;color:var(--text);font-family:var(--fb);font-size:0.82rem;outline:none;transition:border-color 0.15s;resize:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--accent2)}
+.fg select option{background:var(--bg3)}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.form-btn{width:100%;background:var(--accent);color:#000;border:none;padding:11px;border-radius:var(--r);font-weight:700;font-size:0.82rem;cursor:pointer;font-family:var(--fb);transition:opacity 0.15s;margin-top:0.25rem}
+.form-btn:hover{opacity:0.85}
+.form-note{font-size:0.66rem;color:var(--text3);text-align:center;margin-top:0.5rem}
+
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.75rem clamp(1.5rem,4vw,4rem)}
+.ft{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-logo{font-family:var(--fh);font-weight:800;font-size:0.95rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:7px}
+.ft-mark{width:22px;height:22px;border-radius:5px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:900;color:#000;font-family:var(--fh)}
+.ft-links{display:flex;gap:1.5rem}
+.ft-links a{color:var(--text3);text-decoration:none;font-size:0.72rem;transition:color 0.15s}
+.ft-links a:hover{color:var(--text2)}
+.ft-copy{font-size:0.68rem;color:var(--text3)}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:0.07s}.rv.d2{transition-delay:0.14s}.rv.d3{transition-delay:0.21s}.rv.d4{transition-delay:0.28s}
+
+@media(max-width:1100px){.hero-wrap{grid-template-columns:1fr}.proof-panel{display:none}.plans-grid{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}.contact-strip{grid-template-columns:1fr;gap:2.5rem}.steps{grid-template-columns:1fr 1fr}#bespoke .rv{grid-template-columns:1fr!important}#consulting-hl .rv{grid-template-columns:1fr!important;gap:2rem!important}}
+@media(max-width:768px){.nav-links,.nav-btn{display:none}.hbg{display:flex}nav{padding:0 1.25rem}section{padding:2.5rem 1.25rem}.hero{padding:80px 1.25rem 50px}.steps{grid-template-columns:1fr}.contact-strip{padding:2rem 1.5rem}.svc-cat-row{grid-template-columns:1fr}}
+
+/* WhatsApp float */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;display:flex;align-items:center;gap:0;cursor:pointer;text-decoration:none}
+.wa-float-btn{width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:transform 0.2s,box-shadow 0.2s}
+.wa-float-btn:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(37,211,102,0.45)}
+.wa-float-btn svg{width:26px;height:26px;fill:#fff}
+.wa-float-label{background:#111820;color:#dde6f0;font-size:0.72rem;font-weight:600;padding:6px 12px;border-radius:20px 0 0 20px;opacity:0;transform:translateX(8px);transition:opacity 0.2s,transform 0.2s;white-space:nowrap;pointer-events:none;border:1px solid rgba(255,255,255,0.08);border-right:none;margin-right:-4px}
+.wa-float:hover .wa-float-label{opacity:1;transform:translateX(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs>
+  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
+</svg>Apex</a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="consulting.html">Consulting</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#plans">Plans</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Get a Quote</a>
+  <button class="hbg" id="mb" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mo">
+  <a href="services.html" onclick="cm()">Services</a>
+  <a href="consulting.html" onclick="cm()">Consulting</a>
+  <a href="about.html" onclick="cm()">About</a>
+  <a href="index.html#plans" onclick="cm()">Plans</a>
+  <a href="contact.html" onclick="cm()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div>
+      <div class="eyebrow">Available for new clients · UK-based · Remote & On-site</div>
+      <h1>Your business deserves<br><em>serious IT expertise.</em><br><span class="dim">Without the enterprise bill.</span></h1>
+      <p class="hero-desc">14 years of hands-on IT experience — cloud, cybersecurity, data and AI — delivered personally to your business. No account managers. No helpdesk queues. And if you need something that doesn't exist yet, I build it.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-a">Get a free consultation →</a>
+        <a href="services.html" class="btn btn-g">View all services</a>
+      </div>
+      <div class="trust-bar">
+        <div class="trust-item"><div class="num">14<em>+</em></div><div class="lbl">Years experience</div></div>
+        <div class="trust-item"><div class="num">77<em>+</em></div><div class="lbl">Services offered</div></div>
+        <div class="trust-item"><div class="num">1<em>×</em></div><div class="lbl">Direct expert, always</div></div>
+        <div class="trust-item"><div class="num">UK</div><div class="lbl">Based & remote</div></div>
+      </div>
+    </div>
+    <div class="proof-panel">
+      <div class="proof-header">
+        <div class="dot d-r"></div><div class="dot d-a"></div><div class="dot d-g"></div>
+        <span class="proof-title">M.Apex Consulting — Active Services</span>
+      </div>
+      <div class="proof-body">
+        <div class="proof-row"><div class="pr-label"><div class="pr-icon" style="background:rgba(45,212,191,0.1)">☁️</div>Microsoft 365 Admin</div><span class="pr-badge pb-g">Active</span></div>
+        <div class="proof-row"><div class="pr-label"><div class="pr-icon" style="background:rgba(167,139,250,0.1)">🔒</div>Cybersecurity Audit</div><span class="pr-badge pb-a">In progress</span></div>
+        <div class="proof-row"><div class="pr-label"><div class="pr-icon" style="background:rgba(52,211,153,0.1)">📊</div>Power BI Dashboard</div><span class="pr-badge pb-g">Delivered</span></div>
+        <div class="proof-row"><div class="pr-label"><div class="pr-icon" style="background:rgba(251,191,36,0.1)">🤖</div>Copilot Integration</div><span class="pr-badge pb-b">New</span></div>
+        <div class="proof-row"><div class="pr-label"><div class="pr-icon" style="background:rgba(45,212,191,0.1)">🛡️</div>IT Health Check</div><span class="pr-badge pb-g">Delivered</span></div>
+        <div class="proof-row"><div class="pr-label"><div class="pr-icon" style="background:rgba(248,113,113,0.1)">⚡</div>Emergency Support</div><span class="pr-badge pb-g">Resolved</span></div>
+        <div class="proof-row"><div class="pr-label"><div class="pr-icon" style="background:rgba(167,139,250,0.1)">🔧</div>Custom Kiosk System</div><span class="pr-badge pb-b">Built from scratch</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-t">
+  <span class="ti">Microsoft 365 Admin</span><span class="ti">Cyber Essentials Prep</span><span class="ti">Azure / Entra ID</span><span class="ti">Copilot Rollout</span><span class="ti">Cybersecurity</span><span class="ti">Power BI</span><span class="ti">SaaS Licence Audit</span><span class="ti">Python & SQL</span><span class="ti">Teams Phone Setup</span><span class="ti">Intune / MDM</span><span class="ti">SharePoint</span><span class="ti">GDPR Compliance</span><span class="ti">Dark Web Monitoring</span><span class="ti">Disaster Recovery</span><span class="ti">Server Admin</span><span class="ti">IT Retainer</span><span class="ti">Data Migration</span><span class="ti">VoIP Setup</span><span class="ti">Power Platform Dev</span><span class="ti">Cloud Cost Optimisation</span><span class="ti">Google Business Profile</span><span class="ti">Backup Audit</span><span class="ti">Password Manager Rollout</span><span class="ti">AI Governance Policy</span><span class="ti">Website Design</span><span class="ti">Kiosk & Attendance Systems</span><span class="ti">Manufacturing Dashboards</span><span class="ti">OEE Monitoring</span><span class="ti">Shift Reporting Automation</span><span class="ti">ERP Integration</span><span class="ti">Barcode / QR Stock Tracking</span>
+  <span class="ti">Microsoft 365 Admin</span><span class="ti">Cyber Essentials Prep</span><span class="ti">Azure / Entra ID</span><span class="ti">Copilot Rollout</span><span class="ti">Cybersecurity</span><span class="ti">Power BI</span><span class="ti">SaaS Licence Audit</span><span class="ti">Python & SQL</span><span class="ti">Teams Phone Setup</span><span class="ti">Intune / MDM</span><span class="ti">SharePoint</span><span class="ti">GDPR Compliance</span><span class="ti">Dark Web Monitoring</span><span class="ti">Disaster Recovery</span><span class="ti">Server Admin</span><span class="ti">IT Retainer</span><span class="ti">Data Migration</span><span class="ti">VoIP Setup</span><span class="ti">Power Platform Dev</span><span class="ti">Cloud Cost Optimisation</span><span class="ti">Google Business Profile</span><span class="ti">Backup Audit</span><span class="ti">Password Manager Rollout</span><span class="ti">AI Governance Policy</span><span class="ti">Website Design</span><span class="ti">Kiosk & Attendance Systems</span><span class="ti">Manufacturing Dashboards</span><span class="ti">OEE Monitoring</span><span class="ti">Shift Reporting Automation</span><span class="ti">ERP Integration</span><span class="ti">Barcode / QR Stock Tracking</span>
+</div></div>
+
+<!-- VALUE PROPS -->
+<section id="value">
+  <div class="wrap">
+    <div class="rv"><div class="eyebrow2">Why choose M.Apex Consulting</div><h2>The IT partner SMEs<br><em>actually need.</em></h2></div>
+    <div class="vp-grid rv d1">
+      <div class="vp"><div class="vp-icon">🎯</div><div class="vp-title">Direct expert access</div><div class="vp-desc">You speak to the same senior engineer every time. No junior handoffs, no ticket systems, no wasted time re-explaining.</div></div>
+      <div class="vp"><div class="vp-icon">⚡</div><div class="vp-title">Same-day response</div><div class="vp-desc">Critical issues get priority. Most problems resolved the same day — remotely or on-site across Hertfordshire.</div></div>
+      <div class="vp"><div class="vp-icon">🔒</div><div class="vp-title">Security-first approach</div><div class="vp-desc">Every recommendation considers your security posture. Proactive protection, not reactive damage control.</div></div>
+      <div class="vp"><div class="vp-icon">💷</div><div class="vp-title">Transparent pricing</div><div class="vp-desc">Fixed quotes for projects. Clear monthly retainer costs. No surprises, no hidden fees, no inflated enterprise margins.</div></div>
+      <div class="vp"><div class="vp-icon">📈</div><div class="vp-title">Business outcomes</div><div class="vp-desc">Good IT saves time and money. Every engagement is measured against real business results, not just technical deliverables.</div></div>
+      <div class="vp"><div class="vp-icon">🤝</div><div class="vp-title">Long-term partnership</div><div class="vp-desc">I get to know your systems, your team and your goals. The longer we work together, the more value I can deliver.</div></div>
+      <div class="vp"><div class="vp-icon">🔧</div><div class="vp-title">Bespoke solutions</div><div class="vp-desc">Can't find what you need off the shelf? I design and build custom systems from scratch — tailored exactly to your workflows, data and team.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-hdr rv">
+      <div><div class="eyebrow2">What I do</div><h2>77+ services across<br><em>9 specialisms.</em></h2></div>
+      <a href="services.html" class="see-all">See full list with details →</a>
+    </div>
+    <div class="svc-cats rv d1">
+      <div class="svc-cat-row">
+        <div class="cat-lbl">Strategic Consulting</div>
+        <div class="svc-pills">
+          <a href="consulting.html" class="pill">NIS2 Compliance <span class="pill-badge pb-hot">Legal</span></a>
+          <a href="consulting.html" class="pill">Ransomware Resilience <span class="pill-badge pb-hot">Critical</span></a>
+          <a href="consulting.html" class="pill">Private AI Deployment <span class="pill-badge pb-ai">AI</span></a>
+          <a href="consulting.html" class="pill">Autonomous AI Agents <span class="pill-badge pb-ai">AI</span></a>
+          <a href="consulting.html" class="pill">EU AI Act Governance <span class="pill-badge pb-new">New</span></a>
+          <a href="consulting.html" class="pill">Legacy System Rescue <span class="pill-badge pb-new">Speciality</span></a>
+          <a href="consulting.html" class="pill">Paperless Shop Floor <span class="pill-badge pb-new">Proven</span></a>
+          <a href="consulting.html" class="pill">ESG Reporting Automation <span class="pill-badge pb-new">New</span></a>
+        </div>
+      </div>
+      <div class="svc-cat-row">
+        <div class="cat-lbl">IT Support &amp; Infra</div>
+        <div class="svc-pills">
+          <a href="services.html" class="pill">Remote &amp; On-site Support <span class="pill-badge pb-hot">Popular</span></a>
+          <a href="services.html" class="pill">Microsoft 365 Admin <span class="pill-badge pb-hot">Popular</span></a>
+          <a href="services.html" class="pill">Azure / Entra ID</a>
+          <a href="services.html" class="pill">Server Admin</a>
+          <a href="services.html" class="pill">Intune / MDM</a>
+          <a href="services.html" class="pill">Group Policy</a>
+          <a href="services.html" class="pill">Virtualisation</a>
+          <a href="services.html" class="pill">Networking &amp; VPN</a>
+          <a href="services.html" class="pill">Teams Phone / VoIP <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">IT Procurement</a>
+          <a href="services.html" class="pill">SaaS Licence Audit <span class="pill-badge pb-hot">Popular</span></a>
+          <a href="services.html" class="pill">Backup Audit &amp; Setup <span class="pill-badge pb-new">New</span></a>
+        </div>
+      </div>
+      <div class="svc-cat-row">
+        <div class="cat-lbl">Cybersecurity</div>
+        <div class="svc-pills">
+          <a href="services.html" class="pill">Cyber Essentials Prep <span class="pill-badge pb-hot">Popular</span></a>
+          <a href="services.html" class="pill">MFA / Zero Trust <span class="pill-badge pb-hot">Popular</span></a>
+          <a href="services.html" class="pill">Managed Security (MSSP) <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">Dark Web Monitoring</a>
+          <a href="services.html" class="pill">Security Awareness Training</a>
+          <a href="services.html" class="pill">GDPR Compliance</a>
+          <a href="services.html" class="pill">Email Security (DMARC)</a>
+          <a href="services.html" class="pill">Penetration Testing</a>
+          <a href="services.html" class="pill">ISO 27001 Prep</a>
+          <a href="services.html" class="pill">Password Manager Rollout <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">Incident Response</a>
+        </div>
+      </div>
+      <div class="svc-cat-row">
+        <div class="cat-lbl">Data &amp; Automation</div>
+        <div class="svc-pills">
+          <a href="services.html" class="pill">Power BI Dashboards <span class="pill-badge pb-hot">Popular</span></a>
+          <a href="services.html" class="pill">Power Platform Dev <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">Excel Automation / VBA</a>
+          <a href="services.html" class="pill">Power Automate Flows</a>
+          <a href="services.html" class="pill">SQL Databases</a>
+          <a href="services.html" class="pill">Python Scripting</a>
+          <a href="services.html" class="pill">SharePoint Intranet</a>
+          <a href="services.html" class="pill">Data Migration</a>
+          <a href="services.html" class="pill">Cloud Cost Optimisation <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">IT Due Diligence (M&amp;A) <span class="pill-badge pb-new">New</span></a>
+        </div>
+      </div>
+      <div class="svc-cat-row">
+        <div class="cat-lbl">AI Services</div>
+        <div class="svc-pills">
+          <a href="services.html" class="pill">MS Copilot Rollout <span class="pill-badge pb-ai">AI</span></a>
+          <a href="services.html" class="pill">AI Workflow Integration <span class="pill-badge pb-ai">AI</span></a>
+          <a href="services.html" class="pill">AI Governance Policy <span class="pill-badge pb-ai">AI</span></a>
+          <a href="services.html" class="pill">Prompt Engineering <span class="pill-badge pb-ai">AI</span></a>
+          <a href="services.html" class="pill">ChatGPT for Business <span class="pill-badge pb-ai">AI</span></a>
+          <a href="services.html" class="pill">Chatbot Development <span class="pill-badge pb-ai">AI</span></a>
+        </div>
+      </div>
+      <div class="svc-cat-row">
+        <div class="cat-lbl">Web &amp; Digital</div>
+        <div class="svc-pills">
+          <a href="services.html" class="pill">Website Design &amp; Build</a>
+          <a href="services.html" class="pill">Google Workspace Setup</a>
+          <a href="services.html" class="pill">Google Business Profile <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">Email Newsletter Setup <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">LinkedIn Company Setup <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">Domain &amp; DNS Management</a>
+          <a href="services.html" class="pill">Technical SEO</a>
+          <a href="services.html" class="pill">E-commerce Setup</a>
+        </div>
+      </div>
+      <div class="svc-cat-row">
+        <div class="cat-lbl">Automation &amp; Manufacturing</div>
+        <div class="svc-pills">
+          <a href="services.html" class="pill">Kiosk &amp; Attendance Systems <span class="pill-badge pb-hot">Popular</span></a>
+          <a href="services.html" class="pill">Shift Reporting Automation <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">OEE / Production Dashboards <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">Visitor Management System <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">Barcode / QR Stock Tracking <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">ERP Reporting &amp; Integration <span class="pill-badge pb-new">New</span></a>
+          <a href="services.html" class="pill">ISO 9001 Document Control <span class="pill-badge pb-new">New</span></a>
+        </div>
+      </div>
+      <div class="svc-cat-row">
+        <div class="cat-lbl">Managed Plans</div>
+        <div class="svc-pills">
+          <a href="index.html#plans" class="pill">Monthly IT Retainer <span class="pill-badge pb-hot">Popular</span></a>
+          <a href="services.html" class="pill">Managed Security (Monthly) <span class="pill-badge pb-new">New</span></a>
+          <a href="index.html#plans" class="pill">IT Health Check</a>
+          <a href="index.html#plans" class="pill">Disaster Recovery Plan</a>
+          <a href="services.html" class="pill">IT Roadmap Consulting</a>
+          <a href="services.html" class="pill">Quarterly IT Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="rv"><div class="eyebrow2">How it works</div><h2>From first call to<br><em>problem solved.</em></h2></div>
+    <div class="steps rv d1">
+      <div class="step"><div class="step-num">01</div><div class="step-title">Free consultation</div><div class="step-desc">Tell me about your business and what's not working. No commitment, no sales pitch — just an honest conversation.</div><div class="step-arrow">→</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-title">Clear proposal</div><div class="step-desc">I'll send a plain-English proposal with fixed scope, timeline and cost. No surprises, no hidden extras.</div><div class="step-arrow">→</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-title">We get to work</div><div class="step-desc">Remote or on-site, I handle everything end-to-end. You're updated at every step — not after the fact.</div><div class="step-arrow">→</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-title">Ongoing support</div><div class="step-desc">Problem solved, I stay available. Retainer clients get proactive monitoring and priority response every month.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans">
+  <div class="wrap">
+    <div class="rv"><div class="eyebrow2">Managed plans</div><h2>Predictable IT costs.<br><em>Zero surprises.</em></h2><p class="sub">Monthly plans for businesses who want ongoing expert support — without hiring a full-time IT person.</p></div>
+    <div class="plans-grid">
+      <div class="plan rv d1">
+        <div class="plan-name">IT Health Check</div>
+        <div class="plan-desc">One-off full audit of your IT environment with a prioritised remediation roadmap.</div>
+        <div class="plan-price">POA <small>/ one-off project</small></div>
+        <ul class="plan-feats">
+          <li>Full infrastructure &amp; security review</li>
+          <li>Licence &amp; cost optimisation</li>
+          <li>Risk report with priority ratings</li>
+          <li>Remediation roadmap</li>
+          <li>Delivered within 5 working days</li>
+        </ul>
+        <a href="contact.html" class="plan-cta">Enquire →</a>
+      </div>
+      <div class="plan feat rv d2">
+        <div class="plan-badge">MOST POPULAR</div>
+        <div class="plan-name">Monthly IT Retainer</div>
+        <div class="plan-desc">Your dedicated IT department — fixed monthly cost, priority SLA, proactive monitoring.</div>
+        <div class="plan-price">POA <small>/ per month</small></div>
+        <ul class="plan-feats">
+          <li>Agreed monthly support hours</li>
+          <li>Priority same-day response</li>
+          <li>Proactive system monitoring</li>
+          <li>Patch &amp; update management</li>
+          <li>Monthly review meeting</li>
+          <li>Scales up or down as needed</li>
+        </ul>
+        <a href="contact.html" class="plan-cta">Get started →</a>
+      </div>
+      <div class="plan rv d3">
+        <div class="plan-name">Disaster Recovery Plan</div>
+        <div class="plan-desc">Be prepared before something goes wrong. Full DR runbook and annual test included.</div>
+        <div class="plan-price">POA <small>/ one-off project</small></div>
+        <ul class="plan-feats">
+          <li>DR runbook creation</li>
+          <li>Backup validation &amp; testing</li>
+          <li>RTO / RPO definition</li>
+          <li>Failover procedure documentation</li>
+          <li>Annual DR test exercise</li>
+        </ul>
+        <a href="contact.html" class="plan-cta">Enquire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="proof">
+  <div class="wrap">
+    <div class="rv"><div class="eyebrow2">What clients say</div><h2>Results that<br><em>speak for themselves.</em></h2></div>
+    <div class="proof-grid">
+      <div class="tcard rv d1"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"Tiago sorted out our Microsoft 365 migration in a day — something our previous IT company had been dragging out for months. Clear, fast and no nonsense."</div><div class="tcard-author">Operations Manager</div><div class="tcard-role">Distribution company, Hertfordshire</div></div>
+      <div class="tcard rv d2"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"The Power BI dashboards he built have genuinely changed how we run the business. We can now see KPIs in real time that we were tracking manually in spreadsheets."</div><div class="tcard-author">Finance Director</div><div class="tcard-role">Manufacturing SME, UK</div></div>
+      <div class="tcard rv d3"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"After a ransomware scare, Tiago locked everything down and set up proper MFA and monitoring. Best investment we've made in the business. Wish we'd done it sooner."</div><div class="tcard-author">Managing Director</div><div class="tcard-role">Professional services firm</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTING HIGHLIGHT -->
+<section id="consulting-hl" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center">
+      <div>
+        <div class="eyebrow2" style="color:var(--amber)">Strategic Consulting</div>
+        <h2 style="margin-bottom:1rem">More than IT support —<br><em>a strategic partner.</em></h2>
+        <p style="font-size:0.92rem;color:var(--text2);line-height:1.85;margin-bottom:1.5rem">I solve the high-stakes problems that keep directors awake: new EU compliance directives like NIS2 and the AI Act, ransomware resilience, private and confidential AI deployment, rescuing critical legacy systems, and automating the ESG reporting that banks and investors now demand.</p>
+        <a href="consulting.html" class="btn btn-a">Explore strategic consulting →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">⚖️</div>
+          <div style="font-family:var(--fh);font-size:0.85rem;font-weight:700;margin-bottom:3px">NIS2 & Compliance</div>
+          <div style="font-size:0.72rem;color:var(--text2);line-height:1.5">EU directives now legally mandatory</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🔒</div>
+          <div style="font-family:var(--fh);font-size:0.85rem;font-weight:700;margin-bottom:3px">Private AI</div>
+          <div style="font-size:0.72rem;color:var(--text2);line-height:1.5">100% confidential, data stays in-house</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🔧</div>
+          <div style="font-family:var(--fh);font-size:0.85rem;font-weight:700;margin-bottom:3px">Legacy Rescue</div>
+          <div style="font-size:0.72rem;color:var(--text2);line-height:1.5">Old systems made fast &amp; secure</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🌱</div>
+          <div style="font-family:var(--fh);font-size:0.85rem;font-weight:700;margin-bottom:3px">ESG Automation</div>
+          <div style="font-size:0.72rem;color:var(--text2);line-height:1.5">Reports investors demand</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BESPOKE -->
+<section id="bespoke" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv" style="background:var(--card2);border:1px solid var(--border2);border-radius:var(--r3);padding:2.5rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+      <div>
+        <div class="eyebrow2">Custom development</div>
+        <h2 style="margin-bottom:0.75rem">Don't see exactly<br><em>what you need?</em></h2>
+        <p style="font-size:0.88rem;color:var(--text2);line-height:1.8">Every business is different. If the solution you need doesn't exist yet — or the off-the-shelf tools don't quite fit — I design and build it from scratch. From custom web applications and kiosk systems to automated reporting pipelines and database integrations, I've delivered bespoke solutions for manufacturing, distribution and professional services companies across the UK.</p>
+        <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn-a">Describe your problem →</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
+          <span style="font-size:1.2rem">📱</span>
+          <div><div style="font-family:var(--fh);font-size:0.82rem;font-weight:700;margin-bottom:2px">Kiosk &amp; attendance systems</div><div style="font-size:0.72rem;color:var(--text2)">QR clock-in, visitor management, fire call lists</div></div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
+          <span style="font-size:1.2rem">📊</span>
+          <div><div style="font-family:var(--fh);font-size:0.82rem;font-weight:700;margin-bottom:2px">Custom reporting dashboards</div><div style="font-size:0.72rem;color:var(--text2)">Automated daily/weekly reports emailed to your team</div></div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
+          <span style="font-size:1.2rem">🔗</span>
+          <div><div style="font-family:var(--fh);font-size:0.82rem;font-weight:700;margin-bottom:2px">System integrations &amp; APIs</div><div style="font-size:0.72rem;color:var(--text2)">Connect tools that don't talk to each other — seamlessly</div></div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
+          <span style="font-size:1.2rem">⚙️</span>
+          <div><div style="font-family:var(--fh);font-size:0.82rem;font-weight:700;margin-bottom:2px">Manufacturing &amp; ops automation</div><div style="font-size:0.72rem;color:var(--text2)">Stock tracking, OEE dashboards, maintenance schedulers</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap rv">
+    <div class="eyebrow2">Get in touch</div>
+    <h2>Let's talk about your<br><em>IT challenges.</em></h2>
+    <div class="contact-strip">
+      <div class="cs-left">
+        <p>Whether you need immediate help, a quote, or just want to understand your options — I'll give you straight answers with no obligation.</p>
+        <div class="channels">
+          <a href="https://api.whatsapp.com/send/?phone=447349301106" class="ch" target="_blank" rel="noopener"><div class="ch-ic wa">💬</div><div><div class="ch-n">WhatsApp</div><div class="ch-s">+44 7349 301106 · Fastest reply</div></div></a>
+          <a href="https://www.facebook.com/profile.php?id=61579970818349" class="ch" target="_blank" rel="noopener"><div class="ch-ic fb">📘</div><div><div class="ch-n">Facebook</div><div class="ch-s">M-TechConsult Official</div></div></a>
+          <a href="https://linktr.ee/MTechConsult" class="ch" target="_blank" rel="noopener"><div class="ch-ic lk">🔗</div><div><div class="ch-n">All links</div><div class="ch-s">linktr.ee/MTechConsult</div></div></a>
+        </div>
+      </div>
+      <div>
+        <form onsubmit="send(event)">
+          <div class="fg2">
+            <div class="fg"><label>First name *</label><input id="fn" type="text" placeholder="Jane" required></div>
+            <div class="fg"><label>Company</label><input id="co" type="text" placeholder="Acme Ltd"></div>
+          </div>
+          <div class="fg"><label>Email *</label><input id="em" type="email" placeholder="jane@company.co.uk" required></div>
+          <div class="fg">
+            <label>Service needed</label>
+            <select id="sv">
+              <option value="">Select...</option>
+              <option>IT Support / Helpdesk</option><option>Microsoft 365 Admin</option><option>Azure / Cloud Setup</option><option>Cybersecurity Audit</option><option>MFA / Zero Trust</option><option>Power BI / Data</option><option>AI / Copilot Setup</option><option>Website Design</option><option>Monthly IT Retainer</option><option>IT Health Check</option><option>Other / Not sure</option>
+            </select>
+          </div>
+          <div class="fg"><label>Brief description *</label><textarea id="mg" rows="3" placeholder="Tell me what you need help with..." required></textarea></div>
+          <button type="submit" class="form-btn">Send message — I'll reply today →</button>
+          <p class="form-note">Opens WhatsApp with your message pre-filled.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">
+    <a href="index.html" class="ft-logo"><svg width="28" height="28" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs>
+  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
+</svg>Apex</a>
+    <div class="ft-links"><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="ft-copy">© 2025 M.Apex Consulting · UK IT Consultancy</div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:0.06});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+document.getElementById('mb').addEventListener('click',()=>document.getElementById('mo').classList.toggle('open'));
+function cm(){document.getElementById('mo').classList.remove('open')}
+function send(e){
+  e.preventDefault();
+  const fn=document.getElementById('fn').value,co=document.getElementById('co').value,sv=document.getElementById('sv').value,mg=document.getElementById('mg').value;
+  let t=`Hi, I'm ${fn}${co?' from '+co:''}.`;
+  if(sv)t+=`\nService: ${sv}`;
+  if(mg)t+=`\n\n${mg}`;
+  window.open(`https://api.whatsapp.com/send/?phone=447349301106&text=${encodeURIComponent(t)}`,'_blank');
+}
+</script>
+
+<!-- WhatsApp Float -->
+<a href="https://api.whatsapp.com/send/?phone=447349301106&text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20IT%20services." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-float-label">Chat with me</span>
+  <div class="wa-float-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+</a>
+</body>
+</html>

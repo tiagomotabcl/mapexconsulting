@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — M.Apex Consulting</title>
+<meta name="description" content="14 years of IT experience across cloud, data, cybersecurity and AI. UK-based IT consultant for SMEs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090d;--bg2:#0c1018;--bg3:#10161f;--card:#111820;--card2:#141d28;--card3:#182230;--border:rgba(255,255,255,0.055);--border2:rgba(255,255,255,0.1);--border3:rgba(255,255,255,0.16);--accent:#2DD4BF;--accent2:#14b8a6;--accent3:rgba(45,212,191,0.1);--text:#dde6f0;--text2:#98afc4;--text3:#5a7390;--green:#34d399;--amber:#fbbf24;--purple:#a78bfa;--fh:'Syne',sans-serif;--fb:'Inter',sans-serif;--r:8px;--r2:12px;--r3:16px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px;line-height:1.65;overflow-x:hidden}
+nav svg{width:28px;height:28px;display:inline-block;vertical-align:middle;margin-right:6px}
+nav{position:fixed;top:0;width:100%;z-index:200;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,4rem);background:rgba(7,9,13,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-family:var(--fh);font-size:1.05rem;font-weight:800;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo-mark{width:28px;height:28px;border-radius:6px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;color:#000;font-family:var(--fh)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.8rem;font-weight:500;transition:color 0.15s}
+.nav-links a:hover,.nav-links a.cur{color:var(--text)}
+.nav-btn{background:var(--accent);color:#000;padding:7px 18px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:0.78rem}
+.hbg{display:none;background:none;border:none;cursor:pointer;padding:4px;gap:4px;flex-direction:column}
+.hbg span{display:block;width:20px;height:1.5px;background:var(--text2)}
+.mob{display:none;position:fixed;inset:60px 0 0;background:var(--bg);z-index:199;flex-direction:column;padding:2rem clamp(1.5rem,4vw,4rem);gap:1.5rem;border-top:1px solid var(--border)}
+.mob.open{display:flex}
+.mob a{color:var(--text);text-decoration:none;font-family:var(--fh);font-size:1.3rem;font-weight:700}
+.ph{padding:clamp(90px,12vw,140px) clamp(1.5rem,4vw,4rem) clamp(3rem,5vw,4rem);background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.ph::after{content:'';position:absolute;top:-40%;right:-20%;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,0.05) 0%,transparent 65%);pointer-events:none}
+.ph-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}
+.ey{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem}
+.ph h1{font-family:var(--fh);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-0.025em;margin-bottom:0.9rem}
+.ph h1 em{font-style:normal;color:var(--accent)}
+.ph p{color:var(--text2);font-size:0.9rem;max-width:460px;line-height:1.75}
+.ph-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.ph-stat{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem 1.5rem}
+.ph-stat-n{font-family:var(--fh);font-size:1.8rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px}
+.ph-stat-l{font-size:0.72rem;color:var(--text3);line-height:1.4}
+section{padding:clamp(3rem,6vw,5rem) clamp(1.5rem,4vw,4rem)}
+.wrap{max-width:1280px;margin:0 auto}
+h2{font-family:var(--fh);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em;color:var(--text)}
+h2 em{font-style:normal;color:var(--accent)}
+/* STORY */
+#story{background:var(--bg)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start}
+.story-left h2{margin-bottom:1.25rem}
+.story-left p{font-size:0.88rem;color:var(--text2);line-height:1.8;margin-bottom:1rem}
+.story-left p strong{color:var(--text);font-weight:500}
+.avail{display:inline-flex;align-items:center;gap:8px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);padding:6px 14px;border-radius:20px;font-size:0.72rem;color:var(--green);font-weight:600;margin-top:1rem}
+.avail::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
+.story-right{display:flex;flex-direction:column;gap:0.75rem}
+.val-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.15s}
+.val-card:hover{border-color:var(--border2)}
+.val-icon{font-size:1.2rem;flex-shrink:0;margin-top:1px}
+.val-title{font-family:var(--fh);font-size:0.85rem;font-weight:700;margin-bottom:3px}
+.val-desc{font-size:0.75rem;color:var(--text2);line-height:1.6}
+/* TIMELINE */
+#timeline{background:var(--bg2);border-top:1px solid var(--border)}
+.tl-wrap{display:grid;grid-template-columns:280px 1fr;gap:4vw;align-items:start}
+.tl-left h2{margin-bottom:0.75rem}
+.tl-left p{font-size:0.85rem;color:var(--text2);line-height:1.75}
+.tl{position:relative;padding-left:1.5rem}
+.tl::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:1px;background:var(--border2)}
+.tl-item{position:relative;margin-bottom:2rem;padding-bottom:0}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-1.5rem;top:5px;width:9px;height:9px;border-radius:50%;background:var(--accent2);border:2px solid var(--bg2);margin-left:-4px}
+.tl-year{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.tl-role{font-family:var(--fh);font-size:0.92rem;font-weight:700;margin-bottom:4px}
+.tl-desc{font-size:0.78rem;color:var(--text2);line-height:1.65}
+/* SKILLS */
+#skills{background:var(--bg)}
+.skills-header{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.skill-group{margin-bottom:2rem}
+.sg-label{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-bottom:0.75rem}
+.skill-chips{display:flex;flex-wrap:wrap;gap:0.4rem}
+.chip{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:5px 12px;font-size:0.75rem;color:var(--text2);transition:all 0.15s;display:flex;align-items:center;gap:6px}
+.chip:hover{border-color:var(--border2);color:var(--text)}
+.chip-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.cd-b{background:var(--accent)}.cd-g{background:var(--green)}.cd-a{background:var(--amber)}
+/* CTA */
+.cta-strip{background:var(--card);border:1px solid var(--border2);border-radius:var(--r3);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cta-strip h3{font-family:var(--fh);font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.35rem}
+.cta-strip h3 em{font-style:normal;color:var(--accent)}
+.cta-strip p{font-size:0.82rem;color:var(--text2);max-width:400px}
+.cta-btns{display:flex;gap:0.75rem;flex-wrap:wrap;flex-shrink:0}
+.btn-a{background:var(--accent);color:#000;padding:10px 22px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:0.8rem;transition:opacity 0.15s;display:inline-flex;align-items:center;gap:6px}
+.btn-a:hover{opacity:0.85}
+.btn-g{background:transparent;color:var(--text);border:1px solid var(--border3);padding:10px 22px;border-radius:var(--r);text-decoration:none;font-weight:500;font-size:0.8rem;transition:background 0.15s}
+.btn-g:hover{background:var(--card2)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.75rem clamp(1.5rem,4vw,4rem)}
+.ft{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-logo{font-family:var(--fh);font-weight:800;font-size:0.95rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:7px}
+.ft-mark{width:22px;height:22px;border-radius:5px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:900;color:#000;font-family:var(--fh)}
+.ft-links{display:flex;gap:1.5rem}
+.ft-links a{color:var(--text3);text-decoration:none;font-size:0.72rem;transition:color 0.15s}
+.ft-links a:hover{color:var(--text2)}
+.ft-copy{font-size:0.68rem;color:var(--text3)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:0.07s}.rv.d2{transition-delay:0.14s}.rv.d3{transition-delay:0.21s}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fi{animation:fu 0.5s ease both}.fi2{animation:fu 0.5s 0.08s ease both}.fi3{animation:fu 0.5s 0.16s ease both}
+@media(max-width:1000px){.ph-inner{grid-template-columns:1fr}.story-grid{grid-template-columns:1fr}.tl-wrap{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links,.nav-btn{display:none}.hbg{display:flex}nav{padding:0 1.25rem}section{padding:2.5rem 1.25rem}.ph{padding-left:1.25rem;padding-right:1.25rem}.cta-strip{padding:2rem 1.5rem}footer{padding-left:1.25rem;padding-right:1.25rem}.ft{flex-direction:column;align-items:flex-start}}
+
+/* WhatsApp float */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;display:flex;align-items:center;gap:0;cursor:pointer;text-decoration:none}
+.wa-float-btn{width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:transform 0.2s,box-shadow 0.2s}
+.wa-float-btn:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(37,211,102,0.45)}
+.wa-float-btn svg{width:26px;height:26px;fill:#fff}
+.wa-float-label{background:#111820;color:#dde6f0;font-size:0.72rem;font-weight:600;padding:6px 12px;border-radius:20px 0 0 20px;opacity:0;transform:translateX(8px);transition:opacity 0.2s,transform 0.2s;white-space:nowrap;pointer-events:none;border:1px solid rgba(255,255,255,0.08);border-right:none;margin-right:-4px}
+.wa-float:hover .wa-float-label{opacity:1;transform:translateX(0)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs>
+  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
+</svg>Apex</a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="consulting.html">Consulting</a></li><li><a href="about.html" class="cur">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nav-btn">Get a Quote</a>
+  <button class="hbg" id="mb" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mo"><a href="index.html" onclick="cm()">Home</a><a href="services.html" onclick="cm()">Services</a><a href="consulting.html" onclick="cm()">Consulting</a><a href="about.html" onclick="cm()">About</a><a href="contact.html" onclick="cm()">Contact</a></div>
+
+<div class="ph"><div class="ph-inner">
+  <div>
+    <div class="ey fi">The person behind the work</div>
+    <h1 class="fi2">14 years.<br><em>One mission.</em></h1>
+    <p class="fi3">Giving small and medium businesses access to the same IT expertise large enterprises take for granted — at a price that makes sense.</p>
+    <div class="avail fi3">Currently accepting new clients</div>
+  </div>
+  <div class="ph-stats fi2">
+    <div class="ph-stat"><div class="ph-stat-n">14+</div><div class="ph-stat-l">Years hands-on IT experience</div></div>
+    <div class="ph-stat"><div class="ph-stat-n">45+</div><div class="ph-stat-l">Services across 6 specialisms</div></div>
+    <div class="ph-stat"><div class="ph-stat-n">1×</div><div class="ph-stat-l">Point of contact — always me</div></div>
+    <div class="ph-stat"><div class="ph-stat-n">UK</div><div class="ph-stat-l">Based, remote & on-site Herts</div></div>
+  </div>
+</div></div>
+
+<section id="story"><div class="wrap">
+  <div class="story-grid">
+    <div class="rv">
+      <div class="ey">My story</div>
+      <h2>Senior IT.<br><em>Personal service.</em></h2>
+      <p>I'm Tiago — a UK-based IT consultant with over <strong>14 years of hands-on experience</strong> across infrastructure, cloud, data engineering and cybersecurity. I've worked with everything from solo traders to multi-site enterprises.</p>
+      <p>M.Apex Consulting exists because <strong>small businesses deserve proper IT expertise</strong>. Not a generalist who read a manual — someone who has been in the server room at 2am, built the dashboards the finance team actually uses, and locked down a network after a real breach.</p>
+      <p>When you work with me, you deal directly with the expert. <strong>No helpdesk, no junior handoffs, no third-party contractors.</strong> One contact. Full accountability.</p>
+    </div>
+    <div class="rv d1">
+      <div class="val-card"><div class="val-icon">🎯</div><div><div class="val-title">No jargon, ever</div><div class="val-desc">Plain English explanations of what's wrong, what I'll do and what it costs — before I do anything.</div></div></div>
+      <div class="val-card"><div class="val-icon">⚡</div><div><div class="val-title">Same-day on critical issues</div><div class="val-desc">You're not a ticket number. Critical problems get immediate attention, remotely or on-site.</div></div></div>
+      <div class="val-card"><div class="val-icon">🔒</div><div><div class="val-title">Security built in</div><div class="val-desc">Every recommendation considers your security posture — not added as an afterthought later.</div></div></div>
+      <div class="val-card"><div class="val-icon">💷</div><div><div class="val-title">Transparent, fair pricing</div><div class="val-desc">Fixed quotes for scoped work. Monthly retainers that scale. No hidden fees, no surprise invoices.</div></div></div>
+      <div class="val-card"><div class="val-icon">📈</div><div><div class="val-title">Real business outcomes</div><div class="val-desc">I measure success by what it delivers to your business — time saved, costs cut, risks removed.</div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="timeline"><div class="wrap">
+  <div class="tl-wrap">
+    <div class="rv">
+      <div class="ey">Experience</div>
+      <h2>Built over<br><em>14 years.</em></h2>
+      <p class="sub" style="margin-top:0.5rem;font-size:0.85rem">From helpdesk to cloud architecture to AI integration — every layer of the stack, every type of business.</p>
+    </div>
+    <div class="tl rv d1">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025 – Present</div><div class="tl-role">Founder · M.Apex Consulting</div><div class="tl-desc">Independent IT consultancy delivering cloud, cybersecurity, data and AI services directly to UK SMEs. End-to-end IT ownership with full client accountability.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020 – 2025</div><div class="tl-role">IT & Data Specialist</div><div class="tl-desc">Infrastructure management, Power BI development, Microsoft Dynamics support, ERP reporting and process automation for mid-size UK businesses.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2015 – 2020</div><div class="tl-role">IT Support Engineer</div><div class="tl-desc">Windows Server, Active Directory, network administration, endpoint security and cloud migrations for multi-site organisations across the UK.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2010 – 2015</div><div class="tl-role">IT Helpdesk & Systems Admin</div><div class="tl-desc">End-user support, hardware lifecycle, AD administration, software deployment and the foundational infrastructure skills built over years of problem solving.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="skills-header rv"><div><div class="ey">Technical skills</div><h2>Tools I use<br><em>every day.</em></h2></div></div>
+  <div class="skill-group rv"><div class="sg-label">Cloud & Infrastructure</div><div class="skill-chips"><span class="chip"><span class="chip-dot cd-b"></span>Microsoft 365</span><span class="chip"><span class="chip-dot cd-b"></span>Azure / Entra ID</span><span class="chip"><span class="chip-dot cd-b"></span>Windows Server</span><span class="chip"><span class="chip-dot cd-b"></span>Active Directory</span><span class="chip"><span class="chip-dot cd-b"></span>Intune / MDM</span><span class="chip"><span class="chip-dot cd-b"></span>Hyper-V / VMware</span><span class="chip"><span class="chip-dot cd-b"></span>Meraki / Fortinet</span><span class="chip"><span class="chip-dot cd-b"></span>Linux (Ubuntu)</span><span class="chip"><span class="chip-dot cd-b"></span>pfSense</span></div></div>
+  <div class="skill-group rv d1"><div class="sg-label">Data & Automation</div><div class="skill-chips"><span class="chip"><span class="chip-dot cd-g"></span>Power BI</span><span class="chip"><span class="chip-dot cd-g"></span>SQL Server</span><span class="chip"><span class="chip-dot cd-g"></span>Python</span><span class="chip"><span class="chip-dot cd-g"></span>Excel / VBA</span><span class="chip"><span class="chip-dot cd-g"></span>Power Automate</span><span class="chip"><span class="chip-dot cd-g"></span>SharePoint</span><span class="chip"><span class="chip-dot cd-g"></span>PowerApps</span><span class="chip"><span class="chip-dot cd-g"></span>Dynamics AX</span><span class="chip"><span class="chip-dot cd-g"></span>MySQL</span></div></div>
+  <div class="skill-group rv d2"><div class="sg-label">Web, AI & Other</div><div class="skill-chips"><span class="chip"><span class="chip-dot cd-a"></span>MS Copilot / AI</span><span class="chip"><span class="chip-dot cd-a"></span>PowerShell</span><span class="chip"><span class="chip-dot cd-a"></span>WordPress</span><span class="chip"><span class="chip-dot cd-a"></span>HTML / CSS / JS</span><span class="chip"><span class="chip-dot cd-a"></span>PHP</span><span class="chip"><span class="chip-dot cd-a"></span>Google Workspace</span><span class="chip"><span class="chip-dot cd-a"></span>Shopify / WooCommerce</span><span class="chip"><span class="chip-dot cd-a"></span>Copilot Studio</span><span class="chip"><span class="chip-dot cd-a"></span>Kiosk Systems (QR/tablet)</span><span class="chip"><span class="chip-dot cd-a"></span>IIS / PHP</span><span class="chip"><span class="chip-dot cd-a"></span>Task Scheduler / SMTP</span></div></div>
+  <div class="cta-strip rv d3">
+    <div><h3>Ready to work<br><em>together?</em></h3><p>Get in touch — honest quote, fast response, no obligation required.</p></div>
+    <div class="cta-btns"><a href="contact.html" class="btn-a">Contact me →</a><a href="services.html" class="btn-g">View all services</a></div>
+  </div>
+</div></section>
+
+<footer><div class="ft">
+  <a href="index.html" class="ft-logo"><svg width="28" height="28" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs>
+  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
+</svg>Tech Consult</a>
+  <div class="ft-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="consulting.html">Consulting</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <div class="ft-copy">© 2025 M.Apex Consulting · UK IT Consultancy</div>
+</div></footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:0.06});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+document.getElementById('mb').addEventListener('click',()=>document.getElementById('mo').classList.toggle('open'));
+function cm(){document.getElementById('mo').classList.remove('open')}
+</script>
+
+<!-- WhatsApp Float -->
+<a href="https://api.whatsapp.com/send/?phone=447349301106&text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20IT%20services." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-float-label">Chat with me</span>
+  <div class="wa-float-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+</a>
+</body></html>
