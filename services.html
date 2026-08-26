@@ -1,386 +1,1199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Services. M.Apex Consulting</title>
-<meta name="description" content="58+ IT services for UK businesses. support, cloud, cybersecurity, data, AI, digital presence and managed plans.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IT Services & Pricing | M.Apex Consulting</title>
+<meta name="description" content="77+ IT, security, data and AI services for UK SMEs, priced and explained. One expert, no outsourcing.">
+<link rel="canonical" href="https://mapexconsulting.co.uk/services.html">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#08090f">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="M.Apex Consulting">
+<meta property="og:title" content="IT Services & Pricing | M.Apex Consulting">
+<meta property="og:description" content="77+ IT, security, data and AI services for UK SMEs, priced and explained. One expert, no outsourcing.">
+<meta property="og:url" content="https://mapexconsulting.co.uk/services.html">
+<meta property="og:image" content="https://mapexconsulting.co.uk/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IT Services & Pricing | M.Apex Consulting">
+<meta name="twitter:description" content="77+ IT, security, data and AI services for UK SMEs, priced and explained. One expert, no outsourcing.">
+<meta name="twitter:image" content="https://mapexconsulting.co.uk/og-image.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07090d;--bg2:#0c1018;--bg3:#10161f;--card:#111820;--card2:#141d28;--border:rgba(255,255,255,0.055);--border2:rgba(255,255,255,0.1);--border3:rgba(255,255,255,0.16);--accent:#2DD4BF;--accent2:#14b8a6;--accent3:rgba(45,212,191,0.1);--text:#eaf0f7;--text2:#b8cedf;--text3:#7a96b0;--green:#34d399;--amber:#fbbf24;--purple:#a78bfa;--red:#f87171;--fh:'Syne','Segoe UI',system-ui,sans-serif;--fb:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;--r:8px;--r2:12px;--r3:16px}
+/* M.Apex Consulting: shared design system
+   Teal brand accent (#2DD4BF), rich dark background, Fraunces for display moments,
+   Syne for structure, Inter for body. One file, five pages, consistent everywhere. */
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale}
-body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:16.5px;line-height:1.75;overflow-x:hidden;word-break:break-word}
-nav svg{width:28px;height:28px;display:inline-block;vertical-align:middle;margin-right:6px}
-nav{position:fixed;top:0;width:100%;z-index:200;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,4rem);background:rgba(7,9,13,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo{font-family:var(--fh);font-size:1.05rem;font-weight:800;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
-.logo-mark{width:28px;height:28px;border-radius:6px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;color:#000;font-family:var(--fh)}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color 0.15s}
-.nav-links a:hover,.nav-links a.cur{color:var(--text)}
-.nav-btn{background:var(--accent);color:#000;padding:7px 18px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:0.78rem}
-.hbg{display:none;background:none;border:none;cursor:pointer;padding:4px;gap:4px;flex-direction:column}
-.hbg span{display:block;width:20px;height:1.5px;background:var(--text2)}
-.mob{display:none;position:fixed;inset:60px 0 0;background:var(--bg);z-index:199;flex-direction:column;padding:2rem clamp(1.5rem,4vw,4rem);gap:1.5rem;border-top:1px solid var(--border)}
-.mob.open{display:flex}
-.mob a{color:var(--text);text-decoration:none;font-family:var(--fh);font-size:1.3rem;font-weight:700}
-.ph{padding:clamp(90px,12vw,140px) clamp(1.5rem,4vw,4rem) clamp(3rem,5vw,4rem);background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.ph::after{content:'';position:absolute;top:-40%;right:-20%;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,0.05) 0%,transparent 65%);pointer-events:none}
-.ph-inner{max-width:1280px;margin:0 auto}
-.ey{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem}
-.ph h1{font-family:var(--fh);font-size:clamp(1.6rem,3.5vw,3.2rem);font-weight:800;line-height:1.15;letter-spacing:-0.01em;margin-bottom:0.9rem}
-.ph h1 em{font-style:normal;color:var(--accent)}
-.ph p{color:var(--text2);font-size:0.9rem;max-width:520px;line-height:1.75}
-.filter-bar{position:sticky;top:60px;z-index:100;background:rgba(12,16,24,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.75rem clamp(1.5rem,4vw,4rem);display:flex;gap:0.4rem;flex-wrap:wrap}
-.fb{background:transparent;border:1px solid var(--border);color:var(--text3);padding:5px 14px;border-radius:20px;font-family:var(--fb);font-size:0.72rem;font-weight:500;cursor:pointer;transition:all 0.15s;white-space:nowrap}
-.fb:hover{border-color:var(--border2);color:var(--text2)}
-.fb.on{background:var(--accent3);border-color:rgba(45,212,191,0.3);color:var(--accent)}
-section{padding:clamp(2.5rem,5vw,4.5rem) clamp(1.5rem,4vw,4rem)}
-.wrap{max-width:1280px;margin:0 auto}
-.cat-block{margin-bottom:3.5rem}
-.cat-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
-.cat-head-left{display:flex;align-items:center;gap:12px}
-.cat-icon{width:38px;height:38px;border-radius:10px;background:var(--accent3);border:1px solid rgba(45,212,191,0.15);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.cat-title{font-family:var(--fh);font-size:1rem;font-weight:800}
-.cat-count{font-size:0.68rem;color:var(--text3);margin-top:2px}
-.cat-earn{font-size:0.72rem;color:var(--green);background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.15);padding:3px 10px;border-radius:20px;white-space:nowrap}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.75rem}
-.sc{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem 1.5rem;transition:border-color 0.15s,transform 0.15s;display:flex;flex-direction:column}
-.sc:hover{border-color:var(--border2);transform:translateY(-2px)}
-.sc-name{font-family:var(--fh);font-size:0.88rem;font-weight:700;margin-bottom:0.4rem}
-.sc-desc{font-size:0.85rem;color:var(--text2);line-height:1.75;flex:1}
-.sc-earn{font-size:0.68rem;color:var(--green);margin-top:0.6rem;font-weight:500}
-.sc-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:0.5rem}
-.tag{font-size:0.58rem;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:0.03em}
-.t-new{background:rgba(52,211,153,0.1);color:var(--green)}
-.t-ai{background:var(--accent3);color:var(--accent)}
-.t-hot{background:rgba(251,191,36,0.1);color:var(--amber)}
-.t-mgd{background:rgba(167,139,250,0.1);color:var(--purple)}
-.t-cert{background:rgba(248,113,113,0.1);color:var(--red)}
-.sc-link{font-size:0.72rem;color:var(--accent2);text-decoration:none;margin-top:0.75rem;display:inline-flex;align-items:center;gap:4px;transition:color 0.15s}
-.sc-link:hover{color:var(--accent)}
-.cta-banner{background:var(--card);border:1px solid var(--border2);border-radius:var(--r3);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:1rem}
-.cta-banner h3{font-family:var(--fh);font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.35rem}
-.cta-banner h3 em{font-style:normal;color:var(--accent)}
-.cta-banner p{font-size:0.82rem;color:var(--text2);max-width:440px}
-.cta-btns{display:flex;gap:0.75rem;flex-wrap:wrap;flex-shrink:0}
-.btn-a{background:var(--accent);color:#000;padding:10px 22px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:0.8rem;transition:opacity 0.15s;display:inline-flex;align-items:center;gap:6px}
-.btn-a:hover{opacity:0.85}
-.btn-g{background:transparent;color:var(--text);border:1px solid var(--border3);padding:10px 22px;border-radius:var(--r);text-decoration:none;font-weight:500;font-size:0.8rem;transition:background 0.15s}
-.btn-g:hover{background:var(--card2)}
-footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.75rem clamp(1.5rem,4vw,4rem)}
-.ft{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.ft-logo{font-family:var(--fh);font-weight:800;font-size:0.95rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:7px}
-.ft-mark{width:22px;height:22px;border-radius:5px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:900;color:#000;font-family:var(--fh)}
-.ft-links{display:flex;gap:1.5rem}
-.ft-links a{color:var(--text3);text-decoration:none;font-size:0.72rem;transition:color 0.15s}
-.ft-links a:hover{color:var(--text2)}
-.ft-copy{font-size:0.68rem;color:var(--text3)}
-.rv{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
-.rv.in{opacity:1;transform:none}
-@media(max-width:768px){.nav-links,.nav-btn{display:none}.hbg{display:flex}nav{padding:0 1.25rem}section{padding:2.5rem 1.25rem}.ph{padding-left:1.25rem;padding-right:1.25rem}.filter-bar{padding-left:1.25rem;padding-right:1.25rem}.cta-banner{padding:2rem 1.5rem}.ft{flex-direction:column;align-items:flex-start}footer{padding-left:1.25rem;padding-right:1.25rem}.cat-earn{display:none}}
 
-/* WhatsApp float */
-.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;display:flex;align-items:center;gap:0;cursor:pointer;text-decoration:none}
-.wa-float-btn{width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:transform 0.2s,box-shadow 0.2s}
-.wa-float-btn:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(37,211,102,0.45)}
-.wa-float-btn svg{width:26px;height:26px;fill:#fff}
-.wa-float-label{background:#111820;color:#dde6f0;font-size:0.72rem;font-weight:600;padding:6px 12px;border-radius:20px 0 0 20px;opacity:0;transform:translateX(8px);transition:opacity 0.2s,transform 0.2s;white-space:nowrap;pointer-events:none;border:1px solid rgba(255,255,255,0.08);border-right:none;margin-right:-4px}
-.wa-float:hover .wa-float-label{opacity:1;transform:translateX(0)}
+:root{
+  /* --- existing brand tokens, unchanged --- */
+  --bg:#08090f;--bg2:#0d0f1a;--bg3:#12141f;
+  --card:#12141e;--card2:#161927;--card3:#1a1e2e;
+  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.105);--border3:rgba(255,255,255,0.17);
+  --accent:#2DD4BF;--accent2:#14b8a6;--accent3:rgba(45,212,191,0.1);--accent4:rgba(45,212,191,0.06);
+  --text:#eaf0f7;--text2:#b8cedf;--text3:#7a96b0;
+  --green:#34d399;--amber:#fbbf24;--purple:#a78bfa;--red:#f87171;
+  --fh:'Syne','Segoe UI',system-ui,sans-serif;
+  --fd:'Fraunces','Syne','Segoe UI',serif;
+  --fb:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
+  --fm:'JetBrains Mono','SF Mono',Consolas,monospace;
+  --r:8px;--r2:12px;--r3:16px;--r4:999px;
+  --grad-brand:linear-gradient(135deg,#2DD4BF 0%,#5EEAD4 45%,#14b8a6 100%);
+  --grad-aurora:radial-gradient(60% 60% at 30% 20%,rgba(45,212,191,0.16),transparent 70%),radial-gradient(50% 50% at 80% 0%,rgba(167,139,250,0.10),transparent 70%);
 
-/* ── TYPOGRAPHY IMPROVEMENTS ── */
-p, li, .sc-desc, .hero-desc, .ph-sub, .eng-card p{
-  font-size: clamp(0.9rem, 2.2vw, 1.05rem) !important;
-  line-height: 1.8 !important;
-  color: var(--text2);
-}
-h1{font-size: clamp(2rem, 5vw, 3.6rem) !important; line-height:1.1 !important}
-h2{font-size: clamp(1.5rem, 3vw, 2.15rem) !important; line-height:1.2 !important}
-h3{font-size: clamp(1.1rem, 2.5vw, 1.5rem) !important; line-height:1.3 !important}
-h4{font-size: clamp(0.95rem, 2vw, 1.1rem) !important; line-height:1.35 !important}
-.sc-name{font-size: clamp(0.92rem, 2vw, 1.02rem) !important}
-.cat-title{font-size: clamp(0.95rem, 2vw, 1.05rem) !important}
-.eyebrow, .eyebrow2{font-size: 0.72rem !important; letter-spacing:0.1em !important}
-
-/* Mobile specific */
-@media(max-width:640px){
-  body{font-size:16px !important}
-  h1{font-size:2rem !important}
-  h2{font-size:1.55rem !important}
-  .hero-desc{font-size:1rem !important}
-  p, .sc-desc{font-size:0.95rem !important}
-  .btn{font-size:0.9rem !important; padding:12px 20px !important}
-  .mob a{font-size:1.5rem !important}
-  section{padding:2.5rem 1.25rem !important}
-  .svc-grid{grid-template-columns:1fr !important}
-  .eng-grid{grid-template-columns:1fr !important}
-  .proc-grid{grid-template-columns:1fr !important}
-  .trust-bar{gap:1.5rem !important}
-  .trust-item .num{font-size:1.5rem !important}
+  /* --- new: layout + motion scale, additive only --- */
+  --maxw:1180px;
+  --pad:clamp(1.25rem,4vw,2rem);
+  --gap-xs:8px;--gap-sm:12px;--gap-md:20px;--gap-lg:32px;--gap-xl:56px;
+  --sec-y:clamp(4rem,8vw,7rem);
+  --dur:180ms;--ease:cubic-bezier(.4,0,.2,1);
 }
 
-
-@media(max-width:480px){
-  h1,.ph h1{font-size:clamp(1.5rem,7vw,2rem) !important;letter-spacing:-0.005em !important;word-break:normal !important}
-  h2{font-size:clamp(1.25rem,5vw,1.6rem) !important}
-  .hero-wrap,.wrap{overflow-x:hidden}
-  section{overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--fb);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;position:relative;
 }
+/* subtle grain, the thing that keeps a flat dark field from reading as a template */
+body::before{
+  content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.skip-link{position:fixed;top:-60px;left:12px;z-index:200;background:var(--accent);color:#04231f;padding:12px 18px;border-radius:var(--r);font-weight:600;font-size:14px;transition:top var(--dur) var(--ease)}
+.skip-link:focus{top:12px}
+h1,h2,h3,h4{font-family:var(--fh);font-weight:800;line-height:1.12;letter-spacing:-0.015em;color:var(--text)}
+h1{font-family:var(--fd);font-weight:600;font-size:clamp(2.7rem,6vw,4.8rem);letter-spacing:-0.01em;font-style:normal}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+h3{font-size:1.28rem}
+h4{font-size:1.05rem}
+p{color:var(--text2)}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+button,input,select,textarea{font-family:var(--fb);color:var(--text);font-size:15px}
+::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+.grad-text{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.aurora{position:relative}
+.aurora::before{content:'';position:absolute;inset:-10% -10% auto -10%;height:140%;background:var(--grad-aurora);pointer-events:none;z-index:0}
+.aurora>*{position:relative;z-index:1}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.section{padding:var(--sec-y) 0}
+.section-tight{padding:clamp(2.5rem,5vw,3.5rem) 0}
+.grid{display:grid;gap:var(--gap-md)}
+.g-2{grid-template-columns:repeat(2,1fr)}
+.g-3{grid-template-columns:repeat(3,1fr)}
+.g-4{grid-template-columns:repeat(4,1fr)}
+.g-auto{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:var(--gap-md)}
+.bento .span-2{grid-column:span 2;grid-row:span 2}
+.bento .feature{background:linear-gradient(155deg,var(--card2),var(--card));border-color:var(--border3);display:flex;flex-direction:column;justify-content:center}
+@media (max-width:900px){.g-2,.g-3,.g-4{grid-template-columns:1fr 1fr}.bento{grid-template-columns:1fr 1fr}.bento .span-2{grid-column:span 2;grid-row:span 1}}
+@media (max-width:640px){.g-2,.g-3,.g-4,.bento{grid-template-columns:1fr}.bento .span-2{grid-column:span 1;grid-row:span 1}}
+
+/* icons: geometric line set, single colour, inherits from parent */
+.i{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.i-fill{fill:currentColor;stroke:none}
+.i-lg{width:26px;height:26px}
+.i-sm{width:16px;height:16px}
+.icon-tile{width:44px;height:44px;border-radius:var(--r2);background:var(--accent4);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
+.icon-tile.solid{background:var(--accent);color:var(--bg)}
+
+/* eyebrow + section header */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent4)}
+.sec-head{max-width:640px;margin-bottom:var(--gap-xl)}
+.sec-head p{margin-top:14px;font-size:1.05rem}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:var(--r);font-family:var(--fb);font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;transition:transform var(--dur) var(--ease),background var(--dur),border-color var(--dur)}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:#04231f}
+.btn-primary:hover{background:#5ee0cf}
+.btn-outline{border-color:var(--border3);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-block{width:100%}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,9,13,0.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--fh);font-weight:800;font-size:1.05rem;color:var(--text)}
+.logo svg{display:block}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14.5px;color:var(--text2);transition:color var(--dur)}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{display:flex;align-items:center;gap:18px}
+.nav-toggle{display:none;background:none;border:0;color:var(--text);cursor:pointer;padding:6px}
+@media (max-width:860px){
+  .nav-links{position:fixed;top:68px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:18px var(--pad) 24px;gap:16px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:transform var(--dur) var(--ease),opacity var(--dur)}
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav-cta .btn-primary{display:none}
+  .nav-toggle{display:block}
+}
+
+/* footer */
+footer{border-top:1px solid var(--border);padding:var(--gap-xl) 0 var(--gap-lg)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-bottom:28px;border-bottom:1px solid var(--border);margin-bottom:20px}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+.footer-links a{font-size:13.5px;color:var(--text3)}
+.footer-links a:hover{color:var(--accent)}
+.footer-bottom{font-size:13px;color:var(--text3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* cards */
+.card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:26px}
+.card-hover{transition:border-color var(--dur),transform var(--dur) var(--ease)}
+.card-hover:hover{border-color:var(--border3);transform:translateY(-2px)}
+.feature-card h3{margin:16px 0 8px;font-size:1.05rem}
+.feature-card p{font-size:14.5px}
+
+/* badges / pills / tags */
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;letter-spacing:.02em;padding:4px 10px;border-radius:var(--r4);border:1px solid var(--border3);color:var(--text2)}
+.badge-accent{background:var(--accent4);border-color:var(--accent3);color:var(--accent)}
+.badge-amber{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.28);color:var(--amber)}
+.badge-red{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.28);color:var(--red)}
+.badge-purple{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.28);color:var(--purple)}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+
+/* status dot (replaces coloured circle emoji) */
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.dot-red{background:var(--red)}
+.dot-amber{background:var(--amber)}
+.dot-yellow{background:#fde047}
+.dot-green{background:var(--green)}
+
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(4,auto);gap:var(--gap-xl);margin-top:var(--gap-lg)}
+.stat b{display:block;font-family:var(--fh);font-size:2rem;color:var(--text)}
+.stat span{font-size:13px;color:var(--text3)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,auto)}}
+
+/* testimonial */
+.testi{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:28px;display:flex;flex-direction:column;gap:16px}
+.testi .stars{display:flex;gap:3px;color:var(--amber)}
+.testi p{font-size:15px;color:var(--text2);flex-grow:1}
+.testi-who{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--accent4);border:1px solid var(--accent3);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:700;font-size:13px;flex-shrink:0}
+.testi-who b{display:block;font-size:14px;color:var(--text)}
+.testi-who span{font-size:12.5px;color:var(--text3)}
+
+/* pricing */
+.price-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:30px;display:flex;flex-direction:column;position:relative}
+.price-card.pop{border-color:var(--accent);background:linear-gradient(180deg,var(--accent4),var(--card) 40%)}
+.price-card .pop-badge{position:absolute;top:-12px;left:30px;background:var(--accent);color:#04231f;font-size:11px;font-weight:700;padding:4px 12px;border-radius:var(--r4)}
+.price-card .amount{font-family:var(--fh);font-size:2rem;margin:14px 0 4px}
+.price-card .amount span{font-family:var(--fb);font-size:13px;color:var(--text3);font-weight:400}
+.price-card ul{margin:20px 0;display:flex;flex-direction:column;gap:11px}
+.price-card li{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--text2)}
+.price-card li .i{color:var(--accent);margin-top:2px}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;cursor:pointer;font-family:var(--fh);font-weight:700;font-size:15.5px;color:var(--text)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .i{transition:transform var(--dur) var(--ease);color:var(--text3)}
+.faq-item[open] summary .i{transform:rotate(45deg);color:var(--accent)}
+.faq-item .faq-body{padding-bottom:20px;font-size:14.5px;color:var(--text2);max-width:640px}
+
+/* forms */
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.field label{font-size:13px;color:var(--text2)}
+.field input,.field select,.field textarea{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:12px 14px;transition:border-color var(--dur)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none}
+.field textarea{resize:vertical;min-height:110px}
+.urgency{display:flex;gap:8px;flex-wrap:wrap}
+.urgency label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--border2);border-radius:var(--r4);font-size:13.5px;color:var(--text2);cursor:pointer;transition:border-color var(--dur)}
+.urgency input{position:absolute;opacity:0;pointer-events:none}
+.urgency input:checked + span{color:var(--text)}
+.urgency label:has(input:checked){border-color:var(--accent);background:var(--accent4)}
+
+/* services filter tabs */
+.filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--gap-lg)}
+.filter-tab{display:flex;align-items:center;gap:7px;padding:9px 16px;border-radius:var(--r4);border:1px solid var(--border2);color:var(--text2);font-size:13.5px;cursor:pointer;background:none;transition:border-color var(--dur),color var(--dur)}
+.filter-tab .i{width:15px;height:15px}
+.filter-tab:hover{border-color:var(--border3);color:var(--text)}
+.filter-tab.active{border-color:var(--accent);background:var(--accent4);color:var(--accent)}
+
+.cat-block{margin-bottom:var(--gap-xl);scroll-margin-top:96px}
+.cat-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.cat-head .icon-tile{width:40px;height:40px}
+.cat-head .meta{font-size:13px;color:var(--text3)}
+.svc-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:22px;display:flex;flex-direction:column;gap:10px}
+.svc-card h4{font-size:15px}
+.svc-card p{font-size:13.5px;line-height:1.55}
+.svc-price{font-family:var(--fm);font-size:12.5px;color:var(--accent);margin-top:auto;padding-top:4px}
+.svc-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.svc-link{font-size:13px;color:var(--text2);display:flex;align-items:center;gap:5px}
+.svc-link:hover{color:var(--accent)}
+
+/* ticker (pure CSS marquee, no duplicated markup needed twice in DOM for a11y) */
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);overflow:hidden;padding:14px 0}
+.ticker-track{display:flex;gap:40px;width:max-content;animation:scroll 38s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{font-size:13px;color:var(--text3);white-space:nowrap;display:flex;align-items:center;gap:10px}
+.ticker-track span::after{content:'·';color:var(--border3);margin-left:30px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* signature motif: node/status line, echoes the logo's dot, used as a quiet structural device on process + timeline blocks */
+.node-line{position:relative;padding-left:32px}
+.node-line::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--border2)}
+.node-item{position:relative;padding-bottom:32px}
+.node-item::before{content:'';position:absolute;left:-32px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.node-item:last-child{padding-bottom:0}
+
+.divider{height:1px;background:var(--border);border:0;margin:0}
+.muted{color:var(--text3)}
+.center{text-align:center}
+.mono{font-family:var(--fm)}
+
+/* scroll-aware header, hides on scroll down, returns on scroll up (FourFold / Josh Kremer pattern) */
+nav{transition:transform .32s var(--ease),background var(--dur)}
+nav.nav-hidden{transform:translateY(-100%)}
+
+/* back-to-top: services.html is long enough to genuinely need it (Jack Dalrymple pattern) */
+.to-top{position:fixed;right:22px;bottom:22px;z-index:90;width:44px;height:44px;border-radius:50%;background:var(--card2);border:1px solid var(--border3);color:var(--text2);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity var(--dur),transform var(--dur) var(--ease),border-color var(--dur),color var(--dur)}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{border-color:var(--accent);color:var(--accent)}
+.to-top .i{transform:rotate(-90deg)}
+
+/* "start from your problem" entry grid: navigation by client need, not by our own structure (Kearney pattern) */
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-sm)}
+.problem-card{display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);text-decoration:none;transition:border-color var(--dur),transform var(--dur) var(--ease)}
+.problem-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.problem-card .icon-tile{width:38px;height:38px}
+.problem-card q{display:block;font-size:14.5px;color:var(--text);font-style:italic;line-height:1.5;quotes:'\201C' '\201D'}
+.problem-card .route{display:block;font-size:12.5px;color:var(--text3);margin-top:7px}
+.problem-card:hover .route{color:var(--accent)}
+
+/* comparison block: typical agency vs M.Apex, a proven B2B pattern that was still missing */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border2);border-radius:var(--r2);overflow:hidden}
+.compare-col{padding:28px}
+.compare-col.win{background:var(--accent4);position:relative}
+.compare-col.win::before{content:'';position:absolute;inset:0;border-left:1px solid var(--accent3);pointer-events:none}
+.compare-col h4{font-family:var(--fh);font-size:1.05rem;margin-bottom:18px;display:flex;align-items:center;gap:9px}
+.compare-col.win h4{color:var(--accent)}
+.compare-row{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-top:1px solid var(--border)}
+.compare-row:first-of-type{border-top:0}
+.compare-row .i{margin-top:2px;flex-shrink:0}
+.compare-col:not(.win) .compare-row .i{color:var(--text3)}
+.compare-col.win .compare-row .i{color:var(--accent)}
+.compare-row span{font-size:14px;color:var(--text2)}
+@media (max-width:700px){.compare-grid{grid-template-columns:1fr}.compare-col.win::before{border-left:0;border-top:1px solid var(--accent3)}}
+
+@media (max-width:640px){
+  .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start}
+  .to-top{right:14px;bottom:14px}
+}
+
+/* content is visible immediately, no scroll-triggered opacity gating: see changelog for why */
+
+/* hover polish on interactive surfaces */
+.card,.price-card,.testi,.svc-card{transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.card:hover,.svc-card:hover{border-color:var(--accent3);transform:translateY(-3px);box-shadow:0 16px 40px -20px rgba(45,212,191,0.25)}
+.price-card:hover{transform:translateY(-3px)}
+.filter-tab,.btn{transition:transform var(--dur) var(--ease),border-color var(--dur),background var(--dur),color var(--dur),box-shadow var(--dur)}
+.btn-primary:hover{box-shadow:0 10px 28px -12px rgba(45,212,191,0.55)}
+
+/* hero network visual: signature element, echoes the logo's node/connection language */
+.net-viz{position:absolute;top:0;right:0;width:min(46vw,460px);height:460px;pointer-events:none;opacity:0.9}
+.net-viz line{stroke:var(--accent);stroke-width:1;opacity:0.14}
+.net-viz circle{fill:var(--accent);animation:netpulse 4.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes netpulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:1;transform:scale(1.45)}}
+.hero-shell{position:relative;overflow:hidden}
+.hero-shell::before{content:'';position:absolute;inset:-15% -10% auto -10%;height:150%;background:var(--grad-aurora);pointer-events:none;z-index:0}
+.hero-shell>.wrap{position:relative;z-index:1}
+@media (max-width:1000px){.net-viz{display:none}}
+@media (prefers-reduced-motion:reduce){.net-viz circle{animation:none;opacity:.6}}
+
+/* status pulse: small live indicator on the active-services panel, same signature language */
+.pulse-dot{position:relative;width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.pulse-dot::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid currentColor;animation:pulsering 2.2s ease-out infinite}
+@media (prefers-reduced-motion:reduce){.pulse-dot::after{animation:none}}
+@keyframes pulsering{0%{opacity:.7;transform:scale(.5)}100%{opacity:0;transform:scale(1.6)}}
+
+/* testimonial slider */
+.slider{position:relative}
+.slider-track{display:flex;transition:transform .5s var(--ease)}
+.slider-viewport{overflow:hidden;border-radius:var(--r2)}
+.slider-track .testi{flex:0 0 100%;margin:0 2px}
+.slider-dots{display:flex;justify-content:center;gap:8px;margin-top:22px}
+.slider-dots button{width:8px;height:8px;border-radius:50%;border:0;background:var(--border3);cursor:pointer;padding:0;transition:background var(--dur),width var(--dur)}
+.slider-dots button.active{background:var(--accent);width:22px;border-radius:4px}
+
+/* active-services status list */
+.status-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
+.status-row:last-child{border-bottom:0}
+.status-row .icon-tile{width:34px;height:34px}
+.status-row .name{flex:1;font-size:14px;color:var(--text)}
+.status-label{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text3)}
+
+/* on-page search, shows up where content is long enough to need it */
+.search-box{position:relative;margin-bottom:var(--gap-md)}
+.search-box .i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none}
+.search-box input{width:100%;padding:14px 16px 14px 46px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);font-size:15px}
+.search-box input:focus{border-color:var(--accent);outline:none}
+.search-box .clear-search{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--text3);cursor:pointer;padding:6px;display:none}
+.search-box.has-value .clear-search{display:block}
+.no-results{display:none;text-align:center;padding:60px 20px;color:var(--text3)}
+.no-results.show{display:block}
 
 </style>
-</head>
-<body>
-<nav>
-  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
-<defs>
-  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
-    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
-  </linearGradient>
-</defs>
-<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
-<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
-<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
-</svg>Apex</a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html" class="cur">Services</a></li><li><a href="consulting.html">Consulting</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
-  <a href="contact.html" class="nav-btn">Get a Quote</a>
-  <button class="hbg" id="mb" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
-<div class="mob" id="mo"><a href="index.html" onclick="cm()">Home</a><a href="services.html" onclick="cm()">Services</a><a href="about.html" onclick="cm()">About</a><a href="contact.html" onclick="cm()">Contact</a></div>
-
-<div class="ph"><div class="ph-inner">
-  <div class="ey">What I offer</div>
-  <h1>77+ services.<br><em>One expert.</em></h1>
-  <p>Everything your business needs from a single trusted IT partner. No outsourcing, no middlemen. delivered by someone who knows your systems inside out.</p>
-</div></div>
-
-<div class="filter-bar" id="filterBar">
-  <button class="fb on" onclick="filter('all',this)">All</button>
-  <button class="fb" onclick="filter('strategic',this)">⚖️ Strategic Consulting</button>
-  <button class="fb" onclick="filter('support',this)">🖥️ IT Support</button>
-  <button class="fb" onclick="filter('cyber',this)">🔒 Cybersecurity</button>
-  <button class="fb" onclick="filter('data',this)">📊 Data & Automation</button>
-  <button class="fb" onclick="filter('ai',this)">🤖 AI Services</button>
-  <button class="fb" onclick="filter('web',this)">🌐 Web & Digital</button>
-  <button class="fb" onclick="filter('digital',this)">📣 Digital Marketing</button>
-  <button class="fb" onclick="filter('auto',this)">⚙️ Automation & Mfg</button>
-  <button class="fb" onclick="filter('managed',this)">📋 Managed Plans</button>
-</div>
-
-<section><div class="wrap">
-
-<!-- STRATEGIC CONSULTING -->
-<div class="cat-block rv" data-cat="strategic">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">⚖️</div><div><div class="cat-title">Strategic Consulting</div><div class="cat-count">12 high-value services</div></div></div>
-    <span class="cat-earn">High-value · £2,000–£15,000 projects</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">NIS2 Directive Compliance</div><div class="sc-desc">Audit your cybersecurity posture against the EU NIS2 directive and design a compliant IT resilience plan. Essential for manufacturing, transport, utilities and their supply chains. now a legal requirement with significant fines for non-compliance.</div><div class="sc-earn">£3,000–£12,000 engagement</div><div class="sc-tags"><span class="tag t-cert">Legal Requirement</span><span class="tag t-hot">High Demand</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">Ransomware Resilience Planning</div><div class="sc-desc">Build and test a recovery plan so that if you're attacked, you're back online in hours not weeks. Centred on immutable, isolated backups that ransomware cannot touch. The question is when, not if.</div><div class="sc-earn">£2,000–£6,000 project</div><div class="sc-tags"><span class="tag t-new">Critical</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">Business Continuity Planning</div><div class="sc-desc">A tested plan to keep your business running through any IT disruption. from a cyber attack to hardware failure. Defines exactly who does what, in what order, to get critical systems back fast.</div><div class="sc-earn">£2,000–£5,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">Private AI Deployment</div><div class="sc-desc">Deploy open-source LLMs or private Azure instances that analyse your company's documents and databases with 100% confidentiality. your data never leaves your control. The productivity of AI without the data leak risk.</div><div class="sc-earn">£4,000–£15,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">Confidential</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">Autonomous AI Agents (Copilot Studio)</div><div class="sc-desc">Build AI agents that do the work, not just chat. an agent that reads an order email, checks ERP stock and generates the dispatch note automatically. Real task automation beyond conversational chatbots.</div><div class="sc-earn">£3,000–£10,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-hot">High Value</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">EU AI Act Risk & Governance</div><div class="sc-desc">Ensure every AI tool your business uses complies with the EU AI Act. risk classification, governance policies and documentation. so you adopt AI confidently without legal exposure.</div><div class="sc-earn">£1,500–£5,000 engagement</div><div class="sc-tags"><span class="tag t-cert">EU AI Act</span><span class="tag t-ai">AI</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">Legacy Industrial Software Rescue</div><div class="sc-desc">Audit, optimise and secure critical software running on old PHP, outdated SQL and unpatched IIS servers. migrating to modern Windows Server without stopping production. My core differentiator.</div><div class="sc-earn">£3,000–£12,000 project</div><div class="sc-tags"><span class="tag t-new">My Speciality</span><span class="tag t-hot">High Value</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">Paperless Shop Floor Automation</div><div class="sc-desc">Replace printed Excel sheets, whiteboards and manual logs with digital kiosks integrated into real-time dashboards. Built and proven in a live industrial environment. QR clock-in, attendance, visitor management.</div><div class="sc-earn">£3,000–£10,000 project</div><div class="sc-tags"><span class="tag t-new">Proven</span><span class="tag t-hot">High Value</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">Process Hyperautomation</div><div class="sc-desc">Map repetitive manual processes draining your team's time and rebuild them as automated workflows connecting ERP, email, databases and reporting. so data flows automatically and people focus on what matters.</div><div class="sc-earn">£2,000–£8,000 project</div><div class="sc-tags"><span class="tag t-hot">High ROI</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">ESG & Carbon Footprint Reporting</div><div class="sc-desc">Centralise and automate collection of energy, waste and fleet data. pulled from IoT sensors or your ERP. to generate the sustainability reports banks and investors now require. Turn a manual headache into a pipeline.</div><div class="sc-earn">£3,000–£10,000 project</div><div class="sc-tags"><span class="tag t-cert">Investor Requirement</span><span class="tag t-new">Growing Fast</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">IoT & Sensor Data Integration</div><div class="sc-desc">Connect the sensors and meters on your shop floor to a central system that logs, visualises and reports data automatically. the foundation for ESG reporting and smarter operational decisions.</div><div class="sc-earn">£2,500–£8,000 project</div><div class="sc-tags"><span class="tag t-new">Emerging</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-    <div class="sc"><div class="sc-name">IT Strategy & Roadmap Consulting</div><div class="sc-desc">A strategic 12–24 month technology roadmap aligned to your business goals. covering infrastructure, cloud, security, AI adoption and digital transformation, with realistic budget estimates and priorities.</div><div class="sc-earn">£2,000–£6,000 engagement</div><div class="sc-tags"><span class="tag t-mgd">Advisory</span></div><a href="consulting.html" class="sc-link">Learn more →</a></div>
-  </div>
-</div>
-
-<!-- IT SUPPORT -->
-<div class="cat-block rv" data-cat="support">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">🖥️</div><div><div class="cat-title">IT Support & Infrastructure</div><div class="cat-count">13 services</div></div></div>
-    <span class="cat-earn">From £50/hr · £500+ projects</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">Remote & On-site Support</div><div class="sc-desc">Full helpdesk for PCs, Macs and mobile devices. Hardware diagnostics, upgrades, OS issues and troubleshooting wherever you need it.</div><div class="sc-earn">From £50/hr or day rate</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Microsoft 365 Admin</div><div class="sc-desc">Full tenant management. users, licences, Exchange Online, Teams policies, SharePoint permissions, security defaults and MFA rollout.</div><div class="sc-earn">£500–£2,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Azure / Entra ID</div><div class="sc-desc">Cloud identity. user provisioning, SSO, Conditional Access policies, guest access and hybrid AD configuration with on-prem integration.</div><div class="sc-earn">£800–£3,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Server Admin (Windows/Linux)</div><div class="sc-desc">IIS, DNS, DHCP, file shares, Active Directory, patch management and performance monitoring for on-prem servers and cloud VMs.</div><div class="sc-earn">From £60/hr</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Intune / MDM</div><div class="sc-desc">Device enrolment, compliance policies, app deployment and remote wipe across Windows, iOS, Android and macOS from a single console.</div><div class="sc-earn">£600–£2,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Group Policy (GPO)</div><div class="sc-desc">Windows Group Policy design and deployment via Active Directory. software restrictions, drive maps, security baselines and login scripts.</div><div class="sc-earn">£300–£800 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Virtualisation</div><div class="sc-desc">Hyper-V and VMware. virtual machine setup, P2V migration, snapshot management, performance tuning and capacity planning.</div><div class="sc-earn">From £500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Networking & Connectivity</div><div class="sc-desc">Office and home networks, mesh Wi-Fi, firewall and VPN (Meraki, Fortinet, pfSense), VLAN segmentation and comprehensive network audits.</div><div class="sc-earn">From £300 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Teams Phone / VoIP Setup</div><div class="sc-desc">Replace legacy phone lines with Microsoft Teams Phone or hosted VoIP. Number porting, call routing, auto-attendants and voicemail. Critical ahead of the 2027 PSTN switch-off.</div><div class="sc-earn">£1,000–£4,000 setup</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">SaaS Licence Audit</div><div class="sc-desc">Audit every SaaS subscription your business pays for. Identify unused licences, right-size plans and set up monthly governance. Most businesses save 20–35% of their software bill.</div><div class="sc-earn">£400–£1,200 audit + retainer</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Backup Audit & Implementation</div><div class="sc-desc">Audit existing backup (usually broken or non-existent), implement a proper 3-2-1 backup strategy using Veeam, Acronis or Azure Backup. Test restores included.</div><div class="sc-earn">£500–£1,500 setup</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">IT Procurement</div><div class="sc-desc">Sourcing and purchasing laptops, servers, networking gear and software licences at the best price. correctly spec'd for your actual needs, not over-engineered.</div><div class="sc-earn">% of order or flat fee</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Onboarding & Offboarding</div><div class="sc-desc">Full new-starter setup or secure leaver offboarding. accounts, devices, permissions, email forwarding and data transfer handled end-to-end.</div><div class="sc-earn">£150–£400 per user</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-  </div>
-</div>
-
-<!-- CYBERSECURITY -->
-<div class="cat-block rv" data-cat="cyber">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">🔒</div><div><div class="cat-title">Cybersecurity</div><div class="cat-count">11 services</div></div></div>
-    <span class="cat-earn">£500–£8,000 projects · monthly plans</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">Cyber Essentials Certification Prep</div><div class="sc-desc">Prepare your business for UK government-backed Cyber Essentials certification. Mandatory for all government contracts. and shown to prevent 98% of common attacks. I audit your 5 controls, fix gaps and guide the self-assessment.</div><div class="sc-earn">£500–£2,000 per engagement</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-cert">Gov Requirement</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">MFA / Zero Trust Setup</div><div class="sc-desc">Enforce multi-factor across Microsoft 365, Google and all platforms. Zero Trust network access policies to protect against credential theft. the #1 attack vector.</div><div class="sc-earn">£400–£1,200 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Managed Security Service (MSSP-lite)</div><div class="sc-desc">Monthly managed security monitoring: dark web scanning, Microsoft Secure Score tracking, email threat monitoring, patch compliance reports and a monthly security health score. Ongoing protection, not one-off fixes.</div><div class="sc-earn">£200–£800/month</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-new">New</span><span class="tag t-mgd">Managed</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Dark Web Monitoring</div><div class="sc-desc">Continuous scanning. alerts when your company email addresses or credentials appear in known data breaches or dark web forums before they're exploited.</div><div class="sc-earn">From £50/month</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Security Awareness Training</div><div class="sc-desc">Simulated phishing campaigns and tailored staff training sessions. One Sheffield firm reduced phishing click rates from 32% to 4% through regular monthly sessions.</div><div class="sc-earn">£300–£800 per session</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">GDPR / Compliance Review</div><div class="sc-desc">Data audit, privacy notices, data flow mapping and a practical gap analysis against UK GDPR requirements. Clear actions, not legal waffle.</div><div class="sc-earn">£600–£1,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Email Security (DMARC/DKIM/SPF)</div><div class="sc-desc">Full email authentication setup to prevent domain spoofing, phishing and spam. Also improves deliverability. often completed in a single day.</div><div class="sc-earn">£200–£500 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Password Manager Rollout</div><div class="sc-desc">Deploy 1Password Teams or Bitwarden Business across your organisation. account setup, credential import, shared vault configuration and full staff training.</div><div class="sc-earn">£300–£600 per deployment</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Endpoint Protection (EDR)</div><div class="sc-desc">Deploy and manage enterprise-grade endpoint detection and response across all devices, with centralised alerting and rapid threat response.</div><div class="sc-earn">From £50/month managed</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Penetration Testing</div><div class="sc-desc">Controlled ethical testing of your network, M365 environment or web apps to find vulnerabilities before attackers do. Detailed written report with remediation steps.</div><div class="sc-earn">£800–£3,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">ISO 27001 / Cyber Essentials Plus</div><div class="sc-desc">Gap analysis, policy templates and implementation support for ISO 27001 certification or Cyber Essentials Plus. the next level above standard CE.</div><div class="sc-earn">£1,500–£5,000 project</div><div class="sc-tags"><span class="tag t-new">New</span><span class="tag t-cert">Certification</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-  </div>
-</div>
-
-<!-- DATA -->
-<div class="cat-block rv" data-cat="data">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">📊</div><div><div class="cat-title">Data & Automation</div><div class="cat-count">11 services</div></div></div>
-    <span class="cat-earn">£50–£120/hr · £500–£15k projects</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">Power BI Dashboards</div><div class="sc-desc">Custom KPI dashboards, financial reports and executive visualisations connected to your live data. ERP, SQL, Excel or cloud sources.</div><div class="sc-earn">£800–£5,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Power Platform Development</div><div class="sc-desc">PowerApps, Power Automate and Copilot Studio combined. custom business apps, approval workflows, data collection tools and process automation that connects to any Microsoft data source.</div><div class="sc-earn">£2,000–£15,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Excel Automation (VBA)</div><div class="sc-desc">Macros, advanced formulas and automated reporting workbooks that eliminate hours of weekly manual work. built exactly around how your team works.</div><div class="sc-earn">£300–£2,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Power Automate Flows</div><div class="sc-desc">Automate approvals, notifications, form submissions and data syncs across Microsoft 365, SharePoint and hundreds of third-party apps via connectors.</div><div class="sc-earn">£400–£2,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">SQL Databases</div><div class="sc-desc">Schema design, stored procedures, query optimisation, reporting views and SQL Server administration for business-critical applications and reporting.</div><div class="sc-earn">From £60/hr</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Python Scripting & Automation</div><div class="sc-desc">Data pipelines, scheduled tasks, API integrations and custom automation tools that permanently replace repetitive manual processes.</div><div class="sc-earn">From £60/hr</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">SharePoint Intranet</div><div class="sc-desc">Design and build company portals, document libraries, news hubs and team collaboration spaces on Microsoft SharePoint Online.</div><div class="sc-earn">£1,000–£5,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Data Migration</div><div class="sc-desc">Legacy to cloud. clean, map, migrate and validate your data with zero loss. Covers ERP, CRM, file servers and databases.</div><div class="sc-earn">£800–£4,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Cloud Cost Optimisation</div><div class="sc-desc">Review Azure spend and M365 licences, identify orphaned resources, right-size plans and set up ongoing cost governance. Most businesses save 20–40% of their cloud bill after an audit.</div><div class="sc-earn">£500–£2,000 audit + % savings</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">IT Due Diligence (M&A)</div><div class="sc-desc">IT assessment for businesses being acquired or merging. infrastructure state, security posture, licencing compliance, technical debt and integration complexity report.</div><div class="sc-earn">£2,000–£8,000 assessment</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Financial Reporting & Modelling</div><div class="sc-desc">P&L, balance sheets, cash flow forecasting and variance analysis in Excel, Power BI or Dynamics. built for management decisions, not just accountants.</div><div class="sc-earn">£600–£3,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-  </div>
-</div>
-
-<!-- AI -->
-<div class="cat-block rv" data-cat="ai">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">🤖</div><div><div class="cat-title">AI & Emerging Technology</div><div class="cat-count">7 services</div></div></div>
-    <span class="cat-earn">£800–£5,000+ projects</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">Microsoft Copilot Rollout</div><div class="sc-desc">End-to-end Copilot deployment: licence procurement, tenant security config, user enablement and full staff training. Most businesses get Copilot licences but never deploy them properly. this fixes that.</div><div class="sc-earn">£1,500–£5,000 rollout</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">AI Workflow Integration</div><div class="sc-desc">Connect AI tools into your existing systems. CRM, ERP, M365, SharePoint and custom APIs. to automate tasks, surface insights and reduce manual work.</div><div class="sc-earn">£1,000–£4,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">AI Governance & Policy Writing</div><div class="sc-desc">Write a tailored AI acceptable use policy, data handling guidelines and risk assessment for your business. Most companies adopting AI tools have nothing in writing. this protects you legally and operationally.</div><div class="sc-earn">£800–£2,500 engagement</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Prompt Engineering</div><div class="sc-desc">Design and optimise custom system prompts for Copilot, ChatGPT and other LLMs, tailored to your specific business language, workflows and compliance requirements.</div><div class="sc-earn">£500–£1,500 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">ChatGPT / AI Tools for Business</div><div class="sc-desc">Select the right AI tools, configure them securely, integrate with your workflows and train your team to use them effectively, responsibly and in line with your policies.</div><div class="sc-earn">£600–£2,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Custom Chatbot Development</div><div class="sc-desc">Build internal or customer-facing chatbots powered by Copilot Studio or GPT. trained on your documents, FAQs and knowledge base to answer real questions.</div><div class="sc-earn">£1,500–£6,000 project</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">AI Staff Training Workshop</div><div class="sc-desc">Half-day or full-day workshop teaching your team to use AI tools effectively. practical, hands-on and tailored to your industry and existing tools. Delivered remotely or on-site.</div><div class="sc-earn">£500–£1,500 per session</div><div class="sc-tags"><span class="tag t-ai">AI</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-  </div>
-</div>
-
-<!-- WEB -->
-<div class="cat-block rv" data-cat="web">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">🌐</div><div><div class="cat-title">Web & Digital Presence</div><div class="cat-count">8 services</div></div></div>
-    <span class="cat-earn">£200–£5,000 projects</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">Website Design & Build</div><div class="sc-desc">Professional custom HTML/CSS, WordPress or Wix websites. fast, mobile-first, SEO-optimised and built to convert visitors into real enquiries.</div><div class="sc-earn">£800–£4,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Google Workspace Setup</div><div class="sc-desc">Gmail, Drive, Meet, Calendar. full admin config, migration from legacy email systems, domain verification and staff training included.</div><div class="sc-earn">£400–£1,200 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Domain & DNS Management</div><div class="sc-desc">Domain registration, DNS record setup (MX, A, CNAME, TXT, SPF), SSL certificates, CDN configuration and domain transfers handled correctly.</div><div class="sc-earn">From £150 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Cloud Migration (M365/GWS)</div><div class="sc-desc">Migrate from on-prem Exchange, file servers or Google to Microsoft 365. email, calendar, OneDrive, Teams and SharePoint all covered.</div><div class="sc-earn">£1,000–£4,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Technical SEO</div><div class="sc-desc">Core Web Vitals, site speed, crawl error fixes, structured data, XML sitemaps and mobile usability. the technical foundations that get you ranking.</div><div class="sc-earn">£400–£1,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">E-commerce Setup</div><div class="sc-desc">WooCommerce or Shopify store setup, product import, Stripe/PayPal integration, shipping configuration and order management workflows.</div><div class="sc-earn">£800–£3,000 project</div><div class="sc-tags"></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Email Newsletter Setup</div><div class="sc-desc">Set up Mailchimp or Klaviyo with domain authentication, branded templates, automated sequences and a sending strategy. Combines with your existing DMARC knowledge for a premium result.</div><div class="sc-earn">£300–£800 setup</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Website Care Plan</div><div class="sc-desc">Monthly website maintenance. plugin updates, security scans, uptime monitoring, backups and a monthly performance report. Peace of mind that your site stays fast and secure.</div><div class="sc-earn">£50–£150/month</div><div class="sc-tags"><span class="tag t-new">New</span><span class="tag t-mgd">Managed</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-  </div>
-</div>
-
-<!-- DIGITAL MARKETING -->
-<div class="cat-block rv" data-cat="digital">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">📣</div><div><div class="cat-title">Digital Marketing & Presence</div><div class="cat-count">5 services</div></div></div>
-    <span class="cat-earn">£150–£500 projects · monthly plans</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">Google Business Profile</div><div class="sc-desc">Setup, verification and full optimisation of your Google Business Profile. categories, photos, services, Q&A, review strategy and posting schedule. Dramatically improves local search visibility.</div><div class="sc-earn">£150–£300 setup + £50–£100/month</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">LinkedIn Company Page Setup</div><div class="sc-desc">Set up or refresh your LinkedIn company presence. banner, about section, service pages, employee advocacy setup and a 30-day content calendar to get started.</div><div class="sc-earn">£200–£500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Social Media Business Setup</div><div class="sc-desc"> Business, Instagram Business and Meta Business Suite. profile setup, brand consistency, admin roles, pixel setup and basic ad account configuration.</div><div class="sc-earn">£200–£500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Google Analytics & Tag Manager</div><div class="sc-desc">Set up GA4, Google Tag Manager and conversion tracking so you actually know where your website enquiries are coming from and what's working.</div><div class="sc-earn">£300–£700 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Online Review Management Setup</div><div class="sc-desc">Set up a system to consistently collect Google and Trustpilot reviews. automated request sequences, response templates and reputation monitoring. More reviews, less effort.</div><div class="sc-earn">£200–£400 setup</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-  </div>
-</div>
-
-
-<!-- AUTOMATION & MANUFACTURING -->
-<div class="cat-block rv" data-cat="auto">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">⚙️</div><div><div class="cat-title">Business Automation & Manufacturing IT</div><div class="cat-count">8 services</div></div></div>
-    <span class="cat-earn">£500–£8,000 projects</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">Kiosk & Attendance Systems</div><div class="sc-desc">Custom QR code clock-in/out kiosk systems for manufacturing and warehouse environments. Staff scan badges on tablet, data writes direct to database. Built with PHP, MySQL and IIS. same stack used in production at a UK industrial company. Includes admin panel, badge printing and scheduled reports.</div><div class="sc-earn">£1,500–£5,000 project</div><div class="sc-tags"><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Visitor & Contractor Management</div><div class="sc-desc">Digital visitor sign-in with H&S induction, contractor management, automatic fire call list and sign-out tracking. Replaces paper visitor books. Includes emergency evacuation list always accessible from any device.</div><div class="sc-earn">£800–£2,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Shift & Attendance Reporting Automation</div><div class="sc-desc">Automated daily, weekly and monthly attendance reports emailed to managers and HR. Late arrival alerts, overtime tracking, absence summaries. all generated and sent automatically on schedule. No manual effort required.</div><div class="sc-earn">£600–£2,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">OEE & Production Dashboards</div><div class="sc-desc">Overall Equipment Effectiveness dashboards showing availability, performance and quality in real time. Connect production line data to Power BI or a custom web dashboard. Helps identify bottlenecks and downtime patterns before they become costly.</div><div class="sc-earn">£1,500–£5,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Barcode & QR Stock Tracking</div><div class="sc-desc">Simple scan-in/scan-out stock system using barcodes or QR codes and a tablet or handheld scanner. Track inventory movements, generate low-stock alerts and produce stock level reports. without expensive specialist software.</div><div class="sc-earn">£800–£3,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">ERP Reporting & Integration</div><div class="sc-desc">Connect your ERP system (SAP, Dynamics AX, Sage) to Power BI, Excel or a custom dashboard. Extract the reports your managers actually need. without waiting for the IT team or paying for expensive consultants.</div><div class="sc-earn">£1,000–£4,000 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">ISO 9001 Document Control System</div><div class="sc-desc">Build a simple document management system for ISO 9001 compliance. version control, approval workflows, controlled distribution and audit trail. Built on SharePoint or as a standalone web application.</div><div class="sc-earn">£1,000–£3,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-    <div class="sc"><div class="sc-name">Preventive Maintenance Scheduler</div><div class="sc-desc">Automated maintenance scheduling and alert system. track equipment service intervals, send reminders to engineers, log completed work and generate compliance reports. Reduces unexpected downtime significantly.</div><div class="sc-earn">£800–£2,500 project</div><div class="sc-tags"><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Get a quote →</a></div>
-  </div>
-</div>
-
-<!-- MANAGED -->
-<div class="cat-block rv" data-cat="managed">
-  <div class="cat-head">
-    <div class="cat-head-left"><div class="cat-icon">📋</div><div><div class="cat-title">Managed & Retainer Plans</div><div class="cat-count">6 plans</div></div></div>
-    <span class="cat-earn">Predictable monthly costs</span>
-  </div>
-  <div class="svc-grid">
-    <div class="sc"><div class="sc-name">Monthly IT Retainer</div><div class="sc-desc">Your dedicated IT department for a fixed monthly cost. Priority SLA, proactive monitoring, patch management and a monthly review call. Scales up or down as your business needs change.</div><div class="sc-earn">POA per month</div><div class="sc-tags"><span class="tag t-mgd">Managed</span><span class="tag t-hot">Popular</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
-    <div class="sc"><div class="sc-name">Managed Security Service</div><div class="sc-desc">Monthly security monitoring. dark web scanning, Microsoft Secure Score, email threat alerts, patch compliance and a monthly health report. Ongoing protection without hiring a security engineer.</div><div class="sc-earn">£200–£800/month</div><div class="sc-tags"><span class="tag t-mgd">Managed</span><span class="tag t-hot">Popular</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
-    <div class="sc"><div class="sc-name">IT Health Check</div><div class="sc-desc">One-off full audit of infrastructure, security posture, licences and costs. delivered as a clear risk report with a prioritised remediation roadmap within 5 working days.</div><div class="sc-earn">POA one-off</div><div class="sc-tags"><span class="tag t-mgd">Managed</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
-    <div class="sc"><div class="sc-name">Disaster Recovery Plan</div><div class="sc-desc">Full DR runbook, backup validation, RTO/RPO definition, failover documentation and an annual live test exercise. so you're prepared before something goes wrong.</div><div class="sc-earn">POA one-off project</div><div class="sc-tags"><span class="tag t-mgd">Managed</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
-    <div class="sc"><div class="sc-name">IT Roadmap Consulting</div><div class="sc-desc">Strategic 12–24 month IT roadmap aligned to your business goals. covering infrastructure, cloud, security, AI adoption and digital transformation priorities with budget estimates.</div><div class="sc-earn">£800–£2,500 project</div><div class="sc-tags"><span class="tag t-mgd">Managed</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
-    <div class="sc"><div class="sc-name">Quarterly IT Review</div><div class="sc-desc">Regular check-in on your IT environment. performance, security posture, costs, upcoming licence renewals and recommendations for the next quarter. Keeps you ahead of problems.</div><div class="sc-earn">From £300/quarter</div><div class="sc-tags"><span class="tag t-mgd">Managed</span><span class="tag t-new">New</span></div><a href="contact.html" class="sc-link">Enquire →</a></div>
-  </div>
-</div>
-
-<div class="cta-banner rv">
-  <div><h3>Not sure what<br><em>you need?</em></h3><p>Describe your situation in plain English. I'll recommend the right services and give you a clear, honest quote. No obligation, no jargon.</p></div>
-  <div class="cta-btns">
-    <a href="contact.html" class="btn-a">Talk to me →</a>
-    <a href="https://api.whatsapp.com/send/?phone=447349301106" class="btn-g" target="_blank" rel="noopener">WhatsApp me</a>
-  </div>
-</div>
-
-</div></section>
-
-<footer><div class="ft">
-  <a href="index.html" class="ft-logo"><svg width="28" height="28" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
-<defs>
-  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
-    <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
-  </linearGradient>
-</defs>
-<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
-<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
-<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
-</svg>Tech Consult</a>
-  <div class="ft-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-  <div class="ft-copy">© 2025 M.Apex Consulting · UK IT Consultancy</div>
-</div></footer>
-
-<script>
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:0.05});
-document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-document.getElementById('mb').addEventListener('click',()=>document.getElementById('mo').classList.toggle('open'));
-function cm(){document.getElementById('mo').classList.remove('open')}
-function filter(cat,btn){
-  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
-  document.querySelectorAll('.cat-block').forEach(s=>{s.style.display=(cat==='all'||s.dataset.cat===cat)?'':'none'});
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "M.Apex Consulting",
+  "description": "UK IT consultancy covering cloud, cybersecurity, data, AI and bespoke software development for small and medium businesses.",
+  "url": "https://mapexconsulting.co.uk/",
+  "logo": "https://mapexconsulting.co.uk/icon-512.png",
+  "image": "https://mapexconsulting.co.uk/og-image.jpg",
+  "priceRange": "\u00a3\u00a3",
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Hertfordshire"},
+    {"@type": "AdministrativeArea", "name": "Buckinghamshire"},
+    {"@type": "AdministrativeArea", "name": "Bedfordshire"},
+    {"@type": "AdministrativeArea", "name": "London"}
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Aylesbury",
+    "addressRegion": "Buckinghamshire",
+    "addressCountry": "GB"
+  },
+  "makesOffer": [
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IT Support & Infrastructure"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cybersecurity"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data & Automation"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Services"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strategic IT Consulting"}}
+  ]
 }
 </script>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6"/></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><path d="M6.5 18a4 4 0 01-.5-7.97A5 5 0 0115.9 8.05 4.5 4.5 0 0117.5 18h-11z"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6l7-3z"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
+<symbol id="i-bars" viewBox="0 0 24 24"><rect x="4" y="12" width="4" height="8" rx="1" fill="currentColor" stroke="none"/><rect x="10" y="7" width="4" height="13" rx="1" fill="currentColor" stroke="none"/><rect x="16" y="3" width="4" height="17" rx="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-node" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none"/><circle cx="12" cy="4" r="1.5" fill="currentColor" stroke="none"/><circle cx="19" cy="16" r="1.5" fill="currentColor" stroke="none"/><circle cx="5" cy="16" r="1.5" fill="currentColor" stroke="none"/><line x1="12" y1="9.7" x2="12" y2="5.7"/><line x1="13.9" y1="13.3" x2="17.4" y2="15.2"/><line x1="10.1" y1="13.3" x2="6.6" y2="15.2"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="3.6" ry="8.5"/><line x1="3.7" y1="12" x2="20.3" y2="12"/></symbol>
+<symbol id="i-broadcast" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 001 1h1.5l7 4.5V4.5L6.5 9H5a1 1 0 00-1 1z"/><path d="M18 9a4 4 0 010 6"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><line x1="12" y1="2.5" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21.5" y2="12"/><line x1="5.4" y1="5.4" x2="7.5" y2="7.5"/><line x1="16.5" y1="16.5" x2="18.6" y2="18.6"/><line x1="5.4" y1="18.6" x2="7.5" y2="16.5"/><line x1="16.5" y1="7.5" x2="18.6" y2="5.4"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2.3" width="6" height="3.6" rx="1"/><line x1="9" y1="11.5" x2="15" y2="11.5"/><line x1="9" y1="15.5" x2="15" y2="15.5"/></symbol>
+<symbol id="i-tablet" viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="18.2" r="0.9" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-cycle" viewBox="0 0 24 24"><path d="M19 12a7 7 0 10-2.5 5.4"/><polyline points="20.5 9.3 19 12.3 16.2 11"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><rect x="3" y="9" width="10" height="6" rx="3" transform="rotate(-25 8 12)"/><rect x="11" y="9" width="10" height="6" rx="3" transform="rotate(-25 16 12)"/></symbol>
+<symbol id="i-partner" viewBox="0 0 24 24"><circle cx="9" cy="12" r="5.5" opacity="0.5"/><circle cx="15" cy="12" r="5.5"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><line x1="4" y1="9.5" x2="20" y2="9.5"/><line x1="8" y1="3" x2="8" y2="6.5"/><line x1="16" y1="3" x2="16" y2="6.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><polyline points="12 7.5 12 12 15.5 14"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 3.4l7.9 7.9a1.8 1.8 0 010 2.6l-5.2 5.2a1.8 1.8 0 01-2.6 0l-7.9-7.9V4.4a1 1 0 011-1h6.8z"/><circle cx="8.6" cy="8.4" r="1.2" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><polyline points="3.5 16.5 9.5 10.5 13.5 14.5 20.5 6.5"/><polyline points="14.5 6.5 20.5 6.5 20.5 12.5"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12.5" rx="2"/><line x1="8" y1="20.5" x2="16" y2="20.5"/><line x1="12" y1="17" x2="12" y2="20.5"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><line x1="5" y1="7" x2="19" y2="7"/><path d="M5 7l-3.3 6.3a3.7 3.7 0 007.6 0L5 7z"/><path d="M19 7l-3.3 6.3a3.7 3.7 0 007.6 0L19 7z"/><line x1="8.5" y1="21" x2="15.5" y2="21"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H8.5L4 19.5V5z"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 3 14.6 9 21 9.6 16.1 13.7 17.6 20 12 16.6 6.4 20 7.9 13.7 3 9.6 9.4 9" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-12a7 7 0 10-14 0c0 5.6 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><circle cx="7.5" cy="7" r="0.9" fill="currentColor" stroke="none"/><circle cx="7.5" cy="17" r="0.9" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-sync" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3"/><polyline points="17.5 4.5 18 7 15.5 7.2"/><polyline points="6.5 19.5 6 17 8.5 16.8"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="20.5" y2="20.5"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22h-.01a9.87 9.87 0 01-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26C2.16 6.6 6.6 2.17 12.05 2.17c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.89 6.99c0 5.45-4.44 9.88-9.88 9.88M18.5 3.58A11.82 11.82 0 0012.05 0C5.5 0 .16 5.33.15 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 005.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.17-3.48-8.32"/></symbol>
+</defs></svg>
+<a href="#main" class="skip-link">Skip to content</a>
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1"/>
+<stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1"/>
+</linearGradient></defs>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
+</svg>M.Apex</a>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="consulting.html">Consulting</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Get a quote</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><svg class="i"><use href="#i-menu" xlink:href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</nav>
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  var l=document.getElementById('navLinks');var open=l.classList.toggle('open');
+  this.setAttribute('aria-expanded',open);
+});
+</script>
+<main id="main">
 
-<!-- WhatsApp Float -->
-<a href="https://api.whatsapp.com/send/?phone=447349301106&text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20IT%20services." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <span class="wa-float-label">Message us</span>
-  <div class="wa-float-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-</a>
-</body></html>
+<header class="section-tight hero-shell" style="padding-top:calc(68px + var(--sec-y) * 0.6)">
+  <div class="wrap">
+    <div class="eyebrow">What I offer</div>
+    <h1 style="max-width:700px">77+ services. <span class="grad-text">One expert.</span></h1>
+    <p style="max-width:560px;margin-top:16px;font-size:1.05rem">Every service your business needs, delivered directly by someone who knows your systems inside out, with no outsourcing and no middlemen in between.</p>
+  </div>
+</header>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:var(--gap-lg)">
+      <div class="eyebrow">Start from your problem</div>
+      <h2 style="font-size:1.6rem">Not sure which category you need?</h2>
+      <p>Pick whichever sounds most like your situation and I'll take you straight to the relevant services.</p>
+    </div>
+    <div class="problem-grid" style="margin-bottom:var(--gap-xl)"><a href="services.html#security" class="problem-card">
+      <div class="icon-tile"><svg class="i"><use href="#i-shield" xlink:href="#i-shield"/></svg></div>
+      <div><q>We've been hit, or we're worried we're next.</q><span class="route">Ransomware resilience &amp; recovery <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+    </a>
+    <a href="consulting.html" class="problem-card">
+      <div class="icon-tile"><svg class="i"><use href="#i-scale" xlink:href="#i-scale"/></svg></div>
+      <div><q>A customer or regulator is asking for compliance proof.</q><span class="route">NIS2, Cyber Essentials &amp; GDPR <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+    </a>
+    <a href="services.html#automation" class="problem-card">
+      <div class="icon-tile"><svg class="i"><use href="#i-gear" xlink:href="#i-gear"/></svg></div>
+      <div><q>An old system is holding the business back.</q><span class="route">Legacy rescue &amp; modernisation <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+    </a>
+    <a href="services.html#data" class="problem-card">
+      <div class="icon-tile"><svg class="i"><use href="#i-bars" xlink:href="#i-bars"/></svg></div>
+      <div><q>We're drowning in spreadsheets and manual work.</q><span class="route">Automation &amp; live dashboards <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+    </a>
+    <a href="services.html#ai" class="problem-card">
+      <div class="icon-tile"><svg class="i"><use href="#i-node" xlink:href="#i-node"/></svg></div>
+      <div><q>We want to use AI, but not leak our data.</q><span class="route">Private AI &amp; governance <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+    </a>
+    <a href="services.html#it-support" class="problem-card">
+      <div class="icon-tile"><svg class="i"><use href="#i-monitor" xlink:href="#i-monitor"/></svg></div>
+      <div><q>We just need our IT to work, reliably.</q><span class="route">Support, cloud &amp; infrastructure <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+    </a>
+    </div>
+    <hr class="divider" style="margin-bottom:var(--gap-lg)">
+    <div class="search-box" id="searchBox">
+  <svg class="i"><use href="#i-search" xlink:href="#i-search"/></svg>
+  <input type="text" id="svcSearch" placeholder="Search services, e.g. backup, Copilot, NIS2..." aria-label="Search services">
+  <button class="clear-search" id="clearSearch" aria-label="Clear search"><svg class="i i-sm"><use href="#i-x" xlink:href="#i-x"/></svg></button>
+</div>
+    <div class="filter-row" id="filterRow"><button class="filter-tab active" data-cat="all">All</button>
+<button class="filter-tab" data-cat="strategic"><svg class="i"><use href="#i-scale" xlink:href="#i-scale"/></svg>Strategic Consulting</button>
+<button class="filter-tab" data-cat="it-support"><svg class="i"><use href="#i-monitor" xlink:href="#i-monitor"/></svg>IT Support & Infrastructure</button>
+<button class="filter-tab" data-cat="security"><svg class="i"><use href="#i-lock" xlink:href="#i-lock"/></svg>Cybersecurity</button>
+<button class="filter-tab" data-cat="data"><svg class="i"><use href="#i-bars" xlink:href="#i-bars"/></svg>Data & Automation</button>
+<button class="filter-tab" data-cat="ai"><svg class="i"><use href="#i-node" xlink:href="#i-node"/></svg>AI & Emerging Technology</button>
+<button class="filter-tab" data-cat="web"><svg class="i"><use href="#i-globe" xlink:href="#i-globe"/></svg>Web & Digital Presence</button>
+<button class="filter-tab" data-cat="marketing"><svg class="i"><use href="#i-broadcast" xlink:href="#i-broadcast"/></svg>Digital Marketing & Presence</button>
+<button class="filter-tab" data-cat="automation"><svg class="i"><use href="#i-gear" xlink:href="#i-gear"/></svg>Business Automation & Manufacturing IT</button>
+<button class="filter-tab" data-cat="managed"><svg class="i"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg>Managed & Retainer Plans</button>
+</div>
+    <div id="catList"><div class="cat-block" id="strategic" data-cat="strategic">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-scale" xlink:href="#i-scale"/></svg></div>
+        <div><h3 style="font-size:1.15rem">Strategic Consulting</h3><span class="meta">12 services &middot; Fixed-price engagements, scoped in advance</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="nis2 directive compliance audit your cybersecurity posture against the eu nis2 directive and design a compliant it resilience plan. essential for manufacturing, transport, utilities and their supply chains. now a legal requirement with significant fines for non-compliance.">
+      <h4>NIS2 Directive Compliance</h4><p>Audit your cybersecurity posture against the EU NIS2 directive and design a compliant IT resilience plan. Essential for manufacturing, transport, utilities and their supply chains. Now a legal requirement with significant fines for non-compliance.</p>
+      <div class="tag-row"><span class="badge badge-red">Legal requirement</span><span class="badge badge-accent">High demand</span></div>
+      <div class="svc-price">Fixed-price engagement</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="ransomware resilience planning build and test a recovery plan so that if you're attacked, you're back online in hours not weeks. centred on immutable, isolated backups that ransomware cannot touch. the question is when, not if.">
+      <h4>Ransomware Resilience Planning</h4><p>Build and test a recovery plan so that if you're attacked, you're back online in hours not weeks. Centred on immutable, isolated backups that ransomware cannot touch. The question is when, not if.</p>
+      <div class="tag-row"><span class="badge badge-red">Critical</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="business continuity planning a tested plan to keep your business running through any it disruption, from a cyber attack to hardware failure. defines exactly who does what, in what order, to get critical systems back fast.">
+      <h4>Business Continuity Planning</h4><p>A tested plan to keep your business running through any IT disruption, from a cyber attack to hardware failure. Defines exactly who does what, in what order, to get critical systems back fast.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="private ai deployment deploy open-source llms or private azure instances that analyse your company's documents and databases with 100% confidentiality. your data never leaves your control. the productivity of ai without the data leak risk.">
+      <h4>Private AI Deployment</h4><p>Deploy open-source LLMs or private Azure instances that analyse your company's documents and databases with 100% confidentiality. Your data never leaves your control. The productivity of AI without the data leak risk.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge badge-purple">Confidential</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="autonomous ai agents (copilot studio) build ai agents that do the work, not just chat: an agent that reads an order email, checks erp stock and generates the dispatch note automatically. real task automation beyond conversational chatbots.">
+      <h4>Autonomous AI Agents (Copilot Studio)</h4><p>Build AI agents that do the work, not just chat: an agent that reads an order email, checks ERP stock and generates the dispatch note automatically. Real task automation beyond conversational chatbots.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge badge-accent">High value</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="eu ai act risk & governance ensure every ai tool your business uses complies with the eu ai act: risk classification, governance policies and documentation, so you adopt ai confidently without legal exposure.">
+      <h4>EU AI Act Risk & Governance</h4><p>Ensure every AI tool your business uses complies with the EU AI Act: risk classification, governance policies and documentation, so you adopt AI confidently without legal exposure.</p>
+      <div class="tag-row"><span class="badge badge-purple">EU AI Act</span><span class="badge badge-purple">AI</span></div>
+      <div class="svc-price">Fixed-price engagement</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="legacy industrial software rescue audit, optimise and secure critical software running on old php, outdated sql and unpatched iis servers, migrating to modern windows server without stopping production. a core speciality.">
+      <h4>Legacy Industrial Software Rescue</h4><p>Audit, optimise and secure critical software running on old PHP, outdated SQL and unpatched IIS servers, migrating to modern Windows Server without stopping production. A core speciality.</p>
+      <div class="tag-row"><span class="badge badge-accent">Core speciality</span><span class="badge badge-accent">High value</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="paperless shop floor automation replace printed excel sheets, whiteboards and manual logs with digital kiosks integrated into real-time dashboards. built and proven in a live industrial environment: qr clock-in, attendance, visitor management.">
+      <h4>Paperless Shop Floor Automation</h4><p>Replace printed Excel sheets, whiteboards and manual logs with digital kiosks integrated into real-time dashboards. Built and proven in a live industrial environment: QR clock-in, attendance, visitor management.</p>
+      <div class="tag-row"><span class="badge">Proven</span><span class="badge badge-accent">High value</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="process hyperautomation map repetitive manual processes draining your team's time and rebuild them as automated workflows connecting erp, email, databases and reporting, so data flows automatically and people focus on what matters.">
+      <h4>Process Hyperautomation</h4><p>Map repetitive manual processes draining your team's time and rebuild them as automated workflows connecting ERP, email, databases and reporting, so data flows automatically and people focus on what matters.</p>
+      <div class="tag-row"><span class="badge badge-accent">High ROI</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="esg & carbon footprint reporting centralise and automate collection of energy, waste and fleet data, pulled from iot sensors or your erp, to generate the sustainability reports banks and investors now require.">
+      <h4>ESG & Carbon Footprint Reporting</h4><p>Centralise and automate collection of energy, waste and fleet data, pulled from IoT sensors or your ERP, to generate the sustainability reports banks and investors now require.</p>
+      <div class="tag-row"><span class="badge">Investor requirement</span><span class="badge badge-accent">Growing fast</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="iot & sensor data integration connect the sensors and meters on your shop floor to a central system that logs, visualises and reports data automatically. the foundation for both esg reporting and smarter operational decisions.">
+      <h4>IoT & Sensor Data Integration</h4><p>Connect the sensors and meters on your shop floor to a central system that logs, visualises and reports data automatically. The foundation for both ESG reporting and smarter operational decisions.</p>
+      <div class="tag-row"><span class="badge">Emerging</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="it strategy & roadmap consulting a strategic technology roadmap for the next one to two years, aligned to your business goals and covering infrastructure, cloud, security and ai adoption, with realistic budget estimates and priorities.">
+      <h4>IT Strategy & Roadmap Consulting</h4><p>A strategic technology roadmap for the next one to two years, aligned to your business goals and covering infrastructure, cloud, security and AI adoption, with realistic budget estimates and priorities.</p>
+      <div class="tag-row"><span class="badge">Advisory</span></div>
+      <div class="svc-price">Fixed-price engagement</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+<div class="cat-block" id="it-support" data-cat="it-support">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-monitor" xlink:href="#i-monitor"/></svg></div>
+        <div><h3 style="font-size:1.15rem">IT Support & Infrastructure</h3><span class="meta">13 services &middot; Project, day rate or retainer</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="remote & on-site support full helpdesk for pcs, macs and mobile devices. hardware diagnostics, upgrades, os issues and troubleshooting wherever you need it.">
+      <h4>Remote & On-site Support</h4><p>Full helpdesk for PCs, Macs and mobile devices. Hardware diagnostics, upgrades, OS issues and troubleshooting wherever you need it.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Day rate or retainer</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="microsoft 365 admin full tenant management: users, licences, exchange online, teams policies, sharepoint permissions, security defaults and mfa rollout.">
+      <h4>Microsoft 365 Admin</h4><p>Full tenant management: users, licences, Exchange Online, Teams policies, SharePoint permissions, security defaults and MFA rollout.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="azure / entra id cloud identity: user provisioning, sso, conditional access policies, guest access and hybrid ad configuration with on-prem integration.">
+      <h4>Azure / Entra ID</h4><p>Cloud identity: user provisioning, SSO, Conditional Access policies, guest access and hybrid AD configuration with on-prem integration.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="server admin (windows/linux) iis, dns, dhcp, file shares, active directory, patch management and performance monitoring for on-prem servers and cloud vms.">
+      <h4>Server Admin (Windows/Linux)</h4><p>IIS, DNS, DHCP, file shares, Active Directory, patch management and performance monitoring for on-prem servers and cloud VMs.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Day rate or retainer</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="intune / mdm device enrolment, compliance policies, app deployment and remote wipe across windows, ios, android and macos from a single console.">
+      <h4>Intune / MDM</h4><p>Device enrolment, compliance policies, app deployment and remote wipe across Windows, iOS, Android and macOS from a single console.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="group policy (gpo) windows group policy design and deployment via active directory: software restrictions, drive maps, security baselines and login scripts.">
+      <h4>Group Policy (GPO)</h4><p>Windows Group Policy design and deployment via Active Directory: software restrictions, drive maps, security baselines and login scripts.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="virtualisation hyper-v and vmware: virtual machine setup, p2v migration, snapshot management, performance tuning and capacity planning.">
+      <h4>Virtualisation</h4><p>Hyper-V and VMware: virtual machine setup, P2V migration, snapshot management, performance tuning and capacity planning.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="networking & connectivity office and home networks, mesh wi-fi, firewall and vpn (meraki, fortinet, pfsense), vlan segmentation and comprehensive network audits.">
+      <h4>Networking & Connectivity</h4><p>Office and home networks, mesh Wi-Fi, firewall and VPN (Meraki, Fortinet, pfSense), VLAN segmentation and comprehensive network audits.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="teams phone / voip setup replace legacy phone lines with microsoft teams phone or hosted voip. number porting, call routing, auto-attendants. critical ahead of the 2027 pstn switch-off.">
+      <h4>Teams Phone / VoIP Setup</h4><p>Replace legacy phone lines with Microsoft Teams Phone or hosted VoIP. Number porting, call routing, auto-attendants. Critical ahead of the 2027 PSTN switch-off.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price setup</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="saas licence audit audit every saas subscription your business pays for. identify unused licences, right-size plans and set up monthly governance. audits routinely uncover a material share of spend going to unused or oversized licences.">
+      <h4>SaaS Licence Audit</h4><p>Audit every SaaS subscription your business pays for. Identify unused licences, right-size plans and set up monthly governance. Audits routinely uncover a material share of spend going to unused or oversized licences.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
+      <div class="svc-price">Audit, then optional retainer</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="backup audit & implementation audit existing backup (usually broken or non-existent), implement a proper 3-2-1 backup strategy using veeam, acronis or azure backup. test restores included.">
+      <h4>Backup Audit & Implementation</h4><p>Audit existing backup (usually broken or non-existent), implement a proper 3-2-1 backup strategy using Veeam, Acronis or Azure Backup. Test restores included.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price setup</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="it procurement sourcing and purchasing laptops, servers, networking gear and software licences at the best price, correctly spec'd for your actual needs.">
+      <h4>IT Procurement</h4><p>Sourcing and purchasing laptops, servers, networking gear and software licences at the best price, correctly spec'd for your actual needs.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Flat fee or percentage of order</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="onboarding & offboarding full new-starter setup or secure leaver offboarding: accounts, devices, permissions, email forwarding and data transfer handled end to end.">
+      <h4>Onboarding & Offboarding</h4><p>Full new-starter setup or secure leaver offboarding: accounts, devices, permissions, email forwarding and data transfer handled end to end.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Priced per user</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+<div class="cat-block" id="security" data-cat="security">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-lock" xlink:href="#i-lock"/></svg></div>
+        <div><h3 style="font-size:1.15rem">Cybersecurity</h3><span class="meta">11 services &middot; Projects and monthly managed plans</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="cyber essentials certification prep prepare your business for uk government-backed cyber essentials certification. mandatory for many government contracts, and designed to prevent the vast majority of common cyber attacks.">
+      <h4>Cyber Essentials Certification Prep</h4><p>Prepare your business for UK government-backed Cyber Essentials certification. Mandatory for many government contracts, and designed to prevent the vast majority of common cyber attacks.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge badge-red">Gov requirement</span></div>
+      <div class="svc-price">Fixed-price engagement</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="mfa / zero trust setup enforce multi-factor across microsoft 365, google and all platforms. zero trust network access policies protect against credential theft, the number one attack vector.">
+      <h4>MFA / Zero Trust Setup</h4><p>Enforce multi-factor across Microsoft 365, Google and all platforms. Zero Trust network access policies protect against credential theft, the number one attack vector.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="managed security service (mssp-lite) monthly managed security monitoring: dark web scanning, microsoft secure score tracking, email threat monitoring, patch compliance and a monthly health score.">
+      <h4>Managed Security Service (MSSP-lite)</h4><p>Monthly managed security monitoring: dark web scanning, Microsoft Secure Score tracking, email threat monitoring, patch compliance and a monthly health score.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge">Managed</span></div>
+      <div class="svc-price">Monthly managed service</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="dark web monitoring continuous scanning, with alerts when your company email addresses or credentials appear in known data breaches before they're exploited.">
+      <h4>Dark Web Monitoring</h4><p>Continuous scanning, with alerts when your company email addresses or credentials appear in known data breaches before they're exploited.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Monthly managed service</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="security awareness training simulated phishing campaigns and tailored staff training sessions. regular testing and training measurably reduces the rate at which staff click malicious links.">
+      <h4>Security Awareness Training</h4><p>Simulated phishing campaigns and tailored staff training sessions. Regular testing and training measurably reduces the rate at which staff click malicious links.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Priced per session</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="gdpr / compliance review data audit, privacy notices, data flow mapping and a practical gap analysis against uk gdpr requirements. clear actions, not legal waffle.">
+      <h4>GDPR / Compliance Review</h4><p>Data audit, privacy notices, data flow mapping and a practical gap analysis against UK GDPR requirements. Clear actions, not legal waffle.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="email security (dmarc/dkim/spf) full email authentication setup to prevent domain spoofing, phishing and spam. also improves deliverability. often completed in a single day.">
+      <h4>Email Security (DMARC/DKIM/SPF)</h4><p>Full email authentication setup to prevent domain spoofing, phishing and spam. Also improves deliverability. Often completed in a single day.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="password manager rollout deploy 1password teams or bitwarden business across your organisation: account setup, credential import, shared vaults and staff training.">
+      <h4>Password Manager Rollout</h4><p>Deploy 1Password Teams or Bitwarden Business across your organisation: account setup, credential import, shared vaults and staff training.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Priced per deployment</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="endpoint protection (edr) deploy and manage enterprise-grade endpoint detection and response across all devices, with centralised alerting and rapid threat response.">
+      <h4>Endpoint Protection (EDR)</h4><p>Deploy and manage enterprise-grade endpoint detection and response across all devices, with centralised alerting and rapid threat response.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Monthly managed service</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="penetration testing controlled ethical testing of your network, m365 environment or web apps to find vulnerabilities before attackers do, with a detailed remediation report.">
+      <h4>Penetration Testing</h4><p>Controlled ethical testing of your network, M365 environment or web apps to find vulnerabilities before attackers do, with a detailed remediation report.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="iso 27001 / cyber essentials plus gap analysis, policy templates and implementation support for iso 27001 certification or cyber essentials plus, the next level above standard ce.">
+      <h4>ISO 27001 / Cyber Essentials Plus</h4><p>Gap analysis, policy templates and implementation support for ISO 27001 certification or Cyber Essentials Plus, the next level above standard CE.</p>
+      <div class="tag-row"><span class="badge">New</span><span class="badge">Certification</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+<div class="cat-block" id="data" data-cat="data">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-bars" xlink:href="#i-bars"/></svg></div>
+        <div><h3 style="font-size:1.15rem">Data & Automation</h3><span class="meta">11 services &middot; Fixed-price projects and ongoing development</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="power bi dashboards custom kpi dashboards, financial reports and executive visualisations connected to your live data, whether that's erp, sql, excel or cloud sources.">
+      <h4>Power BI Dashboards</h4><p>Custom KPI dashboards, financial reports and executive visualisations connected to your live data, whether that's ERP, SQL, Excel or cloud sources.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="power platform development powerapps, power automate and copilot studio combined: custom business apps, approval workflows and process automation connected to any microsoft data source.">
+      <h4>Power Platform Development</h4><p>PowerApps, Power Automate and Copilot Studio combined: custom business apps, approval workflows and process automation connected to any Microsoft data source.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="excel automation (vba) macros, advanced formulas and automated reporting workbooks that eliminate hours of weekly manual work, built around how your team actually works.">
+      <h4>Excel Automation (VBA)</h4><p>Macros, advanced formulas and automated reporting workbooks that eliminate hours of weekly manual work, built around how your team actually works.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="power automate flows automate approvals, notifications, form submissions and data syncs across microsoft 365, sharepoint and hundreds of third-party apps via connectors.">
+      <h4>Power Automate Flows</h4><p>Automate approvals, notifications, form submissions and data syncs across Microsoft 365, SharePoint and hundreds of third-party apps via connectors.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="sql databases schema design, stored procedures, query optimisation, reporting views and sql server administration for business-critical applications.">
+      <h4>SQL Databases</h4><p>Schema design, stored procedures, query optimisation, reporting views and SQL Server administration for business-critical applications.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Day rate or retainer</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="python scripting & automation data pipelines, scheduled tasks, api integrations and custom automation tools that permanently replace repetitive manual processes.">
+      <h4>Python Scripting & Automation</h4><p>Data pipelines, scheduled tasks, API integrations and custom automation tools that permanently replace repetitive manual processes.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Day rate or retainer</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="sharepoint intranet design and build company portals, document libraries, news hubs and team collaboration spaces on microsoft sharepoint online.">
+      <h4>SharePoint Intranet</h4><p>Design and build company portals, document libraries, news hubs and team collaboration spaces on Microsoft SharePoint Online.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="data migration legacy to cloud: clean, map, migrate and validate your data with zero loss. covers erp, crm, file servers and databases.">
+      <h4>Data Migration</h4><p>Legacy to cloud: clean, map, migrate and validate your data with zero loss. Covers ERP, CRM, file servers and databases.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="cloud cost optimisation review azure spend and m365 licences, identify orphaned resources and set up ongoing cost governance. audits routinely uncover orphaned resources and oversized plans.">
+      <h4>Cloud Cost Optimisation</h4><p>Review Azure spend and M365 licences, identify orphaned resources and set up ongoing cost governance. Audits routinely uncover orphaned resources and oversized plans.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Audit, then share of savings</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="it due diligence (m&a) it assessment for businesses being acquired or merging: infrastructure state, security posture, licencing compliance and integration complexity.">
+      <h4>IT Due Diligence (M&A)</h4><p>IT assessment for businesses being acquired or merging: infrastructure state, security posture, licencing compliance and integration complexity.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price assessment</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="financial reporting & modelling p&l, balance sheets, cash flow forecasting and variance analysis in excel, power bi or dynamics, built for management decisions.">
+      <h4>Financial Reporting & Modelling</h4><p>P&L, balance sheets, cash flow forecasting and variance analysis in Excel, Power BI or Dynamics, built for management decisions.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+<div class="cat-block" id="ai" data-cat="ai">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-node" xlink:href="#i-node"/></svg></div>
+        <div><h3 style="font-size:1.15rem">AI & Emerging Technology</h3><span class="meta">7 services &middot; Fixed-price projects and workshops</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="microsoft copilot rollout end-to-end copilot deployment: licence procurement, tenant security config, user enablement and full staff training. most businesses buy copilot licences but never deploy them properly. this fixes that.">
+      <h4>Microsoft Copilot Rollout</h4><p>End-to-end Copilot deployment: licence procurement, tenant security config, user enablement and full staff training. Most businesses buy Copilot licences but never deploy them properly. This fixes that.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price rollout</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="ai workflow integration connect ai tools into your existing systems, including crm, erp, m365, sharepoint and custom apis, to automate tasks, surface insights and reduce manual work.">
+      <h4>AI Workflow Integration</h4><p>Connect AI tools into your existing systems, including CRM, ERP, M365, SharePoint and custom APIs, to automate tasks, surface insights and reduce manual work.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="ai governance & policy writing a tailored ai acceptable-use policy, data handling guidelines and risk assessment. most companies adopting ai tools have nothing in writing. this protects you legally.">
+      <h4>AI Governance & Policy Writing</h4><p>A tailored AI acceptable-use policy, data handling guidelines and risk assessment. Most companies adopting AI tools have nothing in writing. This protects you legally.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price engagement</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="prompt engineering design and optimise custom system prompts for copilot, chatgpt and other llms, tailored to your business language, workflows and compliance needs.">
+      <h4>Prompt Engineering</h4><p>Design and optimise custom system prompts for Copilot, ChatGPT and other LLMs, tailored to your business language, workflows and compliance needs.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="chatgpt / ai tools for business select the right ai tools, configure them securely, integrate with your workflows and train your team to use them effectively and responsibly.">
+      <h4>ChatGPT / AI Tools for Business</h4><p>Select the right AI tools, configure them securely, integrate with your workflows and train your team to use them effectively and responsibly.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="custom chatbot development build internal or customer-facing chatbots powered by copilot studio or gpt, trained on your documents, faqs and knowledge base.">
+      <h4>Custom Chatbot Development</h4><p>Build internal or customer-facing chatbots powered by Copilot Studio or GPT, trained on your documents, FAQs and knowledge base.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="ai staff training workshop half-day or full-day workshop teaching your team to use ai tools effectively, tailored to your industry. delivered remotely or on-site.">
+      <h4>AI Staff Training Workshop</h4><p>Half-day or full-day workshop teaching your team to use AI tools effectively, tailored to your industry. Delivered remotely or on-site.</p>
+      <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
+      <div class="svc-price">Priced per session</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+<div class="cat-block" id="web" data-cat="web">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-globe" xlink:href="#i-globe"/></svg></div>
+        <div><h3 style="font-size:1.15rem">Web & Digital Presence</h3><span class="meta">8 services &middot; Fixed-price projects</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="website design & build professional custom html/css, wordpress or wix websites: fast, mobile-first, seo-optimised and built to convert visitors into real enquiries.">
+      <h4>Website Design & Build</h4><p>Professional custom HTML/CSS, WordPress or Wix websites: fast, mobile-first, SEO-optimised and built to convert visitors into real enquiries.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="google workspace setup gmail, drive, meet, calendar: full admin config, migration from legacy email systems, domain verification and staff training included.">
+      <h4>Google Workspace Setup</h4><p>Gmail, Drive, Meet, Calendar: full admin config, migration from legacy email systems, domain verification and staff training included.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="domain & dns management domain registration, dns record setup (mx, a, cname, txt, spf), ssl certificates, cdn configuration and domain transfers handled correctly.">
+      <h4>Domain & DNS Management</h4><p>Domain registration, DNS record setup (MX, A, CNAME, TXT, SPF), SSL certificates, CDN configuration and domain transfers handled correctly.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="cloud migration (m365/gws) migrate from on-prem exchange, file servers or google to microsoft 365: email, calendar, onedrive, teams and sharepoint all covered.">
+      <h4>Cloud Migration (M365/GWS)</h4><p>Migrate from on-prem Exchange, file servers or Google to Microsoft 365: email, calendar, OneDrive, Teams and SharePoint all covered.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="technical seo core web vitals, site speed, crawl error fixes, structured data, xml sitemaps and mobile usability. the technical foundations that get you ranking.">
+      <h4>Technical SEO</h4><p>Core Web Vitals, site speed, crawl error fixes, structured data, XML sitemaps and mobile usability. The technical foundations that get you ranking.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="e-commerce setup woocommerce or shopify store setup, product import, stripe/paypal integration, shipping configuration and order management workflows.">
+      <h4>E-commerce Setup</h4><p>WooCommerce or Shopify store setup, product import, Stripe/PayPal integration, shipping configuration and order management workflows.</p>
+      <div class="tag-row"></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="email newsletter setup mailchimp or klaviyo with domain authentication, branded templates, automated sequences and a sending strategy.">
+      <h4>Email Newsletter Setup</h4><p>Mailchimp or Klaviyo with domain authentication, branded templates, automated sequences and a sending strategy.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price setup</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="website care plan monthly website maintenance: plugin updates, security scans, uptime monitoring, backups and a monthly performance report.">
+      <h4>Website Care Plan</h4><p>Monthly website maintenance: plugin updates, security scans, uptime monitoring, backups and a monthly performance report.</p>
+      <div class="tag-row"><span class="badge">New</span><span class="badge">Managed</span></div>
+      <div class="svc-price">Monthly managed service</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+<div class="cat-block" id="marketing" data-cat="marketing">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-broadcast" xlink:href="#i-broadcast"/></svg></div>
+        <div><h3 style="font-size:1.15rem">Digital Marketing & Presence</h3><span class="meta">5 services &middot; Setup projects and monthly plans</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="google business profile setup, verification and full optimisation: categories, photos, services, q&a, review strategy and posting schedule. improves visibility in local search results.">
+      <h4>Google Business Profile</h4><p>Setup, verification and full optimisation: categories, photos, services, Q&A, review strategy and posting schedule. Improves visibility in local search results.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Setup fee, then monthly plan</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="linkedin company page setup set up or refresh your linkedin presence: banner, about section, service pages, employee advocacy setup and a 30-day content calendar.">
+      <h4>LinkedIn Company Page Setup</h4><p>Set up or refresh your LinkedIn presence: banner, about section, service pages, employee advocacy setup and a 30-day content calendar.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="social media business setup facebook, instagram and meta business suite: profile setup, brand consistency, admin roles, pixel setup and basic ad account configuration.">
+      <h4>Social Media Business Setup</h4><p>Facebook, Instagram and Meta Business Suite: profile setup, brand consistency, admin roles, pixel setup and basic ad account configuration.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="google analytics & tag manager set up ga4, google tag manager and conversion tracking so you actually know where your website enquiries are coming from.">
+      <h4>Google Analytics & Tag Manager</h4><p>Set up GA4, Google Tag Manager and conversion tracking so you actually know where your website enquiries are coming from.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="online review management setup a system to consistently collect google and trustpilot reviews: automated request sequences, response templates and reputation monitoring.">
+      <h4>Online Review Management Setup</h4><p>A system to consistently collect Google and Trustpilot reviews: automated request sequences, response templates and reputation monitoring.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price setup</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+<div class="cat-block" id="automation" data-cat="automation">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-gear" xlink:href="#i-gear"/></svg></div>
+        <div><h3 style="font-size:1.15rem">Business Automation & Manufacturing IT</h3><span class="meta">8 services &middot; Fixed-price builds, scoped in advance</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="kiosk & attendance systems custom qr code clock-in/out kiosk systems for manufacturing and warehouse environments. staff scan badges on tablet, data writes direct to database. the same stack used in production at a uk industrial company.">
+      <h4>Kiosk & Attendance Systems</h4><p>Custom QR code clock-in/out kiosk systems for manufacturing and warehouse environments. Staff scan badges on tablet, data writes direct to database. The same stack used in production at a UK industrial company.</p>
+      <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="visitor & contractor management digital visitor sign-in with h&s induction, contractor management, automatic fire call list and sign-out tracking, replacing paper visitor books.">
+      <h4>Visitor & Contractor Management</h4><p>Digital visitor sign-in with H&S induction, contractor management, automatic fire call list and sign-out tracking, replacing paper visitor books.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="shift & attendance reporting automation automated daily, weekly and monthly attendance reports emailed to managers and hr: late arrival alerts, overtime tracking, absence summaries.">
+      <h4>Shift & Attendance Reporting Automation</h4><p>Automated daily, weekly and monthly attendance reports emailed to managers and HR: late arrival alerts, overtime tracking, absence summaries.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="oee & production dashboards overall equipment effectiveness dashboards showing availability, performance and quality in real time, helping identify bottlenecks before they become costly.">
+      <h4>OEE & Production Dashboards</h4><p>Overall Equipment Effectiveness dashboards showing availability, performance and quality in real time, helping identify bottlenecks before they become costly.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="barcode & qr stock tracking simple scan-in/scan-out stock system using barcodes or qr codes and a handheld scanner. track movements and generate low-stock alerts without expensive software.">
+      <h4>Barcode & QR Stock Tracking</h4><p>Simple scan-in/scan-out stock system using barcodes or QR codes and a handheld scanner. Track movements and generate low-stock alerts without expensive software.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="erp reporting & integration connect your erp (sap, dynamics ax, sage) to power bi, excel or a custom dashboard, extracting the reports your managers actually need.">
+      <h4>ERP Reporting & Integration</h4><p>Connect your ERP (SAP, Dynamics AX, Sage) to Power BI, Excel or a custom dashboard, extracting the reports your managers actually need.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="iso 9001 document control system a document management system for iso 9001 compliance: version control, approval workflows, controlled distribution and audit trail.">
+      <h4>ISO 9001 Document Control System</h4><p>A document management system for ISO 9001 compliance: version control, approval workflows, controlled distribution and audit trail.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="preventive maintenance scheduler automated maintenance scheduling and alerts: track service intervals, remind engineers, log completed work and generate compliance reports.">
+      <h4>Preventive Maintenance Scheduler</h4><p>Automated maintenance scheduling and alerts: track service intervals, remind engineers, log completed work and generate compliance reports.</p>
+      <div class="tag-row"><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+<div class="cat-block" id="managed" data-cat="managed">
+      <div class="cat-head">
+        <div class="icon-tile"><svg class="i"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg></div>
+        <div><h3 style="font-size:1.15rem">Managed & Retainer Plans</h3><span class="meta">6 services &middot; Predictable monthly and quarterly plans</span></div>
+      </div>
+      <div class="grid g-3"><div class="svc-card" data-search="monthly it retainer your dedicated it department for a fixed monthly cost. priority sla, proactive monitoring, patch management and a monthly review call.">
+      <h4>Monthly IT Retainer</h4><p>Your dedicated IT department for a fixed monthly cost. Priority SLA, proactive monitoring, patch management and a monthly review call.</p>
+      <div class="tag-row"><span class="badge">Managed</span><span class="badge badge-accent">Popular</span></div>
+      <div class="svc-price">Monthly managed service</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="managed security service monthly security monitoring: dark web scanning, microsoft secure score, email threat alerts, patch compliance and a monthly health report.">
+      <h4>Managed Security Service</h4><p>Monthly security monitoring: dark web scanning, Microsoft Secure Score, email threat alerts, patch compliance and a monthly health report.</p>
+      <div class="tag-row"><span class="badge">Managed</span><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
+      <div class="svc-price">Monthly managed service</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="it health check one-off full audit of infrastructure, security posture, licences and costs, delivered as a risk report with a prioritised remediation roadmap.">
+      <h4>IT Health Check</h4><p>One-off full audit of infrastructure, security posture, licences and costs, delivered as a risk report with a prioritised remediation roadmap.</p>
+      <div class="tag-row"><span class="badge">Managed</span></div>
+      <div class="svc-price">One-off engagement</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="disaster recovery plan full dr runbook, backup validation, rto/rpo definition, failover documentation and an annual live test exercise.">
+      <h4>Disaster Recovery Plan</h4><p>Full DR runbook, backup validation, RTO/RPO definition, failover documentation and an annual live test exercise.</p>
+      <div class="tag-row"><span class="badge">Managed</span></div>
+      <div class="svc-price">One-off engagement</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="it roadmap consulting a strategic one to two year it roadmap aligned to your business goals, with budget estimates across infrastructure, cloud, security and ai adoption.">
+      <h4>IT Roadmap Consulting</h4><p>A strategic one to two year IT roadmap aligned to your business goals, with budget estimates across infrastructure, cloud, security and AI adoption.</p>
+      <div class="tag-row"><span class="badge">Managed</span><span class="badge">New</span></div>
+      <div class="svc-price">Fixed-price project</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="svc-card" data-search="quarterly it review a regular check-in on your it environment: performance, security posture, costs, upcoming renewals and recommendations for the next quarter.">
+      <h4>Quarterly IT Review</h4><p>A regular check-in on your IT environment: performance, security posture, costs, upcoming renewals and recommendations for the next quarter.</p>
+      <div class="tag-row"><span class="badge">Managed</span><span class="badge">New</span></div>
+      <div class="svc-price">Quarterly engagement</div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </div>
+    </div>
+    </div>
+</div>
+    <div class="no-results" id="noResults">
+      <p style="font-size:1.05rem;color:var(--text)">No services match that search.</p>
+      <p style="margin-top:8px">Try a different term, or just tell me what you need directly.</p>
+      <a href="contact.html" class="btn btn-outline" style="margin-top:20px">Describe what you're after</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg2)">
+  <div class="wrap center" style="max-width:600px">
+    <h2 style="font-size:1.7rem">Not sure what you need?</h2>
+    <p style="margin-top:14px">Describe your situation in plain English and I'll recommend the right services, with a clear, honest quote and nothing you didn't ask for.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px">
+      <a href="contact.html" class="btn btn-primary">Talk to me <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a>
+      <a href="https://wa.me/447349301106" class="btn btn-outline"><svg class="i i-sm"><use href="#i-whatsapp" xlink:href="#i-whatsapp"/></svg>WhatsApp me</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="index.html" class="logo"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1"/>
+<stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1"/>
+</linearGradient></defs>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
+</svg>M.Apex Consulting</a>
+      <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="consulting.html">Consulting</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 M.Apex Consulting &middot; UK IT Consultancy</span>
+      <span>Aylesbury, Buckinghamshire &middot; Remote &amp; on-site across Herts, Bucks, Beds &amp; London</span>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg class="i"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></button>
+<script>
+(function(){
+  var curCat = 'all';
+  var curQuery = '';
+
+  function apply(){
+    var noneVisible = true;
+    document.querySelectorAll('.cat-block').forEach(function(block){
+      var catMatch = (curCat === 'all' || block.dataset.cat === curCat);
+      var anyCardVisible = false;
+      block.querySelectorAll('.svc-card').forEach(function(card){
+        var textMatch = !curQuery || card.dataset.search.indexOf(curQuery) !== -1;
+        var show = catMatch && textMatch;
+        card.style.display = show ? '' : 'none';
+        if(show) anyCardVisible = true;
+      });
+      block.style.display = anyCardVisible ? '' : 'none';
+      if(anyCardVisible) noneVisible = false;
+    });
+    document.getElementById('noResults').classList.toggle('show', noneVisible);
+  }
+
+  document.getElementById('filterRow').addEventListener('click', function(e){
+    var btn = e.target.closest('.filter-tab');
+    if(!btn) return;
+    document.querySelectorAll('.filter-tab').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    curCat = btn.dataset.cat;
+    apply();
+  });
+
+  var searchInput = document.getElementById('svcSearch');
+  var searchBox = document.getElementById('searchBox');
+  searchInput.addEventListener('input', function(){
+    curQuery = this.value.trim().toLowerCase();
+    searchBox.classList.toggle('has-value', curQuery.length > 0);
+    apply();
+  });
+  document.getElementById('clearSearch').addEventListener('click', function(){
+    searchInput.value = '';
+    curQuery = '';
+    searchBox.classList.remove('has-value');
+    apply();
+    searchInput.focus();
+  });
+
+  // arriving via a "start from your problem" link: select the matching filter tab too,
+  // so the page feels like it landed in the right place, not just scrolled to it
+  var hash = location.hash.replace('#','');
+  if(hash){
+    var match = document.querySelector('.filter-tab[data-cat="'+hash+'"]');
+    if(match){
+      document.querySelectorAll('.filter-tab').forEach(function(b){ b.classList.remove('active'); });
+      match.classList.add('active');
+      curCat = hash;
+      apply();
+    }
+  }
+})();
+</script>
+<script>
+(function(){
+  var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll-aware header + back-to-top
+  (function(){
+    var nav = document.querySelector('nav');
+    var toTop = document.getElementById('toTop');
+    var last = window.pageYOffset;
+    var ticking = false;
+    function onScroll(){
+      var y = window.pageYOffset;
+      if(nav){
+        var menuOpen = nav.querySelector('.nav-links.open');
+        if(!menuOpen && y > 300 && y > last) nav.classList.add('nav-hidden');
+        else nav.classList.remove('nav-hidden');
+      }
+      if(toTop) toTop.classList.toggle('show', y > 700);
+      last = y;
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+    }, {passive:true});
+    if(toTop) toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior: reduced ? 'auto' : 'smooth'});
+    });
+  })();
+})();
+</script>
+</body>
+</html>
