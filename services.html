@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>IT Services & Pricing | M.Apex Consulting</title>
 <meta name="description" content="77+ IT, security, data and AI services for UK SMEs, priced and explained. One expert, no outsourcing.">
 <link rel="canonical" href="https://mapexconsulting.co.uk/services.html">
@@ -75,7 +75,7 @@ body::before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .skip-link{position:fixed;top:-60px;left:12px;z-index:200;background:var(--accent);color:#04231f;padding:12px 18px;border-radius:var(--r);font-weight:600;font-size:14px;transition:top var(--dur) var(--ease)}
-.skip-link:focus{top:12px}
+.skip-link:focus-visible{top:12px}
 h1,h2,h3,h4{font-family:var(--fh);font-weight:800;line-height:1.12;letter-spacing:-0.015em;color:var(--text)}
 h1{font-family:var(--fd);font-weight:600;font-size:clamp(2.7rem,6vw,4.8rem);letter-spacing:-0.01em;font-style:normal}
 h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
@@ -144,8 +144,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,9,13,0.82)
 .nav-cta{display:flex;align-items:center;gap:18px}
 .nav-toggle{display:none;background:none;border:0;color:var(--text);cursor:pointer;padding:6px}
 @media (max-width:860px){
-  .nav-links{position:fixed;top:68px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:18px var(--pad) 24px;gap:16px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:transform var(--dur) var(--ease),opacity var(--dur)}
-  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav-links{position:fixed;top:68px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:18px var(--pad) 24px;gap:16px;transform:translateY(-8px);opacity:0;visibility:hidden;pointer-events:none;transition:transform var(--dur) var(--ease),opacity var(--dur),visibility 0s linear var(--dur)}
+  .nav-links.open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;transition:transform var(--dur) var(--ease),opacity var(--dur),visibility 0s}
   .nav-cta .btn-primary{display:none}
   .nav-toggle{display:block}
 }
@@ -217,7 +217,7 @@ footer{border-top:1px solid var(--border);padding:var(--gap-xl) 0 var(--gap-lg)}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
 .field label{font-size:13px;color:var(--text2)}
 .field input,.field select,.field textarea{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:12px 14px;transition:border-color var(--dur)}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{border-color:var(--accent);outline:none}
 .field textarea{resize:vertical;min-height:110px}
 .urgency{display:flex;gap:8px;flex-wrap:wrap}
 .urgency label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--border2);border-radius:var(--r4);font-size:13.5px;color:var(--text2);cursor:pointer;transition:border-color var(--dur)}
@@ -349,12 +349,44 @@ nav.nav-hidden{transform:translateY(-100%)}
 .search-box{position:relative;margin-bottom:var(--gap-md)}
 .search-box .i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none}
 .search-box input{width:100%;padding:14px 16px 14px 46px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);font-size:15px}
-.search-box input:focus{border-color:var(--accent);outline:none}
+.search-box input:focus-visible{border-color:var(--accent);outline:none}
 .search-box .clear-search{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--text3);cursor:pointer;padding:6px;display:none}
 .search-box.has-value .clear-search{display:block}
 .no-results{display:none;text-align:center;padding:60px 20px;color:var(--text3)}
 .no-results.show{display:block}
 
+
+/* guidelines pass: theming, touch, typography, focus, a11y helpers */
+html{color-scheme:dark;scroll-padding-top:88px;-webkit-tap-highlight-color:rgba(45,212,191,0.18)}
+@media (pointer:fine){html{overscroll-behavior:none}}
+a,button,input,select,textarea,label,summary{touch-action:manipulation}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+.stat b,.mono{font-variant-numeric:tabular-nums}
+.h4{font-size:1.05rem}
+.compare-col h3{font-family:var(--fh);font-size:1.05rem;margin-bottom:18px;display:flex;align-items:center;gap:9px}
+.compare-col.win h3{color:var(--accent)}
+.card,.svc-card,.testi,.problem-card{overflow-wrap:break-word}
+.status-row .name{min-width:0}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible,.search-box input:focus-visible{box-shadow:0 0 0 3px var(--accent3)}
+.field select option{background:var(--bg2);color:var(--text)}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-size:13px;color:var(--text2);margin-bottom:7px;padding:0}
+.field-error{color:var(--red);font-size:13px;margin-bottom:14px}
+.field-error:empty{display:none}
+.wrap,.nav-in{padding-left:max(var(--pad),env(safe-area-inset-left));padding-right:max(var(--pad),env(safe-area-inset-right))}
+.to-top{bottom:max(22px,calc(env(safe-area-inset-bottom) + 12px))}
+.cat-block{content-visibility:auto;contain-intrinsic-size:auto 900px}
+.slider-dots{align-items:center}
+.slider-dots button{position:relative}
+.slider-dots button::before{content:'';position:absolute;inset:-12px -6px}
+.motion-toggle{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;border:1px solid var(--border3);background:var(--card);color:var(--text2);cursor:pointer;transition:border-color var(--dur),color var(--dur)}
+.motion-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.motion-toggle .i{width:14px;height:14px}
+.ticker{position:relative}
+.ticker .motion-toggle{position:absolute;right:max(12px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);z-index:2}
+.ticker.paused .ticker-track{animation-play-state:paused}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
 <script type="application/ld+json">
 {
@@ -423,11 +455,11 @@ nav.nav-hidden{transform:translateY(-100%)}
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="20.5" y2="20.5"/></symbol>
 <symbol id="i-x" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
 <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22h-.01a9.87 9.87 0 01-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26C2.16 6.6 6.6 2.17 12.05 2.17c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.89 6.99c0 5.45-4.44 9.88-9.88 9.88M18.5 3.58A11.82 11.82 0 0012.05 0C5.5 0 .16 5.33.15 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 005.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.17-3.48-8.32"/></symbol>
-</defs></svg>
+<symbol id="i-pause" viewBox="0 0 24 24"><line x1="9" y1="5" x2="9" y2="19"/><line x1="15" y1="5" x2="15" y2="19"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><polygon points="7 5 19 12 7 19" fill="currentColor" stroke="none"/></symbol></defs></svg>
 <a href="#main" class="skip-link">Skip to content</a>
 <nav>
   <div class="nav-in">
-    <a href="index.html" class="logo"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+    <a href="index.html" class="logo" translate="no"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block" aria-hidden="true" focusable="false">
 <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
 <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1"/>
 <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1"/>
@@ -445,15 +477,18 @@ nav.nav-hidden{transform:translateY(-100%)}
     </ul>
     <div class="nav-cta">
       <a href="contact.html" class="btn btn-primary">Get a quote</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><svg class="i"><use href="#i-menu" xlink:href="#i-menu"/></svg></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-menu" xlink:href="#i-menu"/></svg></button>
     </div>
   </div>
 </nav>
 <script>
-document.getElementById('navToggle').addEventListener('click',function(){
-  var l=document.getElementById('navLinks');var open=l.classList.toggle('open');
-  this.setAttribute('aria-expanded',open);
-});
+(function(){
+  var t=document.getElementById('navToggle'), l=document.getElementById('navLinks');
+  function set(open){ l.classList.toggle('open',open); t.setAttribute('aria-expanded',open); }
+  t.addEventListener('click',function(){ set(!l.classList.contains('open')); });
+  l.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && l.classList.contains('open')){ set(false); t.focus(); } });
+})();
 </script>
 <main id="main">
 
@@ -470,604 +505,605 @@ document.getElementById('navToggle').addEventListener('click',function(){
     <div class="sec-head" style="margin-bottom:var(--gap-lg)">
       <div class="eyebrow">Start from your problem</div>
       <h2 style="font-size:1.6rem">Not sure which category you need?</h2>
-      <p>Pick whichever sounds most like your situation and I'll take you straight to the relevant services.</p>
+      <p>Pick whichever sounds most like your situation and I’ll take you straight to the relevant services.</p>
     </div>
     <div class="problem-grid" style="margin-bottom:var(--gap-xl)"><a href="services.html#security" class="problem-card">
-      <div class="icon-tile"><svg class="i"><use href="#i-shield" xlink:href="#i-shield"/></svg></div>
-      <div><q>We've been hit, or we're worried we're next.</q><span class="route">Ransomware resilience &amp; recovery <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+      <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-shield" xlink:href="#i-shield"/></svg></div>
+      <div><q>We’ve been hit, or we’re worried we’re next.</q><span class="route">Ransomware resilience &amp; recovery <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
     </a>
     <a href="consulting.html" class="problem-card">
-      <div class="icon-tile"><svg class="i"><use href="#i-scale" xlink:href="#i-scale"/></svg></div>
-      <div><q>A customer or regulator is asking for compliance proof.</q><span class="route">NIS2, Cyber Essentials &amp; GDPR <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+      <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-scale" xlink:href="#i-scale"/></svg></div>
+      <div><q>A customer or regulator is asking for compliance proof.</q><span class="route">NIS2, Cyber Essentials &amp; GDPR <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
     </a>
     <a href="services.html#automation" class="problem-card">
-      <div class="icon-tile"><svg class="i"><use href="#i-gear" xlink:href="#i-gear"/></svg></div>
-      <div><q>An old system is holding the business back.</q><span class="route">Legacy rescue &amp; modernisation <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+      <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-gear" xlink:href="#i-gear"/></svg></div>
+      <div><q>An old system is holding the business back.</q><span class="route">Legacy rescue &amp; modernisation <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
     </a>
     <a href="services.html#data" class="problem-card">
-      <div class="icon-tile"><svg class="i"><use href="#i-bars" xlink:href="#i-bars"/></svg></div>
-      <div><q>We're drowning in spreadsheets and manual work.</q><span class="route">Automation &amp; live dashboards <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+      <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bars" xlink:href="#i-bars"/></svg></div>
+      <div><q>We’re drowning in spreadsheets and manual work.</q><span class="route">Automation &amp; live dashboards <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
     </a>
     <a href="services.html#ai" class="problem-card">
-      <div class="icon-tile"><svg class="i"><use href="#i-node" xlink:href="#i-node"/></svg></div>
-      <div><q>We want to use AI, but not leak our data.</q><span class="route">Private AI &amp; governance <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+      <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-node" xlink:href="#i-node"/></svg></div>
+      <div><q>We want to use AI, but not leak our data.</q><span class="route">Private AI &amp; governance <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
     </a>
     <a href="services.html#it-support" class="problem-card">
-      <div class="icon-tile"><svg class="i"><use href="#i-monitor" xlink:href="#i-monitor"/></svg></div>
-      <div><q>We just need our IT to work, reliably.</q><span class="route">Support, cloud &amp; infrastructure <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
+      <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-monitor" xlink:href="#i-monitor"/></svg></div>
+      <div><q>We just need our IT to work, reliably.</q><span class="route">Support, cloud &amp; infrastructure <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></span></div>
     </a>
     </div>
     <hr class="divider" style="margin-bottom:var(--gap-lg)">
     <div class="search-box" id="searchBox">
-  <svg class="i"><use href="#i-search" xlink:href="#i-search"/></svg>
-  <input type="text" id="svcSearch" placeholder="Search services, e.g. backup, Copilot, NIS2..." aria-label="Search services">
-  <button class="clear-search" id="clearSearch" aria-label="Clear search"><svg class="i i-sm"><use href="#i-x" xlink:href="#i-x"/></svg></button>
+  <svg class="i" aria-hidden="true" focusable="false"><use href="#i-search" xlink:href="#i-search"/></svg>
+  <input type="search" id="svcSearch" name="q" autocomplete="off" spellcheck="false" placeholder="Search services, e.g. backup, Copilot, NIS2…" aria-label="Search services" aria-controls="catList">
+  <button class="clear-search" id="clearSearch" aria-label="Clear search"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-x" xlink:href="#i-x"/></svg></button>
 </div>
-    <div class="filter-row" id="filterRow"><button class="filter-tab active" data-cat="all">All</button>
-<button class="filter-tab" data-cat="strategic"><svg class="i"><use href="#i-scale" xlink:href="#i-scale"/></svg>Strategic Consulting</button>
-<button class="filter-tab" data-cat="it-support"><svg class="i"><use href="#i-monitor" xlink:href="#i-monitor"/></svg>IT Support & Infrastructure</button>
-<button class="filter-tab" data-cat="security"><svg class="i"><use href="#i-lock" xlink:href="#i-lock"/></svg>Cybersecurity</button>
-<button class="filter-tab" data-cat="data"><svg class="i"><use href="#i-bars" xlink:href="#i-bars"/></svg>Data & Automation</button>
-<button class="filter-tab" data-cat="ai"><svg class="i"><use href="#i-node" xlink:href="#i-node"/></svg>AI & Emerging Technology</button>
-<button class="filter-tab" data-cat="web"><svg class="i"><use href="#i-globe" xlink:href="#i-globe"/></svg>Web & Digital Presence</button>
-<button class="filter-tab" data-cat="marketing"><svg class="i"><use href="#i-broadcast" xlink:href="#i-broadcast"/></svg>Digital Marketing & Presence</button>
-<button class="filter-tab" data-cat="automation"><svg class="i"><use href="#i-gear" xlink:href="#i-gear"/></svg>Business Automation & Manufacturing IT</button>
-<button class="filter-tab" data-cat="managed"><svg class="i"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg>Managed & Retainer Plans</button>
+    <div class="filter-row" id="filterRow"><button class="filter-tab active" data-cat="all" aria-pressed="true">All</button>
+<button class="filter-tab" data-cat="strategic" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-scale" xlink:href="#i-scale"/></svg>Strategic Consulting</button>
+<button class="filter-tab" data-cat="it-support" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-monitor" xlink:href="#i-monitor"/></svg>IT Support & Infrastructure</button>
+<button class="filter-tab" data-cat="security" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-lock" xlink:href="#i-lock"/></svg>Cybersecurity</button>
+<button class="filter-tab" data-cat="data" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bars" xlink:href="#i-bars"/></svg>Data & Automation</button>
+<button class="filter-tab" data-cat="ai" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-node" xlink:href="#i-node"/></svg>AI & Emerging Technology</button>
+<button class="filter-tab" data-cat="web" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-globe" xlink:href="#i-globe"/></svg>Web & Digital Presence</button>
+<button class="filter-tab" data-cat="marketing" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-broadcast" xlink:href="#i-broadcast"/></svg>Digital Marketing & Presence</button>
+<button class="filter-tab" data-cat="automation" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-gear" xlink:href="#i-gear"/></svg>Business Automation & Manufacturing IT</button>
+<button class="filter-tab" data-cat="managed" aria-pressed="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg>Managed & Retainer Plans</button>
 </div>
     <div id="catList"><div class="cat-block" id="strategic" data-cat="strategic">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-scale" xlink:href="#i-scale"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-scale" xlink:href="#i-scale"/></svg></div>
         <div><h3 style="font-size:1.15rem">Strategic Consulting</h3><span class="meta">12 services &middot; Fixed-price engagements, scoped in advance</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="nis2 directive compliance audit your cybersecurity posture against the eu nis2 directive and design a compliant it resilience plan. essential for manufacturing, transport, utilities and their supply chains. now a legal requirement with significant fines for non-compliance.">
       <h4>NIS2 Directive Compliance</h4><p>Audit your cybersecurity posture against the EU NIS2 directive and design a compliant IT resilience plan. Essential for manufacturing, transport, utilities and their supply chains. Now a legal requirement with significant fines for non-compliance.</p>
       <div class="tag-row"><span class="badge badge-red">Legal requirement</span><span class="badge badge-accent">High demand</span></div>
       <div class="svc-price">Fixed-price engagement</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="ransomware resilience planning build and test a recovery plan so that if you're attacked, you're back online in hours not weeks. centred on immutable, isolated backups that ransomware cannot touch. the question is when, not if.">
-      <h4>Ransomware Resilience Planning</h4><p>Build and test a recovery plan so that if you're attacked, you're back online in hours not weeks. Centred on immutable, isolated backups that ransomware cannot touch. The question is when, not if.</p>
+      <h4>Ransomware Resilience Planning</h4><p>Build and test a recovery plan so that if you’re attacked, you’re back online in hours not weeks. Centred on immutable, isolated backups that ransomware cannot touch. The question is when, not if.</p>
       <div class="tag-row"><span class="badge badge-red">Critical</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="business continuity planning a tested plan to keep your business running through any it disruption, from a cyber attack to hardware failure. defines exactly who does what, in what order, to get critical systems back fast.">
       <h4>Business Continuity Planning</h4><p>A tested plan to keep your business running through any IT disruption, from a cyber attack to hardware failure. Defines exactly who does what, in what order, to get critical systems back fast.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="private ai deployment deploy open-source llms or private azure instances that analyse your company's documents and databases with 100% confidentiality. your data never leaves your control. the productivity of ai without the data leak risk.">
-      <h4>Private AI Deployment</h4><p>Deploy open-source LLMs or private Azure instances that analyse your company's documents and databases with 100% confidentiality. Your data never leaves your control. The productivity of AI without the data leak risk.</p>
+      <h4>Private AI Deployment</h4><p>Deploy open-source LLMs or private Azure instances that analyse your company’s documents and databases with 100% confidentiality. Your data never leaves your control. The productivity of AI without the data leak risk.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge badge-purple">Confidential</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="autonomous ai agents (copilot studio) build ai agents that do the work, not just chat: an agent that reads an order email, checks erp stock and generates the dispatch note automatically. real task automation beyond conversational chatbots.">
       <h4>Autonomous AI Agents (Copilot Studio)</h4><p>Build AI agents that do the work, not just chat: an agent that reads an order email, checks ERP stock and generates the dispatch note automatically. Real task automation beyond conversational chatbots.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge badge-accent">High value</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="eu ai act risk & governance ensure every ai tool your business uses complies with the eu ai act: risk classification, governance policies and documentation, so you adopt ai confidently without legal exposure.">
       <h4>EU AI Act Risk & Governance</h4><p>Ensure every AI tool your business uses complies with the EU AI Act: risk classification, governance policies and documentation, so you adopt AI confidently without legal exposure.</p>
       <div class="tag-row"><span class="badge badge-purple">EU AI Act</span><span class="badge badge-purple">AI</span></div>
       <div class="svc-price">Fixed-price engagement</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="legacy industrial software rescue audit, optimise and secure critical software running on old php, outdated sql and unpatched iis servers, migrating to modern windows server without stopping production. a core speciality.">
       <h4>Legacy Industrial Software Rescue</h4><p>Audit, optimise and secure critical software running on old PHP, outdated SQL and unpatched IIS servers, migrating to modern Windows Server without stopping production. A core speciality.</p>
       <div class="tag-row"><span class="badge badge-accent">Core speciality</span><span class="badge badge-accent">High value</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="paperless shop floor automation replace printed excel sheets, whiteboards and manual logs with digital kiosks integrated into real-time dashboards. built and proven in a live industrial environment: qr clock-in, attendance, visitor management.">
       <h4>Paperless Shop Floor Automation</h4><p>Replace printed Excel sheets, whiteboards and manual logs with digital kiosks integrated into real-time dashboards. Built and proven in a live industrial environment: QR clock-in, attendance, visitor management.</p>
       <div class="tag-row"><span class="badge">Proven</span><span class="badge badge-accent">High value</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="process hyperautomation map repetitive manual processes draining your team's time and rebuild them as automated workflows connecting erp, email, databases and reporting, so data flows automatically and people focus on what matters.">
-      <h4>Process Hyperautomation</h4><p>Map repetitive manual processes draining your team's time and rebuild them as automated workflows connecting ERP, email, databases and reporting, so data flows automatically and people focus on what matters.</p>
+      <h4>Process Hyperautomation</h4><p>Map repetitive manual processes draining your team’s time and rebuild them as automated workflows connecting ERP, email, databases and reporting, so data flows automatically and people focus on what matters.</p>
       <div class="tag-row"><span class="badge badge-accent">High ROI</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="esg & carbon footprint reporting centralise and automate collection of energy, waste and fleet data, pulled from iot sensors or your erp, to generate the sustainability reports banks and investors now require.">
       <h4>ESG & Carbon Footprint Reporting</h4><p>Centralise and automate collection of energy, waste and fleet data, pulled from IoT sensors or your ERP, to generate the sustainability reports banks and investors now require.</p>
       <div class="tag-row"><span class="badge">Investor requirement</span><span class="badge badge-accent">Growing fast</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="iot & sensor data integration connect the sensors and meters on your shop floor to a central system that logs, visualises and reports data automatically. the foundation for both esg reporting and smarter operational decisions.">
       <h4>IoT & Sensor Data Integration</h4><p>Connect the sensors and meters on your shop floor to a central system that logs, visualises and reports data automatically. The foundation for both ESG reporting and smarter operational decisions.</p>
       <div class="tag-row"><span class="badge">Emerging</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="it strategy & roadmap consulting a strategic technology roadmap for the next one to two years, aligned to your business goals and covering infrastructure, cloud, security and ai adoption, with realistic budget estimates and priorities.">
       <h4>IT Strategy & Roadmap Consulting</h4><p>A strategic technology roadmap for the next one to two years, aligned to your business goals and covering infrastructure, cloud, security and AI adoption, with realistic budget estimates and priorities.</p>
       <div class="tag-row"><span class="badge">Advisory</span></div>
       <div class="svc-price">Fixed-price engagement</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 <div class="cat-block" id="it-support" data-cat="it-support">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-monitor" xlink:href="#i-monitor"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-monitor" xlink:href="#i-monitor"/></svg></div>
         <div><h3 style="font-size:1.15rem">IT Support & Infrastructure</h3><span class="meta">13 services &middot; Project, day rate or retainer</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="remote & on-site support full helpdesk for pcs, macs and mobile devices. hardware diagnostics, upgrades, os issues and troubleshooting wherever you need it.">
       <h4>Remote & On-site Support</h4><p>Full helpdesk for PCs, Macs and mobile devices. Hardware diagnostics, upgrades, OS issues and troubleshooting wherever you need it.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Day rate or retainer</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="microsoft 365 admin full tenant management: users, licences, exchange online, teams policies, sharepoint permissions, security defaults and mfa rollout.">
       <h4>Microsoft 365 Admin</h4><p>Full tenant management: users, licences, Exchange Online, Teams policies, SharePoint permissions, security defaults and MFA rollout.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="azure / entra id cloud identity: user provisioning, sso, conditional access policies, guest access and hybrid ad configuration with on-prem integration.">
       <h4>Azure / Entra ID</h4><p>Cloud identity: user provisioning, SSO, Conditional Access policies, guest access and hybrid AD configuration with on-prem integration.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="server admin (windows/linux) iis, dns, dhcp, file shares, active directory, patch management and performance monitoring for on-prem servers and cloud vms.">
       <h4>Server Admin (Windows/Linux)</h4><p>IIS, DNS, DHCP, file shares, Active Directory, patch management and performance monitoring for on-prem servers and cloud VMs.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Day rate or retainer</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="intune / mdm device enrolment, compliance policies, app deployment and remote wipe across windows, ios, android and macos from a single console.">
       <h4>Intune / MDM</h4><p>Device enrolment, compliance policies, app deployment and remote wipe across Windows, iOS, Android and macOS from a single console.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="group policy (gpo) windows group policy design and deployment via active directory: software restrictions, drive maps, security baselines and login scripts.">
       <h4>Group Policy (GPO)</h4><p>Windows Group Policy design and deployment via Active Directory: software restrictions, drive maps, security baselines and login scripts.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="virtualisation hyper-v and vmware: virtual machine setup, p2v migration, snapshot management, performance tuning and capacity planning.">
       <h4>Virtualisation</h4><p>Hyper-V and VMware: virtual machine setup, P2V migration, snapshot management, performance tuning and capacity planning.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="networking & connectivity office and home networks, mesh wi-fi, firewall and vpn (meraki, fortinet, pfsense), vlan segmentation and comprehensive network audits.">
       <h4>Networking & Connectivity</h4><p>Office and home networks, mesh Wi-Fi, firewall and VPN (Meraki, Fortinet, pfSense), VLAN segmentation and comprehensive network audits.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="teams phone / voip setup replace legacy phone lines with microsoft teams phone or hosted voip. number porting, call routing, auto-attendants. critical ahead of the 2027 pstn switch-off.">
       <h4>Teams Phone / VoIP Setup</h4><p>Replace legacy phone lines with Microsoft Teams Phone or hosted VoIP. Number porting, call routing, auto-attendants. Critical ahead of the 2027 PSTN switch-off.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price setup</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="saas licence audit audit every saas subscription your business pays for. identify unused licences, right-size plans and set up monthly governance. audits routinely uncover a material share of spend going to unused or oversized licences.">
       <h4>SaaS Licence Audit</h4><p>Audit every SaaS subscription your business pays for. Identify unused licences, right-size plans and set up monthly governance. Audits routinely uncover a material share of spend going to unused or oversized licences.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
       <div class="svc-price">Audit, then optional retainer</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="backup audit & implementation audit existing backup (usually broken or non-existent), implement a proper 3-2-1 backup strategy using veeam, acronis or azure backup. test restores included.">
       <h4>Backup Audit & Implementation</h4><p>Audit existing backup (usually broken or non-existent), implement a proper 3-2-1 backup strategy using Veeam, Acronis or Azure Backup. Test restores included.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price setup</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="it procurement sourcing and purchasing laptops, servers, networking gear and software licences at the best price, correctly spec'd for your actual needs.">
-      <h4>IT Procurement</h4><p>Sourcing and purchasing laptops, servers, networking gear and software licences at the best price, correctly spec'd for your actual needs.</p>
+      <h4>IT Procurement</h4><p>Sourcing and purchasing laptops, servers, networking gear and software licences at the best price, correctly spec’d for your actual needs.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Flat fee or percentage of order</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="onboarding & offboarding full new-starter setup or secure leaver offboarding: accounts, devices, permissions, email forwarding and data transfer handled end to end.">
       <h4>Onboarding & Offboarding</h4><p>Full new-starter setup or secure leaver offboarding: accounts, devices, permissions, email forwarding and data transfer handled end to end.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Priced per user</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 <div class="cat-block" id="security" data-cat="security">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-lock" xlink:href="#i-lock"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-lock" xlink:href="#i-lock"/></svg></div>
         <div><h3 style="font-size:1.15rem">Cybersecurity</h3><span class="meta">11 services &middot; Projects and monthly managed plans</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="cyber essentials certification prep prepare your business for uk government-backed cyber essentials certification. mandatory for many government contracts, and designed to prevent the vast majority of common cyber attacks.">
       <h4>Cyber Essentials Certification Prep</h4><p>Prepare your business for UK government-backed Cyber Essentials certification. Mandatory for many government contracts, and designed to prevent the vast majority of common cyber attacks.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge badge-red">Gov requirement</span></div>
       <div class="svc-price">Fixed-price engagement</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="mfa / zero trust setup enforce multi-factor across microsoft 365, google and all platforms. zero trust network access policies protect against credential theft, the number one attack vector.">
       <h4>MFA / Zero Trust Setup</h4><p>Enforce multi-factor across Microsoft 365, Google and all platforms. Zero Trust network access policies protect against credential theft, the number one attack vector.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="managed security service (mssp-lite) monthly managed security monitoring: dark web scanning, microsoft secure score tracking, email threat monitoring, patch compliance and a monthly health score.">
       <h4>Managed Security Service (MSSP-lite)</h4><p>Monthly managed security monitoring: dark web scanning, Microsoft Secure Score tracking, email threat monitoring, patch compliance and a monthly health score.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge">Managed</span></div>
       <div class="svc-price">Monthly managed service</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="dark web monitoring continuous scanning, with alerts when your company email addresses or credentials appear in known data breaches before they're exploited.">
-      <h4>Dark Web Monitoring</h4><p>Continuous scanning, with alerts when your company email addresses or credentials appear in known data breaches before they're exploited.</p>
+      <h4>Dark Web Monitoring</h4><p>Continuous scanning, with alerts when your company email addresses or credentials appear in known data breaches before they’re exploited.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Monthly managed service</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="security awareness training simulated phishing campaigns and tailored staff training sessions. regular testing and training measurably reduces the rate at which staff click malicious links.">
       <h4>Security Awareness Training</h4><p>Simulated phishing campaigns and tailored staff training sessions. Regular testing and training measurably reduces the rate at which staff click malicious links.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Priced per session</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="gdpr / compliance review data audit, privacy notices, data flow mapping and a practical gap analysis against uk gdpr requirements. clear actions, not legal waffle.">
       <h4>GDPR / Compliance Review</h4><p>Data audit, privacy notices, data flow mapping and a practical gap analysis against UK GDPR requirements. Clear actions, not legal waffle.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="email security (dmarc/dkim/spf) full email authentication setup to prevent domain spoofing, phishing and spam. also improves deliverability. often completed in a single day.">
       <h4>Email Security (DMARC/DKIM/SPF)</h4><p>Full email authentication setup to prevent domain spoofing, phishing and spam. Also improves deliverability. Often completed in a single day.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="password manager rollout deploy 1password teams or bitwarden business across your organisation: account setup, credential import, shared vaults and staff training.">
       <h4>Password Manager Rollout</h4><p>Deploy 1Password Teams or Bitwarden Business across your organisation: account setup, credential import, shared vaults and staff training.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Priced per deployment</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="endpoint protection (edr) deploy and manage enterprise-grade endpoint detection and response across all devices, with centralised alerting and rapid threat response.">
       <h4>Endpoint Protection (EDR)</h4><p>Deploy and manage enterprise-grade endpoint detection and response across all devices, with centralised alerting and rapid threat response.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Monthly managed service</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="penetration testing controlled ethical testing of your network, m365 environment or web apps to find vulnerabilities before attackers do, with a detailed remediation report.">
       <h4>Penetration Testing</h4><p>Controlled ethical testing of your network, M365 environment or web apps to find vulnerabilities before attackers do, with a detailed remediation report.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="iso 27001 / cyber essentials plus gap analysis, policy templates and implementation support for iso 27001 certification or cyber essentials plus, the next level above standard ce.">
       <h4>ISO 27001 / Cyber Essentials Plus</h4><p>Gap analysis, policy templates and implementation support for ISO 27001 certification or Cyber Essentials Plus, the next level above standard CE.</p>
       <div class="tag-row"><span class="badge">New</span><span class="badge">Certification</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 <div class="cat-block" id="data" data-cat="data">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-bars" xlink:href="#i-bars"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bars" xlink:href="#i-bars"/></svg></div>
         <div><h3 style="font-size:1.15rem">Data & Automation</h3><span class="meta">11 services &middot; Fixed-price projects and ongoing development</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="power bi dashboards custom kpi dashboards, financial reports and executive visualisations connected to your live data, whether that's erp, sql, excel or cloud sources.">
-      <h4>Power BI Dashboards</h4><p>Custom KPI dashboards, financial reports and executive visualisations connected to your live data, whether that's ERP, SQL, Excel or cloud sources.</p>
+      <h4>Power BI Dashboards</h4><p>Custom KPI dashboards, financial reports and executive visualisations connected to your live data, whether that’s ERP, SQL, Excel or cloud sources.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="power platform development powerapps, power automate and copilot studio combined: custom business apps, approval workflows and process automation connected to any microsoft data source.">
       <h4>Power Platform Development</h4><p>PowerApps, Power Automate and Copilot Studio combined: custom business apps, approval workflows and process automation connected to any Microsoft data source.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="excel automation (vba) macros, advanced formulas and automated reporting workbooks that eliminate hours of weekly manual work, built around how your team actually works.">
       <h4>Excel Automation (VBA)</h4><p>Macros, advanced formulas and automated reporting workbooks that eliminate hours of weekly manual work, built around how your team actually works.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="power automate flows automate approvals, notifications, form submissions and data syncs across microsoft 365, sharepoint and hundreds of third-party apps via connectors.">
       <h4>Power Automate Flows</h4><p>Automate approvals, notifications, form submissions and data syncs across Microsoft 365, SharePoint and hundreds of third-party apps via connectors.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="sql databases schema design, stored procedures, query optimisation, reporting views and sql server administration for business-critical applications.">
       <h4>SQL Databases</h4><p>Schema design, stored procedures, query optimisation, reporting views and SQL Server administration for business-critical applications.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Day rate or retainer</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="python scripting & automation data pipelines, scheduled tasks, api integrations and custom automation tools that permanently replace repetitive manual processes.">
       <h4>Python Scripting & Automation</h4><p>Data pipelines, scheduled tasks, API integrations and custom automation tools that permanently replace repetitive manual processes.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Day rate or retainer</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="sharepoint intranet design and build company portals, document libraries, news hubs and team collaboration spaces on microsoft sharepoint online.">
       <h4>SharePoint Intranet</h4><p>Design and build company portals, document libraries, news hubs and team collaboration spaces on Microsoft SharePoint Online.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="data migration legacy to cloud: clean, map, migrate and validate your data with zero loss. covers erp, crm, file servers and databases.">
       <h4>Data Migration</h4><p>Legacy to cloud: clean, map, migrate and validate your data with zero loss. Covers ERP, CRM, file servers and databases.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="cloud cost optimisation review azure spend and m365 licences, identify orphaned resources and set up ongoing cost governance. audits routinely uncover orphaned resources and oversized plans.">
       <h4>Cloud Cost Optimisation</h4><p>Review Azure spend and M365 licences, identify orphaned resources and set up ongoing cost governance. Audits routinely uncover orphaned resources and oversized plans.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Audit, then share of savings</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="it due diligence (m&a) it assessment for businesses being acquired or merging: infrastructure state, security posture, licencing compliance and integration complexity.">
       <h4>IT Due Diligence (M&A)</h4><p>IT assessment for businesses being acquired or merging: infrastructure state, security posture, licencing compliance and integration complexity.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price assessment</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="financial reporting & modelling p&l, balance sheets, cash flow forecasting and variance analysis in excel, power bi or dynamics, built for management decisions.">
       <h4>Financial Reporting & Modelling</h4><p>P&L, balance sheets, cash flow forecasting and variance analysis in Excel, Power BI or Dynamics, built for management decisions.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 <div class="cat-block" id="ai" data-cat="ai">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-node" xlink:href="#i-node"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-node" xlink:href="#i-node"/></svg></div>
         <div><h3 style="font-size:1.15rem">AI & Emerging Technology</h3><span class="meta">7 services &middot; Fixed-price projects and workshops</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="microsoft copilot rollout end-to-end copilot deployment: licence procurement, tenant security config, user enablement and full staff training. most businesses buy copilot licences but never deploy them properly. this fixes that.">
       <h4>Microsoft Copilot Rollout</h4><p>End-to-end Copilot deployment: licence procurement, tenant security config, user enablement and full staff training. Most businesses buy Copilot licences but never deploy them properly. This fixes that.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price rollout</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="ai workflow integration connect ai tools into your existing systems, including crm, erp, m365, sharepoint and custom apis, to automate tasks, surface insights and reduce manual work.">
       <h4>AI Workflow Integration</h4><p>Connect AI tools into your existing systems, including CRM, ERP, M365, SharePoint and custom APIs, to automate tasks, surface insights and reduce manual work.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="ai governance & policy writing a tailored ai acceptable-use policy, data handling guidelines and risk assessment. most companies adopting ai tools have nothing in writing. this protects you legally.">
       <h4>AI Governance & Policy Writing</h4><p>A tailored AI acceptable-use policy, data handling guidelines and risk assessment. Most companies adopting AI tools have nothing in writing. This protects you legally.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price engagement</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="prompt engineering design and optimise custom system prompts for copilot, chatgpt and other llms, tailored to your business language, workflows and compliance needs.">
       <h4>Prompt Engineering</h4><p>Design and optimise custom system prompts for Copilot, ChatGPT and other LLMs, tailored to your business language, workflows and compliance needs.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="chatgpt / ai tools for business select the right ai tools, configure them securely, integrate with your workflows and train your team to use them effectively and responsibly.">
       <h4>ChatGPT / AI Tools for Business</h4><p>Select the right AI tools, configure them securely, integrate with your workflows and train your team to use them effectively and responsibly.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="custom chatbot development build internal or customer-facing chatbots powered by copilot studio or gpt, trained on your documents, faqs and knowledge base.">
       <h4>Custom Chatbot Development</h4><p>Build internal or customer-facing chatbots powered by Copilot Studio or GPT, trained on your documents, FAQs and knowledge base.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="ai staff training workshop half-day or full-day workshop teaching your team to use ai tools effectively, tailored to your industry. delivered remotely or on-site.">
       <h4>AI Staff Training Workshop</h4><p>Half-day or full-day workshop teaching your team to use AI tools effectively, tailored to your industry. Delivered remotely or on-site.</p>
       <div class="tag-row"><span class="badge badge-purple">AI</span><span class="badge">New</span></div>
       <div class="svc-price">Priced per session</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 <div class="cat-block" id="web" data-cat="web">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-globe" xlink:href="#i-globe"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-globe" xlink:href="#i-globe"/></svg></div>
         <div><h3 style="font-size:1.15rem">Web & Digital Presence</h3><span class="meta">8 services &middot; Fixed-price projects</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="website design & build professional custom html/css, wordpress or wix websites: fast, mobile-first, seo-optimised and built to convert visitors into real enquiries.">
       <h4>Website Design & Build</h4><p>Professional custom HTML/CSS, WordPress or Wix websites: fast, mobile-first, SEO-optimised and built to convert visitors into real enquiries.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="google workspace setup gmail, drive, meet, calendar: full admin config, migration from legacy email systems, domain verification and staff training included.">
       <h4>Google Workspace Setup</h4><p>Gmail, Drive, Meet, Calendar: full admin config, migration from legacy email systems, domain verification and staff training included.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="domain & dns management domain registration, dns record setup (mx, a, cname, txt, spf), ssl certificates, cdn configuration and domain transfers handled correctly.">
       <h4>Domain & DNS Management</h4><p>Domain registration, DNS record setup (MX, A, CNAME, TXT, SPF), SSL certificates, CDN configuration and domain transfers handled correctly.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="cloud migration (m365/gws) migrate from on-prem exchange, file servers or google to microsoft 365: email, calendar, onedrive, teams and sharepoint all covered.">
       <h4>Cloud Migration (M365/GWS)</h4><p>Migrate from on-prem Exchange, file servers or Google to Microsoft 365: email, calendar, OneDrive, Teams and SharePoint all covered.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="technical seo core web vitals, site speed, crawl error fixes, structured data, xml sitemaps and mobile usability. the technical foundations that get you ranking.">
       <h4>Technical SEO</h4><p>Core Web Vitals, site speed, crawl error fixes, structured data, XML sitemaps and mobile usability. The technical foundations that get you ranking.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="e-commerce setup woocommerce or shopify store setup, product import, stripe/paypal integration, shipping configuration and order management workflows.">
       <h4>E-commerce Setup</h4><p>WooCommerce or Shopify store setup, product import, Stripe/PayPal integration, shipping configuration and order management workflows.</p>
       <div class="tag-row"></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="email newsletter setup mailchimp or klaviyo with domain authentication, branded templates, automated sequences and a sending strategy.">
       <h4>Email Newsletter Setup</h4><p>Mailchimp or Klaviyo with domain authentication, branded templates, automated sequences and a sending strategy.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price setup</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="website care plan monthly website maintenance: plugin updates, security scans, uptime monitoring, backups and a monthly performance report.">
       <h4>Website Care Plan</h4><p>Monthly website maintenance: plugin updates, security scans, uptime monitoring, backups and a monthly performance report.</p>
       <div class="tag-row"><span class="badge">New</span><span class="badge">Managed</span></div>
       <div class="svc-price">Monthly managed service</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 <div class="cat-block" id="marketing" data-cat="marketing">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-broadcast" xlink:href="#i-broadcast"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-broadcast" xlink:href="#i-broadcast"/></svg></div>
         <div><h3 style="font-size:1.15rem">Digital Marketing & Presence</h3><span class="meta">5 services &middot; Setup projects and monthly plans</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="google business profile setup, verification and full optimisation: categories, photos, services, q&a, review strategy and posting schedule. improves visibility in local search results.">
       <h4>Google Business Profile</h4><p>Setup, verification and full optimisation: categories, photos, services, Q&A, review strategy and posting schedule. Improves visibility in local search results.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Setup fee, then monthly plan</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="linkedin company page setup set up or refresh your linkedin presence: banner, about section, service pages, employee advocacy setup and a 30-day content calendar.">
       <h4>LinkedIn Company Page Setup</h4><p>Set up or refresh your LinkedIn presence: banner, about section, service pages, employee advocacy setup and a 30-day content calendar.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="social media business setup facebook, instagram and meta business suite: profile setup, brand consistency, admin roles, pixel setup and basic ad account configuration.">
       <h4>Social Media Business Setup</h4><p>Facebook, Instagram and Meta Business Suite: profile setup, brand consistency, admin roles, pixel setup and basic ad account configuration.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="google analytics & tag manager set up ga4, google tag manager and conversion tracking so you actually know where your website enquiries are coming from.">
       <h4>Google Analytics & Tag Manager</h4><p>Set up GA4, Google Tag Manager and conversion tracking so you actually know where your website enquiries are coming from.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="online review management setup a system to consistently collect google and trustpilot reviews: automated request sequences, response templates and reputation monitoring.">
       <h4>Online Review Management Setup</h4><p>A system to consistently collect Google and Trustpilot reviews: automated request sequences, response templates and reputation monitoring.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price setup</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 <div class="cat-block" id="automation" data-cat="automation">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-gear" xlink:href="#i-gear"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-gear" xlink:href="#i-gear"/></svg></div>
         <div><h3 style="font-size:1.15rem">Business Automation & Manufacturing IT</h3><span class="meta">8 services &middot; Fixed-price builds, scoped in advance</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="kiosk & attendance systems custom qr code clock-in/out kiosk systems for manufacturing and warehouse environments. staff scan badges on tablet, data writes direct to database. the same stack used in production at a uk industrial company.">
       <h4>Kiosk & Attendance Systems</h4><p>Custom QR code clock-in/out kiosk systems for manufacturing and warehouse environments. Staff scan badges on tablet, data writes direct to database. The same stack used in production at a UK industrial company.</p>
       <div class="tag-row"><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="visitor & contractor management digital visitor sign-in with h&s induction, contractor management, automatic fire call list and sign-out tracking, replacing paper visitor books.">
       <h4>Visitor & Contractor Management</h4><p>Digital visitor sign-in with H&S induction, contractor management, automatic fire call list and sign-out tracking, replacing paper visitor books.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="shift & attendance reporting automation automated daily, weekly and monthly attendance reports emailed to managers and hr: late arrival alerts, overtime tracking, absence summaries.">
       <h4>Shift & Attendance Reporting Automation</h4><p>Automated daily, weekly and monthly attendance reports emailed to managers and HR: late arrival alerts, overtime tracking, absence summaries.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="oee & production dashboards overall equipment effectiveness dashboards showing availability, performance and quality in real time, helping identify bottlenecks before they become costly.">
       <h4>OEE & Production Dashboards</h4><p>Overall Equipment Effectiveness dashboards showing availability, performance and quality in real time, helping identify bottlenecks before they become costly.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="barcode & qr stock tracking simple scan-in/scan-out stock system using barcodes or qr codes and a handheld scanner. track movements and generate low-stock alerts without expensive software.">
       <h4>Barcode & QR Stock Tracking</h4><p>Simple scan-in/scan-out stock system using barcodes or QR codes and a handheld scanner. Track movements and generate low-stock alerts without expensive software.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="erp reporting & integration connect your erp (sap, dynamics ax, sage) to power bi, excel or a custom dashboard, extracting the reports your managers actually need.">
       <h4>ERP Reporting & Integration</h4><p>Connect your ERP (SAP, Dynamics AX, Sage) to Power BI, Excel or a custom dashboard, extracting the reports your managers actually need.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="iso 9001 document control system a document management system for iso 9001 compliance: version control, approval workflows, controlled distribution and audit trail.">
       <h4>ISO 9001 Document Control System</h4><p>A document management system for ISO 9001 compliance: version control, approval workflows, controlled distribution and audit trail.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="preventive maintenance scheduler automated maintenance scheduling and alerts: track service intervals, remind engineers, log completed work and generate compliance reports.">
       <h4>Preventive Maintenance Scheduler</h4><p>Automated maintenance scheduling and alerts: track service intervals, remind engineers, log completed work and generate compliance reports.</p>
       <div class="tag-row"><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Request a quote <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 <div class="cat-block" id="managed" data-cat="managed">
       <div class="cat-head">
-        <div class="icon-tile"><svg class="i"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg></div>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg></div>
         <div><h3 style="font-size:1.15rem">Managed & Retainer Plans</h3><span class="meta">6 services &middot; Predictable monthly and quarterly plans</span></div>
       </div>
       <div class="grid g-3"><div class="svc-card" data-search="monthly it retainer your dedicated it department for a fixed monthly cost. priority sla, proactive monitoring, patch management and a monthly review call.">
       <h4>Monthly IT Retainer</h4><p>Your dedicated IT department for a fixed monthly cost. Priority SLA, proactive monitoring, patch management and a monthly review call.</p>
       <div class="tag-row"><span class="badge">Managed</span><span class="badge badge-accent">Popular</span></div>
       <div class="svc-price">Monthly managed service</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="managed security service monthly security monitoring: dark web scanning, microsoft secure score, email threat alerts, patch compliance and a monthly health report.">
       <h4>Managed Security Service</h4><p>Monthly security monitoring: dark web scanning, Microsoft Secure Score, email threat alerts, patch compliance and a monthly health report.</p>
       <div class="tag-row"><span class="badge">Managed</span><span class="badge badge-accent">Popular</span><span class="badge">New</span></div>
       <div class="svc-price">Monthly managed service</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="it health check one-off full audit of infrastructure, security posture, licences and costs, delivered as a risk report with a prioritised remediation roadmap.">
       <h4>IT Health Check</h4><p>One-off full audit of infrastructure, security posture, licences and costs, delivered as a risk report with a prioritised remediation roadmap.</p>
       <div class="tag-row"><span class="badge">Managed</span></div>
       <div class="svc-price">One-off engagement</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="disaster recovery plan full dr runbook, backup validation, rto/rpo definition, failover documentation and an annual live test exercise.">
       <h4>Disaster Recovery Plan</h4><p>Full DR runbook, backup validation, RTO/RPO definition, failover documentation and an annual live test exercise.</p>
       <div class="tag-row"><span class="badge">Managed</span></div>
       <div class="svc-price">One-off engagement</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="it roadmap consulting a strategic one to two year it roadmap aligned to your business goals, with budget estimates across infrastructure, cloud, security and ai adoption.">
       <h4>IT Roadmap Consulting</h4><p>A strategic one to two year IT roadmap aligned to your business goals, with budget estimates across infrastructure, cloud, security and AI adoption.</p>
       <div class="tag-row"><span class="badge">Managed</span><span class="badge">New</span></div>
       <div class="svc-price">Fixed-price project</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     <div class="svc-card" data-search="quarterly it review a regular check-in on your it environment: performance, security posture, costs, upcoming renewals and recommendations for the next quarter.">
       <h4>Quarterly IT Review</h4><p>A regular check-in on your IT environment: performance, security posture, costs, upcoming renewals and recommendations for the next quarter.</p>
       <div class="tag-row"><span class="badge">Managed</span><span class="badge">New</span></div>
       <div class="svc-price">Quarterly engagement</div>
-      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+      <div class="svc-foot"><a href="contact.html" class="svc-link">Enquire <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
     </div>
     </div>
     </div>
 </div>
+    <p class="sr-only" id="resultCount" aria-live="polite"></p>
     <div class="no-results" id="noResults">
       <p style="font-size:1.05rem;color:var(--text)">No services match that search.</p>
       <p style="margin-top:8px">Try a different term, or just tell me what you need directly.</p>
-      <a href="contact.html" class="btn btn-outline" style="margin-top:20px">Describe what you're after</a>
+      <a href="contact.html" class="btn btn-outline" style="margin-top:20px">Describe what you’re after</a>
     </div>
   </div>
 </section>
@@ -1075,10 +1111,10 @@ document.getElementById('navToggle').addEventListener('click',function(){
 <section class="section" style="background:var(--bg2)">
   <div class="wrap center" style="max-width:600px">
     <h2 style="font-size:1.7rem">Not sure what you need?</h2>
-    <p style="margin-top:14px">Describe your situation in plain English and I'll recommend the right services, with a clear, honest quote and nothing you didn't ask for.</p>
+    <p style="margin-top:14px">Describe your situation in plain English and I’ll recommend the right services, with a clear, honest quote and nothing you didn’t ask for.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px">
-      <a href="contact.html" class="btn btn-primary">Talk to me <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a>
-      <a href="https://wa.me/447349301106" class="btn btn-outline"><svg class="i i-sm"><use href="#i-whatsapp" xlink:href="#i-whatsapp"/></svg>WhatsApp me</a>
+      <a href="contact.html" class="btn btn-primary">Talk to me <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a>
+      <a href="https://wa.me/447349301106" class="btn btn-outline"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-whatsapp" xlink:href="#i-whatsapp"/></svg>WhatsApp me</a>
     </div>
   </div>
 </section>
@@ -1087,13 +1123,13 @@ document.getElementById('navToggle').addEventListener('click',function(){
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <a href="index.html" class="logo"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
-<defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <a href="index.html" class="logo" translate="no"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block" aria-hidden="true" focusable="false">
+<defs><linearGradient id="grad-foot" x1="0%" y1="0%" x2="100%" y2="100%">
 <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1"/>
 <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1"/>
 </linearGradient></defs>
-<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
-<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad-foot)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad-foot)"/>
 <circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
 </svg>M.Apex Consulting</a>
       <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="consulting.html">Consulting</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
@@ -1104,65 +1140,61 @@ document.getElementById('navToggle').addEventListener('click',function(){
     </div>
   </div>
 </footer>
-<button class="to-top" id="toTop" aria-label="Back to top"><svg class="i"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></button>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></button>
 <script>
 (function(){
-  var curCat = 'all';
-  var curQuery = '';
+  var curCat = 'all', curQuery = '';
+  var tabs = document.querySelectorAll('.filter-tab');
+  var searchInput = document.getElementById('svcSearch');
+  var searchBox = document.getElementById('searchBox');
+  var countEl = document.getElementById('resultCount');
 
+  function syncUrl(){
+    var url = new URL(location.href);
+    if(curQuery) url.searchParams.set('q', curQuery); else url.searchParams.delete('q');
+    url.hash = curCat === 'all' ? '' : curCat;
+    history.replaceState(null, '', url);
+  }
+  function setTab(cat){
+    curCat = cat;
+    tabs.forEach(function(b){ var on = b.dataset.cat === cat; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on); });
+  }
   function apply(){
-    var noneVisible = true;
+    var shown = 0;
     document.querySelectorAll('.cat-block').forEach(function(block){
-      var catMatch = (curCat === 'all' || block.dataset.cat === curCat);
-      var anyCardVisible = false;
+      var catMatch = (curCat === 'all' || block.dataset.cat === curCat), any = false;
       block.querySelectorAll('.svc-card').forEach(function(card){
-        var textMatch = !curQuery || card.dataset.search.indexOf(curQuery) !== -1;
-        var show = catMatch && textMatch;
+        var show = catMatch && (!curQuery || card.dataset.search.indexOf(curQuery) !== -1);
         card.style.display = show ? '' : 'none';
-        if(show) anyCardVisible = true;
+        if(show){ any = true; shown++; }
       });
-      block.style.display = anyCardVisible ? '' : 'none';
-      if(anyCardVisible) noneVisible = false;
+      block.style.display = any ? '' : 'none';
     });
-    document.getElementById('noResults').classList.toggle('show', noneVisible);
+    document.getElementById('noResults').classList.toggle('show', shown === 0);
+    countEl.textContent = shown === 1 ? '1 service shown' : shown + ' services shown';
   }
 
   document.getElementById('filterRow').addEventListener('click', function(e){
-    var btn = e.target.closest('.filter-tab');
-    if(!btn) return;
-    document.querySelectorAll('.filter-tab').forEach(function(b){ b.classList.remove('active'); });
-    btn.classList.add('active');
-    curCat = btn.dataset.cat;
-    apply();
+    var btn = e.target.closest('.filter-tab'); if(!btn) return;
+    setTab(btn.dataset.cat); apply(); syncUrl();
   });
-
-  var searchInput = document.getElementById('svcSearch');
-  var searchBox = document.getElementById('searchBox');
   searchInput.addEventListener('input', function(){
     curQuery = this.value.trim().toLowerCase();
     searchBox.classList.toggle('has-value', curQuery.length > 0);
-    apply();
+    apply(); syncUrl();
   });
   document.getElementById('clearSearch').addEventListener('click', function(){
-    searchInput.value = '';
-    curQuery = '';
-    searchBox.classList.remove('has-value');
-    apply();
-    searchInput.focus();
+    searchInput.value = ''; curQuery = ''; searchBox.classList.remove('has-value');
+    apply(); syncUrl(); searchInput.focus();
   });
 
-  // arriving via a "start from your problem" link: select the matching filter tab too,
-  // so the page feels like it landed in the right place, not just scrolled to it
+  // restore state from the URL (problem-card links land on #security etc.)
+  var params = new URLSearchParams(location.search);
+  var q = (params.get('q') || '').trim().toLowerCase();
+  if(q){ searchInput.value = q; curQuery = q; searchBox.classList.add('has-value'); }
   var hash = location.hash.replace('#','');
-  if(hash){
-    var match = document.querySelector('.filter-tab[data-cat="'+hash+'"]');
-    if(match){
-      document.querySelectorAll('.filter-tab').forEach(function(b){ b.classList.remove('active'); });
-      match.classList.add('active');
-      curCat = hash;
-      apply();
-    }
-  }
+  if(hash && document.querySelector('.filter-tab[data-cat="'+hash+'"]')) setTab(hash);
+  if(q || hash) apply();
 })();
 </script>
 <script>

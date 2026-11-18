@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Contact | M.Apex Consulting</title>
 <meta name="description" content="Get in touch with M.Apex Consulting. Describe what you need and get a clear plan and an honest quote, usually the same day.">
 <link rel="canonical" href="https://mapexconsulting.co.uk/contact.html">
@@ -75,7 +75,7 @@ body::before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .skip-link{position:fixed;top:-60px;left:12px;z-index:200;background:var(--accent);color:#04231f;padding:12px 18px;border-radius:var(--r);font-weight:600;font-size:14px;transition:top var(--dur) var(--ease)}
-.skip-link:focus{top:12px}
+.skip-link:focus-visible{top:12px}
 h1,h2,h3,h4{font-family:var(--fh);font-weight:800;line-height:1.12;letter-spacing:-0.015em;color:var(--text)}
 h1{font-family:var(--fd);font-weight:600;font-size:clamp(2.7rem,6vw,4.8rem);letter-spacing:-0.01em;font-style:normal}
 h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
@@ -144,8 +144,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,9,13,0.82)
 .nav-cta{display:flex;align-items:center;gap:18px}
 .nav-toggle{display:none;background:none;border:0;color:var(--text);cursor:pointer;padding:6px}
 @media (max-width:860px){
-  .nav-links{position:fixed;top:68px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:18px var(--pad) 24px;gap:16px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:transform var(--dur) var(--ease),opacity var(--dur)}
-  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav-links{position:fixed;top:68px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:18px var(--pad) 24px;gap:16px;transform:translateY(-8px);opacity:0;visibility:hidden;pointer-events:none;transition:transform var(--dur) var(--ease),opacity var(--dur),visibility 0s linear var(--dur)}
+  .nav-links.open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;transition:transform var(--dur) var(--ease),opacity var(--dur),visibility 0s}
   .nav-cta .btn-primary{display:none}
   .nav-toggle{display:block}
 }
@@ -217,7 +217,7 @@ footer{border-top:1px solid var(--border);padding:var(--gap-xl) 0 var(--gap-lg)}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
 .field label{font-size:13px;color:var(--text2)}
 .field input,.field select,.field textarea{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:12px 14px;transition:border-color var(--dur)}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{border-color:var(--accent);outline:none}
 .field textarea{resize:vertical;min-height:110px}
 .urgency{display:flex;gap:8px;flex-wrap:wrap}
 .urgency label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--border2);border-radius:var(--r4);font-size:13.5px;color:var(--text2);cursor:pointer;transition:border-color var(--dur)}
@@ -349,12 +349,44 @@ nav.nav-hidden{transform:translateY(-100%)}
 .search-box{position:relative;margin-bottom:var(--gap-md)}
 .search-box .i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none}
 .search-box input{width:100%;padding:14px 16px 14px 46px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);font-size:15px}
-.search-box input:focus{border-color:var(--accent);outline:none}
+.search-box input:focus-visible{border-color:var(--accent);outline:none}
 .search-box .clear-search{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--text3);cursor:pointer;padding:6px;display:none}
 .search-box.has-value .clear-search{display:block}
 .no-results{display:none;text-align:center;padding:60px 20px;color:var(--text3)}
 .no-results.show{display:block}
 
+
+/* guidelines pass: theming, touch, typography, focus, a11y helpers */
+html{color-scheme:dark;scroll-padding-top:88px;-webkit-tap-highlight-color:rgba(45,212,191,0.18)}
+@media (pointer:fine){html{overscroll-behavior:none}}
+a,button,input,select,textarea,label,summary{touch-action:manipulation}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+.stat b,.mono{font-variant-numeric:tabular-nums}
+.h4{font-size:1.05rem}
+.compare-col h3{font-family:var(--fh);font-size:1.05rem;margin-bottom:18px;display:flex;align-items:center;gap:9px}
+.compare-col.win h3{color:var(--accent)}
+.card,.svc-card,.testi,.problem-card{overflow-wrap:break-word}
+.status-row .name{min-width:0}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible,.search-box input:focus-visible{box-shadow:0 0 0 3px var(--accent3)}
+.field select option{background:var(--bg2);color:var(--text)}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-size:13px;color:var(--text2);margin-bottom:7px;padding:0}
+.field-error{color:var(--red);font-size:13px;margin-bottom:14px}
+.field-error:empty{display:none}
+.wrap,.nav-in{padding-left:max(var(--pad),env(safe-area-inset-left));padding-right:max(var(--pad),env(safe-area-inset-right))}
+.to-top{bottom:max(22px,calc(env(safe-area-inset-bottom) + 12px))}
+.cat-block{content-visibility:auto;contain-intrinsic-size:auto 900px}
+.slider-dots{align-items:center}
+.slider-dots button{position:relative}
+.slider-dots button::before{content:'';position:absolute;inset:-12px -6px}
+.motion-toggle{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;border:1px solid var(--border3);background:var(--card);color:var(--text2);cursor:pointer;transition:border-color var(--dur),color var(--dur)}
+.motion-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.motion-toggle .i{width:14px;height:14px}
+.ticker{position:relative}
+.ticker .motion-toggle{position:absolute;right:max(12px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);z-index:2}
+.ticker.paused .ticker-track{animation-play-state:paused}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
 <script type="application/ld+json">
 {
@@ -423,11 +455,11 @@ nav.nav-hidden{transform:translateY(-100%)}
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="20.5" y2="20.5"/></symbol>
 <symbol id="i-x" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
 <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22h-.01a9.87 9.87 0 01-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26C2.16 6.6 6.6 2.17 12.05 2.17c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.89 6.99c0 5.45-4.44 9.88-9.88 9.88M18.5 3.58A11.82 11.82 0 0012.05 0C5.5 0 .16 5.33.15 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 005.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.17-3.48-8.32"/></symbol>
-</defs></svg>
+<symbol id="i-pause" viewBox="0 0 24 24"><line x1="9" y1="5" x2="9" y2="19"/><line x1="15" y1="5" x2="15" y2="19"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><polygon points="7 5 19 12 7 19" fill="currentColor" stroke="none"/></symbol></defs></svg>
 <a href="#main" class="skip-link">Skip to content</a>
 <nav>
   <div class="nav-in">
-    <a href="index.html" class="logo"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
+    <a href="index.html" class="logo" translate="no"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block" aria-hidden="true" focusable="false">
 <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
 <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1"/>
 <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1"/>
@@ -445,23 +477,26 @@ nav.nav-hidden{transform:translateY(-100%)}
     </ul>
     <div class="nav-cta">
       <a href="contact.html" class="btn btn-primary">Get a quote</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><svg class="i"><use href="#i-menu" xlink:href="#i-menu"/></svg></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-menu" xlink:href="#i-menu"/></svg></button>
     </div>
   </div>
 </nav>
 <script>
-document.getElementById('navToggle').addEventListener('click',function(){
-  var l=document.getElementById('navLinks');var open=l.classList.toggle('open');
-  this.setAttribute('aria-expanded',open);
-});
+(function(){
+  var t=document.getElementById('navToggle'), l=document.getElementById('navLinks');
+  function set(open){ l.classList.toggle('open',open); t.setAttribute('aria-expanded',open); }
+  t.addEventListener('click',function(){ set(!l.classList.contains('open')); });
+  l.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && l.classList.contains('open')){ set(false); t.focus(); } });
+})();
 </script>
 <main id="main">
 
 <header class="section-tight hero-shell" style="padding-top:calc(68px + var(--sec-y) * 0.6)">
   <div class="wrap">
     <div class="eyebrow">Get in touch</div>
-    <h1 style="max-width:700px">Let's solve your <span class="grad-text">IT challenges.</span></h1>
-    <p style="max-width:560px;margin-top:16px;font-size:1.05rem">Describe what you need and I'll come back with a clear plan and an honest quote. No jargon, no sales pitch, no catch.</p>
+    <h1 style="max-width:700px">Let’s solve your <span class="grad-text">IT challenges.</span></h1>
+    <p style="max-width:560px;margin-top:16px;font-size:1.05rem">Describe what you need and I’ll come back with a clear plan and an honest quote. No jargon, no sales pitch, no catch.</p>
   </div>
 </header>
 
@@ -469,46 +504,43 @@ document.getElementById('navToggle').addEventListener('click',function(){
   <div class="wrap grid g-2" style="gap:var(--gap-xl);align-items:start">
     <div>
       <div class="card" style="margin-bottom:32px">
-        <div class="icon-tile"><svg class="i"><use href="#i-whatsapp" xlink:href="#i-whatsapp"/></svg></div>
-        <h3 style="margin:16px 0 6px">Fast reply. Always me.</h3>
-        <p style="font-size:14.5px">WhatsApp is fastest. I typically reply within a few hours on business days, and it's always me on the other end, never a bot or an assistant.</p>
-        <a href="https://wa.me/447349301106" class="btn btn-primary" style="margin-top:18px"><svg class="i i-sm"><use href="#i-whatsapp" xlink:href="#i-whatsapp"/></svg>Message on WhatsApp</a>
+        <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp" xlink:href="#i-whatsapp"/></svg></div>
+        <h2 style="font-size:1.28rem;margin:16px 0 6px">Fast reply. Always me.</h2>
+        <p style="font-size:14.5px">WhatsApp is fastest. I typically reply within a few hours on business days, and it’s always me on the other end, never a bot or an assistant.</p>
+        <a href="https://wa.me/447349301106" class="btn btn-primary" style="margin-top:18px"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-whatsapp" xlink:href="#i-whatsapp"/></svg>Message on WhatsApp</a>
       </div>
       <div class="eyebrow">Common questions</div>
-      <div><details class="faq-item"><summary>Remote or on-site?<svg class="i"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Both. Most issues resolve remotely. On-site available in Hertfordshire and surrounding areas.</div></details>
-    <details class="faq-item"><summary>How quickly can you start?<svg class="i"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Urgent issues often same day. Projects typically within a week.</div></details>
-    <details class="faq-item"><summary>Do you work with small businesses?<svg class="i"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">SMEs are my primary focus. Senior expertise without the full-time hire cost.</div></details>
-    <details class="faq-item"><summary>Can I get a fixed-price quote?<svg class="i"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Yes, for clearly scoped projects. Monthly retainers are available for ongoing support.</div></details>
-    <details class="faq-item"><summary>Do you sign NDAs?<svg class="i"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Yes, happy to sign one before discussing sensitive systems or data.</div></details>
-    <details class="faq-item"><summary>Do you work outside Hertfordshire?<svg class="i"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Remotely, anywhere in the UK. On-site I cover Herts, Bucks, Beds and London.</div></details>
+      <div><details class="faq-item"><summary>Remote or on-site?<svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Both. Most issues resolve remotely. On-site available in Hertfordshire and surrounding areas.</div></details>
+    <details class="faq-item"><summary>How quickly can you start?<svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Urgent issues often same day. Projects typically within a week.</div></details>
+    <details class="faq-item"><summary>Do you work with small businesses?<svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">SMEs are my primary focus. Senior expertise without the full-time hire cost.</div></details>
+    <details class="faq-item"><summary>Can I get a fixed-price quote?<svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Yes, for clearly scoped projects. Monthly retainers are available for ongoing support.</div></details>
+    <details class="faq-item"><summary>Do you sign NDAs?<svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Yes, happy to sign one before discussing sensitive systems or data.</div></details>
+    <details class="faq-item"><summary>Do you work outside Hertfordshire?<svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus" xlink:href="#i-plus"/></svg></summary><div class="faq-body">Remotely, anywhere in the UK. On-site I cover Herts, Bucks, Beds and London.</div></details>
     </div>
     </div>
 
     <div class="card" style="padding:32px">
-      <h3 style="margin-bottom:6px">Send a message.</h3>
-      <p style="font-size:14px;margin-bottom:24px">Fill in the details and I'll reply with a tailored plan, usually the same day.</p>
-      <form id="contactForm">
+      <h2 style="font-size:1.28rem;margin-bottom:6px">Send a message.</h2>
+      <p style="font-size:14px;margin-bottom:24px">Fill in the details and I’ll reply with a tailored plan, usually the same day.</p>
+      <form id="contactForm" novalidate>
         <div class="grid g-2" style="gap:16px">
-          <div class="field"><label for="fname">First name *</label><input id="fname" required></div>
-          <div class="field"><label for="lname">Last name</label><input id="lname"></div>
+          <div class="field"><label for="fname">First name *</label><input id="fname" name="given-name" autocomplete="given-name" required aria-describedby="fname-err"><div class="field-error" id="fname-err" aria-live="polite"></div></div>
+          <div class="field"><label for="lname">Last name</label><input id="lname" name="family-name" autocomplete="family-name"></div>
         </div>
         <div class="grid g-2" style="gap:16px">
-          <div class="field"><label for="email">Email *</label><input id="email" type="email" required></div>
-          <div class="field"><label for="company">Company</label><input id="company"></div>
+          <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required aria-describedby="email-err"><div class="field-error" id="email-err" aria-live="polite"></div></div>
+          <div class="field"><label for="company">Company</label><input id="company" name="organization" autocomplete="organization"></div>
         </div>
-        <div class="field"><label for="svc">Service needed</label><select id="svc"><option value="">Select&hellip;</option><option>Remote / On-site Support</option><option>Microsoft 365 Admin</option><option>Azure / Entra ID</option><option>Server Admin</option><option>Intune / MDM</option><option>Networking / VPN</option><option>VoIP Setup</option><option>IT Procurement</option><option>MFA / Zero Trust</option><option>Dark Web Monitoring</option><option>Security Awareness Training</option><option>GDPR / Compliance</option><option>Penetration Testing</option><option>ISO 27001 Prep</option><option>Incident Response</option><option>Power BI Dashboards</option><option>Excel Automation (VBA)</option><option>Power Automate</option><option>SQL / Python</option><option>SharePoint Intranet</option><option>Data Migration</option><option>BI Strategy</option><option>Microsoft Copilot Setup</option><option>AI Workflow Integration</option><option>Chatbot Development</option><option>AI Policy & Governance</option><option>Website Design</option><option>Google Workspace</option><option>Domain & DNS</option><option>Technical SEO</option><option>Google Business Profile</option><option>Monthly IT Retainer</option><option>IT Health Check</option><option>Disaster Recovery Plan</option><option>IT Roadmap</option><option>Not sure / Other</option></select></div>
-        <div class="field">
-          <label>How urgent?</label>
-          <div class="urgency">
+        <div class="field"><label for="svc">Service needed</label><select id="svc" name="service" autocomplete="off"><option value="">Select&hellip;</option><option>Remote / On-site Support</option><option>Microsoft 365 Admin</option><option>Azure / Entra ID</option><option>Server Admin</option><option>Intune / MDM</option><option>Networking / VPN</option><option>VoIP Setup</option><option>IT Procurement</option><option>MFA / Zero Trust</option><option>Dark Web Monitoring</option><option>Security Awareness Training</option><option>GDPR / Compliance</option><option>Penetration Testing</option><option>ISO 27001 Prep</option><option>Incident Response</option><option>Power BI Dashboards</option><option>Excel Automation (VBA)</option><option>Power Automate</option><option>SQL / Python</option><option>SharePoint Intranet</option><option>Data Migration</option><option>BI Strategy</option><option>Microsoft Copilot Setup</option><option>AI Workflow Integration</option><option>Chatbot Development</option><option>AI Policy & Governance</option><option>Website Design</option><option>Google Workspace</option><option>Domain & DNS</option><option>Technical SEO</option><option>Google Business Profile</option><option>Monthly IT Retainer</option><option>IT Health Check</option><option>Disaster Recovery Plan</option><option>IT Roadmap</option><option>Not sure / Other</option></select></div>
+        <fieldset class="field"><legend>How urgent?</legend><div class="urgency">
             <label><input type="radio" name="urgency" value="Critical" checked><span class="dot dot-red"></span>Critical</label>
             <label><input type="radio" name="urgency" value="Urgent"><span class="dot dot-amber"></span>Urgent</label>
             <label><input type="radio" name="urgency" value="Normal"><span class="dot dot-yellow"></span>Normal</label>
             <label><input type="radio" name="urgency" value="Planning"><span class="dot dot-green"></span>Planning</label>
-          </div>
-        </div>
-        <div class="field"><label for="msg">Tell me about your situation *</label><textarea id="msg" required></textarea></div>
-        <div id="formErr" style="display:none;color:var(--red);font-size:13px;margin-bottom:14px"></div>
-        <button type="submit" class="btn btn-primary btn-block">Send message, I'll reply today <svg class="i i-sm"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></button>
+          </div></fieldset>
+        <div class="field"><label for="msg">Tell me about your situation *</label><textarea id="msg" name="message" autocomplete="off" required aria-describedby="msg-err"></textarea><div class="field-error" id="msg-err" aria-live="polite"></div></div>
+        <div id="formErr" class="field-error" role="status" aria-live="polite"></div>
+        <button type="submit" class="btn btn-primary btn-block">Send message, I’ll reply today <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></button>
         <p class="muted" style="font-size:12.5px;margin-top:12px;text-align:center">Opens WhatsApp with your message pre-filled for the fastest possible response.</p>
       </form>
     </div>
@@ -519,13 +551,13 @@ document.getElementById('navToggle').addEventListener('click',function(){
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <a href="index.html" class="logo"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block">
-<defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <a href="index.html" class="logo" translate="no"><svg width="26" height="26" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="display:block" aria-hidden="true" focusable="false">
+<defs><linearGradient id="grad-foot" x1="0%" y1="0%" x2="100%" y2="100%">
 <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1"/>
 <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1"/>
 </linearGradient></defs>
-<rect x="20" y="30" width="15" height="60" fill="url(#grad)" rx="2"/>
-<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad)"/>
+<rect x="20" y="30" width="15" height="60" fill="url(#grad-foot)" rx="2"/>
+<polygon points="45,30 60,50 75,30 90,30 90,90 75,90 75,60 60,80 45,60 45,90 30,90 30,30" fill="url(#grad-foot)"/>
 <circle cx="60" cy="15" r="8" fill="#2DD4BF"/>
 </svg>M.Apex Consulting</a>
       <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="consulting.html">Consulting</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
@@ -536,7 +568,7 @@ document.getElementById('navToggle').addEventListener('click',function(){
     </div>
   </div>
 </footer>
-<button class="to-top" id="toTop" aria-label="Back to top"><svg class="i"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></button>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></button>
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();
@@ -544,12 +576,20 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
   var email=document.getElementById('email').value.trim();
   var msg=document.getElementById('msg').value.trim();
   var err=document.getElementById('formErr');
-  if(!fname || !email || !msg){
-    err.textContent='Please fill in your name, email and a short description before sending.';
-    err.style.display='block';
-    return;
-  }
-  err.style.display='none';
+  var checks=[
+    ['fname', !fname, 'Add your first name so I know who to reply to.'],
+    ['email', !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), 'Add a valid email, for example name@company.co.uk.'],
+    ['msg', !msg, 'Add a line or two about what you need help with.']
+  ];
+  var first=null;
+  checks.forEach(function(ch){
+    var el=document.getElementById(ch[0]), box=document.getElementById(ch[0]+'-err');
+    el.setAttribute('aria-invalid', ch[1] ? 'true' : 'false');
+    box.textContent = ch[1] ? ch[2] : '';
+    if(ch[1] && !first) first=el;
+  });
+  if(first){ err.textContent=''; first.focus(); return; }
+  err.textContent='Opening WhatsApp with your message\u2026';
   var lname=document.getElementById('lname').value.trim();
   var company=document.getElementById('company').value.trim();
   var svc=document.getElementById('svc').value;
