@@ -1,9 +1,8 @@
 @font-face{font-family:'Fraunces Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(/fonts/fraunces.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(/fonts/inter.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Syne';font-style:normal;font-display:swap;font-weight:800;src:url(/fonts/syne-800.woff2) format('woff2')}
 /* M.Apex Consulting: shared design system
    Teal brand accent (#2DD4BF), rich dark background, Fraunces for display moments,
-   Syne for structure, Inter for body. One file, five pages, consistent everywhere. */
+   Inter for body and UI. One file, five pages, consistent everywhere. */
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -15,8 +14,8 @@
   --accent:#2DD4BF;--accent2:#14b8a6;--accent3:rgba(45,212,191,0.1);--accent4:rgba(45,212,191,0.06);
   --text:#eaf0f7;--text2:#b8cedf;--text3:#7a96b0;
   --green:#34d399;--amber:#fbbf24;--purple:#a78bfa;--red:#f87171;
-  --fh:'Syne','Segoe UI',system-ui,sans-serif;
-  --fd:'Fraunces','Syne','Segoe UI',serif;
+  --fh:'Inter Variable',system-ui,sans-serif;
+  --fd:'Fraunces Variable',Georgia,serif;
   --fb:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
   --fm:'JetBrains Mono','SF Mono',Consolas,monospace;
   --r:8px;--r2:12px;--r3:16px;--r4:999px;
@@ -355,7 +354,7 @@ legend{font-size:13px;color:var(--text2);margin-bottom:7px;padding:0}
 .ticker.paused .ticker-track{animation-play-state:paused}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-/* type system: Fraunces for headlines, Inter for everything you read or tap, Syne only in the logo */
+/* type system: Fraunces for headlines, Inter for everything you read or tap, Fraunces also for the logo wordmark */
 :root{--fd:'Fraunces Variable',Georgia,'Times New Roman',serif;--fh:'Inter Variable',system-ui,-apple-system,'Segoe UI',sans-serif;--fb:'Inter Variable',system-ui,-apple-system,'Segoe UI',sans-serif;--fm:'Inter Variable',system-ui,-apple-system,'Segoe UI',sans-serif}
 body{font-feature-settings:'cv11','ss01';font-optical-sizing:auto}
 h1,h2{font-family:var(--fd);font-weight:560;letter-spacing:-0.022em;line-height:1.06;font-optical-sizing:auto}
@@ -364,7 +363,7 @@ h2{font-size:clamp(1.85rem,3.6vw,2.8rem)}
 h3,h4{font-family:var(--fh);font-weight:640;letter-spacing:-0.012em;line-height:1.25}
 .feature.span-2 h3{font-family:var(--fd);font-weight:560;letter-spacing:-0.015em}
 .stat b{font-family:var(--fd);font-weight:560;letter-spacing:-0.02em}
-.logo{font-family:'Syne',var(--fb);font-weight:800}
+.logo{font-family:var(--fd);font-weight:600;font-size:1.3rem;letter-spacing:-0.02em}
 .eyebrow{font-weight:600;font-size:11.5px;letter-spacing:.14em}
 .btn{font-weight:600;letter-spacing:-0.005em}
 p{line-height:1.65}
