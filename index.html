@@ -433,6 +433,17 @@ p{line-height:1.65}
 .stat b[style*="1.55rem"]{font-size:2rem!important}
 @media (max-width:640px){.stat b,.stat b[style*="1.55rem"]{font-size:1.7rem!important}.eyebrow{letter-spacing:.1em}}
 .stat span{display:block;line-height:1.45;margin-top:4px}
+.vcard{position:relative;z-index:1;padding:30px 30px 24px;border-radius:var(--r3);background:linear-gradient(160deg,rgba(45,212,191,0.08),rgba(45,212,191,0) 40%),var(--card);border:1px solid var(--border2);box-shadow:0 30px 80px -40px rgba(0,0,0,0.8),inset 0 1px 0 rgba(255,255,255,0.05)}
+.vlist{list-style:none;margin:8px 0 0;padding:0}
+.vlist li{display:grid;grid-template-columns:44px 1fr;gap:4px;padding:18px 0;border-bottom:1px solid var(--border)}
+.vlist li:last-child{border-bottom:0}
+.vnum{font-family:var(--fd);font-size:1.05rem;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:2px}
+.vtitle{display:block;font-family:var(--fd);font-weight:560;font-size:1.3rem;letter-spacing:-0.015em;color:var(--text);line-height:1.2}
+.vlist p{margin-top:6px;font-size:14px;line-height:1.55;color:var(--text2)}
+.vfoot{display:flex;align-items:center;gap:14px;margin-top:10px;padding-top:20px;border-top:1px solid var(--border2)}
+.vfoot b{display:block;font-size:14px;color:var(--text)}
+.vfoot span{display:block;font-size:12.5px;color:var(--text3);margin-top:2px;line-height:1.45}
+@media (max-width:640px){.vcard{padding:22px 20px 18px}.vtitle{font-size:1.18rem}.vlist li{grid-template-columns:36px 1fr;padding:15px 0}}
 </style>
 <script type="application/ld+json">
 {
@@ -558,45 +569,11 @@ p{line-height:1.65}
           <div class="stat"><b>UK</b><span>Based &amp; remote</span></div>
         </div>
       </div>
-      <div><div class="card" style="position:relative;z-index:1">
-    <div class="eyebrow" style="margin-bottom:4px">M.Apex &middot; What I work on</div>
-    <div class="status-row">
-      <div class="icon-tile" style="width:32px;height:32px"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-cloud" xlink:href="#i-cloud"/></svg></div>
-      <span class="name">Microsoft 365 Admin</span>
-      <span class="status-label">Cloud</span>
-    </div>
-    <div class="status-row">
-      <div class="icon-tile" style="width:32px;height:32px"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-lock" xlink:href="#i-lock"/></svg></div>
-      <span class="name">Cybersecurity Audit</span>
-      <span class="status-label">Security</span>
-    </div>
-    <div class="status-row">
-      <div class="icon-tile" style="width:32px;height:32px"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-bars" xlink:href="#i-bars"/></svg></div>
-      <span class="name">Power BI Dashboard</span>
-      <span class="status-label">Data</span>
-    </div>
-    <div class="status-row">
-      <div class="icon-tile" style="width:32px;height:32px"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-node" xlink:href="#i-node"/></svg></div>
-      <span class="name">Copilot Integration</span>
-      <span class="status-label">AI</span>
-    </div>
-    <div class="status-row">
-      <div class="icon-tile" style="width:32px;height:32px"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-shield" xlink:href="#i-shield"/></svg></div>
-      <span class="name">IT Health Check</span>
-      <span class="status-label">Audit</span>
-    </div>
-    <div class="status-row">
-      <div class="icon-tile" style="width:32px;height:32px"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-bolt" xlink:href="#i-bolt"/></svg></div>
-      <span class="name">Emergency Support</span>
-      <span class="status-label">Support</span>
-    </div>
-    <div class="status-row">
-      <div class="icon-tile" style="width:32px;height:32px"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-tablet" xlink:href="#i-tablet"/></svg></div>
-      <span class="name">Custom Kiosk System</span>
-      <span class="status-label">Custom build</span>
-    </div>
-    
-  </div></div>
+      <div><aside class="vcard" aria-label="Where I add value">
+    <div class="eyebrow" style="margin-bottom:6px">Where I add value</div>
+    <ol class="vlist"><li><span class="vnum">01</span><div><b class="vtitle">Resilience</b><p>Backups and recovery plans, tested before you need them, so an attack doesn’t stop the business.</p></div></li><li><span class="vnum">02</span><div><b class="vtitle">Compliance</b><p>The security proof customers and contracts ask for: Cyber Essentials, NIS2 supply chain requirements and GDPR.</p></div></li><li><span class="vnum">03</span><div><b class="vtitle">Modernisation</b><p>Ageing systems made secure and connected to live reporting, without stopping production.</p></div></li><li><span class="vnum">04</span><div><b class="vtitle">AI, done safely</b><p>Private AI and automation that use your data without it leaving your control.</p></div></li></ol>
+    <div class="vfoot"><div class="avatar" aria-hidden="true">TM</div><div><b>Tiago Mota</b><span>Founder. Runs IT for a multi-site manufacturer across the UK and Italy.</span></div></div>
+  </aside></div>
     </div>
   </div>
 </header>
