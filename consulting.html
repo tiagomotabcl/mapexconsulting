@@ -433,6 +433,20 @@ p{line-height:1.65}
 .stat b[style*="1.55rem"]{font-size:2rem!important}
 @media (max-width:640px){.stat b,.stat b[style*="1.55rem"]{font-size:1.7rem!important}.eyebrow{letter-spacing:.1em}}
 .stat span{display:block;line-height:1.45;margin-top:4px}
+.pkg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-md)}
+.pkg{display:flex;flex-direction:column;padding:30px;border-radius:var(--r3);background:linear-gradient(160deg,rgba(45,212,191,0.07),rgba(45,212,191,0) 40%),var(--card);border:1px solid var(--border2)}
+.pkg-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.pkg h3{font-family:var(--fd);font-weight:560;font-size:1.6rem;letter-spacing:-0.02em}
+.pkg-promise{margin-top:8px;font-size:15.5px;color:var(--text)}
+.pkg-who{margin-top:14px;font-size:13.5px;color:var(--text3)}
+.pkg-who b{color:var(--accent);font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
+.pkg ul{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px}
+.pkg li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text2);line-height:1.5}
+.pkg li .i{color:var(--accent);margin-top:2px;width:16px;height:16px}
+.pkg-foot{margin-top:auto;padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:900px){.pkg-grid{grid-template-columns:1fr}}
+@media (max-width:640px){.pkg{padding:22px}.pkg h3{font-size:1.4rem}.pkg-foot .btn{flex:1 1 100%}}
+.vnum{font-family:var(--fd);font-size:1.05rem;color:var(--accent);font-variant-numeric:tabular-nums}
 </style>
 <script type="application/ld+json">
 {
@@ -553,6 +567,45 @@ p{line-height:1.65}
   </div>
 </header>
 
+<section class="section" id="packages">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Signature engagements</div>
+      <h2>Four packages with a clear scope and a clear result.</h2>
+      <p>Each one has a fixed scope and a fixed fee agreed before we start. Bring me one of these problems and you’ll know exactly what you’re getting.</p>
+    </div>
+    <div class="pkg-grid"><article class="pkg">
+      <div class="pkg-top"><span class="vnum">01</span><div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-partner" xlink:href="#i-partner"/></svg></div></div>
+      <h3>Part-time IT Director</h3>
+      <p class="pkg-promise">A senior head of IT for your business, without the full-time salary.</p>
+      <p class="pkg-who"><b>For</b> Growing businesses of 20 to 150 people with no one owning IT at board level.</p>
+      <ul><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>A standing monthly slot with your leadership team</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Technology roadmap, budget and supplier management</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Security posture tracked and reported each quarter</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Priority response when something goes wrong</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Hands-on delivery, not only advice</li></ul>
+      <div class="pkg-foot"><span class="svc-price">Monthly retainer, minimum three months</span><a href="contact.html" class="btn btn-outline">Discuss this <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </article><article class="pkg">
+      <div class="pkg-top"><span class="vnum">02</span><div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-shield" xlink:href="#i-shield"/></svg></div></div>
+      <h3>Recovery Assurance</h3>
+      <p class="pkg-promise">Proof, not hope, that the business can recover from an attack.</p>
+      <p class="pkg-who"><b>For</b> Firms whose insurer, lender or largest customer is asking about ransomware readiness.</p>
+      <ul><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Backup audit against the 3-2-1 rule, with immutable copies</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>A recovery runbook: who does what, in what order</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Recovery time and data loss targets agreed with you</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>A live restore test, repeated every year</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>A written report for your board or insurer</li></ul>
+      <div class="pkg-foot"><span class="svc-price">Fixed-price project, then annual test</span><a href="contact.html" class="btn btn-outline">Discuss this <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </article><article class="pkg">
+      <div class="pkg-top"><span class="vnum">03</span><div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-gear" xlink:href="#i-gear"/></svg></div></div>
+      <h3>Factory Data in Six Weeks</h3>
+      <p class="pkg-promise">From clipboards and whiteboards to live production numbers.</p>
+      <p class="pkg-who"><b>For</b> Manufacturers who run on spreadsheets and want to see machine and line performance.</p>
+      <ul><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Tablet kiosks for production and attendance logging</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Overall Equipment Effectiveness (OEE) dashboards</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>ERP data connected to Power BI</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>A data quality review, so the numbers can be trusted</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Training for supervisors and managers</li></ul>
+      <div class="pkg-foot"><span class="svc-price">Fixed-price project, scoped in a free call</span><a href="contact.html" class="btn btn-outline">Discuss this <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </article><article class="pkg">
+      <div class="pkg-top"><span class="vnum">04</span><div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg></div></div>
+      <h3>Supplier Security Evidence Pack</h3>
+      <p class="pkg-promise">Answers ready before your customer’s security questionnaire arrives.</p>
+      <p class="pkg-who"><b>For</b> Suppliers to larger or EU customers who keep receiving security questionnaires and NIS2 requests.</p>
+      <ul><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Your current controls assessed and gaps fixed</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Policies written to match what you actually do</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Completed answers to the common questionnaire formats</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>Cyber Essentials as the base certificate</li><li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg>A yearly refresh as contracts renew</li></ul>
+      <div class="pkg-foot"><span class="svc-price">Fixed-price engagement, then annual refresh</span><a href="contact.html" class="btn btn-outline">Discuss this <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow" xlink:href="#i-arrow"/></svg></a></div>
+    </article></div>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap">
     <div class="sec-head">
@@ -598,7 +651,7 @@ p{line-height:1.65}
     </div>
     <div class="card">
       <div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-node" xlink:href="#i-node"/></svg></div>
-      <h3 style="margin:16px 0 10px">Autonomous AI Agents (Copilot Studio)</h3><p style="font-size:14.5px">Go beyond conversational chatbots. I build agents that do the work: an agent that reads an incoming order email, checks stock in your ERP, and automatically generates the dispatch note. Real automation of real tasks, not just answering questions.</p>
+      <h3 style="margin:16px 0 10px">Autonomous AI Agents (Copilot Studio)</h3><p style="font-size:14.5px">Go beyond conversational chatbots. I build agents that do the work: an agent that reads an incoming order email, checks stock in your ERP, and automatically generates the dispatch note. Real automation of real tasks, not only answering questions.</p>
       <div class="tag-row"><span class="badge">AI</span><span class="badge">High value</span></div>
     </div>
     <div class="card">
