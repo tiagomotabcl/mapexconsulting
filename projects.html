@@ -586,6 +586,17 @@ p{line-height:1.65}
       </dl>
       <div class="tag-row"><span class="badge">Hyper-V</span><span class="badge">Veeam</span><span class="badge">Meraki</span><span class="badge">Microsoft 365</span><span class="badge">Entra ID</span><span class="badge">Dynamics NAV</span></div></div>
     </article>
+    <article class="card proj-card proj-feature" data-cat="infra">
+      <div class="proj-feature-l"><div class="proj-top"><div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-server" xlink:href="#i-server"/></svg></div><span class="muted proj-cat">Infrastructure</span><span class="badge badge-accent">Live</span></div>
+      <h3>Secure network rebuilt on Cisco Meraki</h3>
+      <div class="proj-scope"><span>Meraki firewall</span><span>Meraki switching</span><span>Segmented VLANs</span><span>WiFi 7</span></div></div>
+      <div class="proj-feature-r"><dl class="proj-dl">
+        <dt>The challenge</dt><dd>The site needed a network that could be secured, segmented and managed centrally, while ageing wireless held it back.</dd>
+        <dt>My approach</dt><dd>I implemented Cisco Meraki firewalls and switches as the core of the network, with routing, DHCP and firewall policy managed centrally from the Meraki cloud dashboard. Office and guest traffic run on separate VLANs, and I rebuilt the wireless controller as a virtual machine on existing Hyper-V to bring in WiFi 7 access points.</dd>
+        <dt>The result</dt><dd>A segmented network where guests never touch business systems, with firewall and switching managed from one cloud dashboard and modern wireless on the existing platform.</dd>
+      </dl>
+      <div class="tag-row"><span class="badge">Cisco Meraki</span><span class="badge">Firewall</span><span class="badge">Switching</span><span class="badge">VLANs</span><span class="badge">UniFi</span><span class="badge">Hyper-V</span></div></div>
+    </article>
     <article class="card proj-card proj-feature" data-cat="security">
       <div class="proj-feature-l"><div class="proj-top"><div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-shield" xlink:href="#i-shield"/></svg></div><span class="muted proj-cat">Security & compliance</span><span class="badge badge-accent">Ongoing</span></div>
       <h3>TISAX for an automotive supplier</h3>
@@ -618,17 +629,6 @@ p{line-height:1.65}
         <dt>The result</dt><dd>Findings closed for good instead of reopening at the next scan, through one standard method on every machine.</dd>
       </dl>
       <div class="tag-row"><span class="badge">PowerShell</span><span class="badge">Rapid7</span><span class="badge">N-able</span><span class="badge">.NET</span><span class="badge">Dell firmware</span></div>
-    </article>
-    <article class="card proj-card" data-cat="infra">
-      <div class="proj-top"><div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-server" xlink:href="#i-server"/></svg></div><span class="muted proj-cat">Infrastructure</span><span class="badge badge-amber">In delivery</span></div>
-      <h3>Wireless modernisation on existing infrastructure</h3>
-      <div class="proj-scope"><span>UniFi on Hyper-V</span><span>Meraki routing</span><span>Segmented networks</span></div>
-      <dl class="proj-dl">
-        <dt>The challenge</dt><dd>End-of-life access points and a controller due for rebuild were holding back the site’s wireless network.</dd>
-        <dt>My approach</dt><dd>I rebuilt the controller as a virtual machine on existing Windows Server 2022 Hyper-V, kept routing and DHCP on the Meraki gateway, isolated guest and office traffic on separate VLANs, and planned the move from legacy access points to WiFi 7.</dd>
-        <dt>The result</dt><dd>A modern wireless design on the existing platform, with guests isolated from business systems and no new hardware for the controller.</dd>
-      </dl>
-      <div class="tag-row"><span class="badge">UniFi</span><span class="badge">WiFi 7</span><span class="badge">Meraki</span><span class="badge">VLANs</span></div>
     </article>
     <article class="card proj-card" data-cat="data">
       <div class="proj-top"><div class="icon-tile"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bars" xlink:href="#i-bars"/></svg></div><span class="muted proj-cat">Data & automation</span><span class="badge badge-accent">Live</span></div>
